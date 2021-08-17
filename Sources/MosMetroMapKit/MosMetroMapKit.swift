@@ -1,3 +1,8 @@
+import UIKit
+
 struct MosMetroMapKit {
-    var text = "Hello, World!"
+    
+    public func openMetroMap() {
+        
+    }
 }

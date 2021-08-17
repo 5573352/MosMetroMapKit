@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Bold.otf">
+            <string>MoscowSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="4hQ-HO-p7o" customClass="MarkerLabelView" customModule="MosMetro_X" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FilterBackground" translatesAutoresizingMaskIntoConstraints="NO" id="c70-je-gBO">
+                    <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLZ-W8-jEE">
+                    <rect key="frame" x="3" y="4" width="10" height="9"/>
+                    <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="9"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="c70-je-gBO" secondAttribute="trailing" id="3b6-4g-bYs"/>
+                <constraint firstItem="DLZ-W8-jEE" firstAttribute="top" secondItem="4hQ-HO-p7o" secondAttribute="top" constant="4" id="7HI-01-KHY"/>
+                <constraint firstAttribute="trailing" secondItem="DLZ-W8-jEE" secondAttribute="trailing" constant="3" id="CtW-Ag-qr4"/>
+                <constraint firstAttribute="bottom" secondItem="c70-je-gBO" secondAttribute="bottom" id="Jdx-8O-01h"/>
+                <constraint firstItem="Mxs-Z6-jJk" firstAttribute="bottom" secondItem="DLZ-W8-jEE" secondAttribute="bottom" constant="3" id="SkC-uJ-KOX"/>
+                <constraint firstItem="DLZ-W8-jEE" firstAttribute="leading" secondItem="4hQ-HO-p7o" secondAttribute="leading" constant="3" id="hXk-LL-Ytf"/>
+                <constraint firstItem="c70-je-gBO" firstAttribute="leading" secondItem="4hQ-HO-p7o" secondAttribute="leading" id="p8i-r7-ER4"/>
+                <constraint firstItem="c70-je-gBO" firstAttribute="top" secondItem="4hQ-HO-p7o" secondAttribute="top" id="rBK-ey-0h0"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Mxs-Z6-jJk"/>
+            <connections>
+                <outlet property="countLabel" destination="DLZ-W8-jEE" id="EBd-kJ-G26"/>
+            </connections>
+            <point key="canvasLocation" x="130.43478260869566" y="-139.28571428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="FilterBackground" width="50" height="50"/>
+    </resources>
+</document>
