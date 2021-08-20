@@ -174,7 +174,7 @@ extension MetroMapView {
         case .presented(let state):
             self.stationSelectionView.isHidden = true
             if self.routePreview == nil {
-                presentRoutePreview()
+//                presentRoutePreview()
                 self.routePreview?.viewState = state
             } else {
                 routePreview?.removeFromSuperview()
