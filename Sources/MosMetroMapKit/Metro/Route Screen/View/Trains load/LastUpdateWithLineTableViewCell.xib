@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Regular.otf">
+            <string>MoscowSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="33" id="KGk-i7-Jjw" customClass="LastUpdateWithLineTableViewCell" customModule="MosMetro_X" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="33"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSv-VZ-Wwm">
+                        <rect key="frame" x="63" y="-1" width="5" height="35"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E54-yE-M2b">
+                                <rect key="frame" x="1" y="-4" width="3" height="43"/>
+                                <color key="backgroundColor" name="Base"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="5" id="9j3-Lh-qz7"/>
+                            <constraint firstItem="E54-yE-M2b" firstAttribute="centerX" secondItem="gSv-VZ-Wwm" secondAttribute="centerX" id="GtQ-yW-oAC"/>
+                            <constraint firstItem="E54-yE-M2b" firstAttribute="top" secondItem="gSv-VZ-Wwm" secondAttribute="top" constant="-4" id="RcV-AV-Iod"/>
+                            <constraint firstAttribute="bottom" secondItem="E54-yE-M2b" secondAttribute="bottom" constant="-4" id="efR-ec-aCa"/>
+                            <constraint firstItem="E54-yE-M2b" firstAttribute="leading" secondItem="gSv-VZ-Wwm" secondAttribute="leading" constant="1" id="tFH-hJ-uWW"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w75-WA-E0S">
+                        <rect key="frame" x="81" y="2" width="226" height="29"/>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="11"/>
+                        <color key="textColor" name="grey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="gSv-VZ-Wwm" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="KR3-z5-eQI"/>
+                    <constraint firstAttribute="trailing" secondItem="w75-WA-E0S" secondAttribute="trailing" constant="13" id="Odm-Bb-1yX"/>
+                    <constraint firstItem="w75-WA-E0S" firstAttribute="leading" secondItem="gSv-VZ-Wwm" secondAttribute="trailing" constant="13" id="X7r-WO-ftw"/>
+                    <constraint firstAttribute="bottom" secondItem="w75-WA-E0S" secondAttribute="bottom" constant="2" id="itE-z7-AEM"/>
+                    <constraint firstItem="gSv-VZ-Wwm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="63" id="jx0-0n-fQ7"/>
+                    <constraint firstItem="gSv-VZ-Wwm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-1" id="wuA-f3-qlt"/>
+                    <constraint firstItem="w75-WA-E0S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="xgp-Kf-bxZ"/>
+                    <constraint firstAttribute="bottom" secondItem="gSv-VZ-Wwm" secondAttribute="bottom" constant="-1" id="yFS-4r-cXb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="infoLabel" destination="w75-WA-E0S" id="FWO-NH-paC"/>
+                <outlet property="insideLineView" destination="E54-yE-M2b" id="bK2-i4-dU4"/>
+                <outlet property="lineView" destination="gSv-VZ-Wwm" id="p9M-Cy-Dds"/>
+            </connections>
+            <point key="canvasLocation" x="92.753623188405811" y="93.415178571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Base">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey">
+            <color red="0.59600001573562622" green="0.60000002384185791" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

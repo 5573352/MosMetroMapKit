@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Bold.otf">
+            <string>MoscowSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="92" id="KGk-i7-Jjw" customClass="TransferTableViewCell" customModule="MosMetro_X" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J63-Aa-mz5">
+                        <rect key="frame" x="20" y="12" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="Oy1-rl-THt"/>
+                            <constraint firstAttribute="width" constant="24" id="vgc-KW-6X9"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ms-Ze-5lg">
+                        <rect key="frame" x="60" y="14" width="210" height="66"/>
+                        <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="16"/>
+                        <color key="textColor" name="TextPrimary"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAs-Rp-Fk1">
+                        <rect key="frame" x="278" y="14" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="3b8-FM-qij"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="LuT-yh-JqM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="15"/>
+                        <color key="textColor" name="TextSecondary"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="4ms-Ze-5lg" secondAttribute="bottom" constant="12" id="9C8-9o-k1j"/>
+                    <constraint firstItem="4ms-Ze-5lg" firstAttribute="leading" secondItem="J63-Aa-mz5" secondAttribute="trailing" constant="16" id="BSI-ys-uU7"/>
+                    <constraint firstAttribute="trailing" secondItem="LAs-Rp-Fk1" secondAttribute="trailing" constant="20" id="NSf-Ge-0cU"/>
+                    <constraint firstItem="J63-Aa-mz5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="O1E-5v-hVd"/>
+                    <constraint firstItem="LAs-Rp-Fk1" firstAttribute="leading" secondItem="4ms-Ze-5lg" secondAttribute="trailing" constant="8" id="Osw-gr-NcR"/>
+                    <constraint firstItem="LAs-Rp-Fk1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="XEf-lY-eLP"/>
+                    <constraint firstItem="J63-Aa-mz5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="d3w-cV-8Sc"/>
+                    <constraint firstItem="4ms-Ze-5lg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="14" id="qUt-yW-cSa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="labelToSuperviewAnchor" destination="9C8-9o-k1j" id="vYl-Bn-9rc"/>
+                <outlet property="leftImageView" destination="J63-Aa-mz5" id="SBs-Gi-HWE"/>
+                <outlet property="mainTitleLabel" destination="4ms-Ze-5lg" id="jSo-fR-xmh"/>
+                <outlet property="timeLabel" destination="LAs-Rp-Fk1" id="uks-ry-ALk"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="117.85714285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="TextPrimary">
+            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextSecondary">
+            <color red="0.59600001573562622" green="0.60000002384185791" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

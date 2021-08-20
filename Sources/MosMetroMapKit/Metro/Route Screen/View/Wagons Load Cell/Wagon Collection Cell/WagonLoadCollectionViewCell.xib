@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Medium.otf">
+            <string>MoscowSans-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WagonLoadCollectionViewCell" id="gTV-IL-0wX" customClass="WagonLoadCollectionViewCell" customModule="MosMetro_X" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="261" height="74"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="261" height="74"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6g-Zh-r4o">
+                        <rect key="frame" x="0.0" y="0.0" width="261" height="74"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BjS-iU-UEc">
+                                <rect key="frame" x="16" y="16" width="229" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="BBy-yx-kKh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
+                                <color key="textColor" name="text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="XNT-p7-aHh">
+                                <rect key="frame" x="16" y="44" width="229" height="14"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="3e5-vN-fSf"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="pe6-26-JWt">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="estimatedItemSize" width="36" height="14"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" name="card_background"/>
+                        <constraints>
+                            <constraint firstItem="BjS-iU-UEc" firstAttribute="top" secondItem="k6g-Zh-r4o" secondAttribute="top" constant="16" id="1sg-lQ-aO2"/>
+                            <constraint firstItem="XNT-p7-aHh" firstAttribute="leading" secondItem="k6g-Zh-r4o" secondAttribute="leading" constant="16" id="6FV-26-7Yq"/>
+                            <constraint firstAttribute="trailing" secondItem="XNT-p7-aHh" secondAttribute="trailing" constant="16" id="78v-6w-5Vu"/>
+                            <constraint firstItem="BjS-iU-UEc" firstAttribute="leading" secondItem="k6g-Zh-r4o" secondAttribute="leading" constant="16" id="8e9-mV-ZQe"/>
+                            <constraint firstAttribute="height" constant="74" id="ai7-Km-INg"/>
+                            <constraint firstAttribute="trailing" secondItem="BjS-iU-UEc" secondAttribute="trailing" constant="16" id="e4t-Ne-WOv"/>
+                            <constraint firstAttribute="bottom" secondItem="XNT-p7-aHh" secondAttribute="bottom" constant="16" id="fjy-se-heZ"/>
+                            <constraint firstItem="BjS-iU-UEc" firstAttribute="leading" secondItem="k6g-Zh-r4o" secondAttribute="leading" constant="16" id="ru5-QO-BmE"/>
+                            <constraint firstItem="XNT-p7-aHh" firstAttribute="top" secondItem="BjS-iU-UEc" secondAttribute="bottom" constant="10" id="yAo-fO-Tdo"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="k6g-Zh-r4o" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5Pc-ta-gbY"/>
+                <constraint firstAttribute="bottom" secondItem="k6g-Zh-r4o" secondAttribute="bottom" id="L45-5A-6C9"/>
+                <constraint firstAttribute="trailing" secondItem="k6g-Zh-r4o" secondAttribute="trailing" id="U5A-Xo-QEb"/>
+                <constraint firstItem="k6g-Zh-r4o" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZfR-sb-SFx"/>
+            </constraints>
+            <size key="customSize" width="261" height="90"/>
+            <connections>
+                <outlet property="arrivalLabel" destination="BjS-iU-UEc" id="tqP-hG-1b2"/>
+                <outlet property="cardView" destination="k6g-Zh-r4o" id="CgD-Lq-Lyj"/>
+                <outlet property="wagonsNestedCollectionView" destination="XNT-p7-aHh" id="JM7-R3-uaU"/>
+            </connections>
+            <point key="canvasLocation" x="280.43478260869568" y="131.25"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="card_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

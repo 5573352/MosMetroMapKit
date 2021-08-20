@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Regular.otf">
+            <string>MoscowSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="26" id="KGk-i7-Jjw" customClass="StopTableViewCell" customModule="MosMetro_X" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="26"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="26"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGX-MA-bCS">
+                        <rect key="frame" x="63" y="-1" width="5" height="28"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KV2-Wc-VrG">
+                                <rect key="frame" x="1" y="-4" width="3" height="36"/>
+                                <color key="backgroundColor" name="Base"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="KV2-Wc-VrG" secondAttribute="trailing" constant="1" id="PId-G3-HMP"/>
+                            <constraint firstItem="KV2-Wc-VrG" firstAttribute="top" secondItem="PGX-MA-bCS" secondAttribute="top" constant="-4" id="VJW-zb-dN8"/>
+                            <constraint firstItem="KV2-Wc-VrG" firstAttribute="leading" secondItem="PGX-MA-bCS" secondAttribute="leading" constant="1" id="ate-6l-8Qb"/>
+                            <constraint firstAttribute="bottom" secondItem="KV2-Wc-VrG" secondAttribute="bottom" constant="-4" id="jOe-Q7-Wpr"/>
+                            <constraint firstAttribute="width" constant="5" id="mgM-MX-aAS"/>
+                            <constraint firstAttribute="height" constant="28" id="wNu-TG-1wk"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dm2-wp-PV7">
+                        <rect key="frame" x="61" y="8.5" width="9" height="9"/>
+                        <color key="backgroundColor" name="closing"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="9" id="HH4-gT-fYG"/>
+                            <constraint firstAttribute="height" constant="9" id="lE8-zF-QF6"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAo-f4-oJh">
+                        <rect key="frame" x="81" y="4.5" width="37" height="17.5"/>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="15"/>
+                        <color key="textColor" name="text"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJE-mq-Cu9">
+                        <rect key="frame" x="20" y="13" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
+                        <color key="textColor" name="grey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="PGX-MA-bCS" secondAttribute="bottom" constant="-1" id="B8P-rP-LIb"/>
+                    <constraint firstItem="pJE-mq-Cu9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BYv-ru-oGr"/>
+                    <constraint firstItem="oAo-f4-oJh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NEL-8T-oJG"/>
+                    <constraint firstItem="oAo-f4-oJh" firstAttribute="leading" secondItem="Dm2-wp-PV7" secondAttribute="trailing" constant="11" id="Zir-Hm-XU2"/>
+                    <constraint firstItem="Dm2-wp-PV7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="61" id="fl2-ph-jQs"/>
+                    <constraint firstItem="PGX-MA-bCS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="63" id="fpM-9X-MHT"/>
+                    <constraint firstItem="PGX-MA-bCS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-1" id="kTk-jo-Xwj"/>
+                    <constraint firstItem="pJE-mq-Cu9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="tdK-zx-aar"/>
+                    <constraint firstItem="Dm2-wp-PV7" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="x3a-3Y-vOM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="dividerLineView" destination="KV2-Wc-VrG" id="9wn-YH-cZ5"/>
+                <outlet property="linePathView" destination="PGX-MA-bCS" id="TtC-31-4fW"/>
+                <outlet property="stopCircle" destination="Dm2-wp-PV7" id="pND-O0-dHn"/>
+                <outlet property="stopNameLabel" destination="oAo-f4-oJh" id="6m8-kV-feZ"/>
+                <outlet property="timeToStop" destination="pJE-mq-Cu9" id="ow5-5k-RAN"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Base">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="closing">
+            <color red="0.87800002098083496" green="0.3880000114440918" blue="0.3880000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey">
+            <color red="0.59600001573562622" green="0.60000002384185791" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

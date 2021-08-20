@@ -115,7 +115,7 @@
                     <rect key="frame" x="58.5" y="0.0" width="297" height="28"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can travel on metro and MCC only with mask" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDX-fL-tUT">
-                            <rect key="frame" x="34" y="8.5" width="243" height="11"/>
+                            <rect key="frame" x="34" y="7.5" width="243" height="13"/>
                             <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="11"/>
                             <color key="textColor" name="text"/>
                             <nil key="highlightedColor"/>

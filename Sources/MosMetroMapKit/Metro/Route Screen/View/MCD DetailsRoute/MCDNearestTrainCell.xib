@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Bold.otf">
+            <string>MoscowSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MCDNearestTrainCell" customModule="MosMetro_X" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="533" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="533" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIC-X6-aYg">
+                        <rect key="frame" x="81" y="5" width="447" height="34"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M90-kx-Xey">
+                                <rect key="frame" x="8" y="8" width="100" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="d11-5D-9TD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="11"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ax9-al-rE9">
+                                <rect key="frame" x="239" y="8" width="200" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="w80-07-ff0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="11"/>
+                                <color key="textColor" name="grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="overlay"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ax9-al-rE9" secondAttribute="trailing" constant="8" id="BAN-BY-55X"/>
+                            <constraint firstItem="M90-kx-Xey" firstAttribute="top" secondItem="jIC-X6-aYg" secondAttribute="top" constant="8" id="MXs-Eb-tBS"/>
+                            <constraint firstAttribute="bottom" secondItem="M90-kx-Xey" secondAttribute="bottom" constant="8" id="QWF-RY-Muo"/>
+                            <constraint firstAttribute="bottom" secondItem="Ax9-al-rE9" secondAttribute="bottom" constant="8" id="e2d-yD-apj"/>
+                            <constraint firstItem="M90-kx-Xey" firstAttribute="leading" secondItem="jIC-X6-aYg" secondAttribute="leading" constant="8" id="i3U-98-rvf"/>
+                            <constraint firstItem="Ax9-al-rE9" firstAttribute="top" secondItem="jIC-X6-aYg" secondAttribute="top" constant="8" id="t8N-2x-BTG"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="later.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NT5-Zl-z5j">
+                        <rect key="frame" x="63" y="-4" width="5" height="52"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6D-PK-Ar9">
+                                <rect key="frame" x="1" y="-4" width="3" height="60"/>
+                                <color key="backgroundColor" name="Base"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="j6D-PK-Ar9" firstAttribute="top" secondItem="NT5-Zl-z5j" secondAttribute="top" constant="-4" id="HcC-eS-tj0"/>
+                            <constraint firstAttribute="width" constant="5" id="IYB-a6-gXp"/>
+                            <constraint firstAttribute="bottom" secondItem="j6D-PK-Ar9" secondAttribute="bottom" constant="-4" id="OJK-PU-S1h"/>
+                            <constraint firstItem="j6D-PK-Ar9" firstAttribute="leading" secondItem="NT5-Zl-z5j" secondAttribute="leading" constant="1" id="j5C-u2-LTO"/>
+                            <constraint firstItem="j6D-PK-Ar9" firstAttribute="centerX" secondItem="NT5-Zl-z5j" secondAttribute="centerX" id="ljj-ap-ZfI"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="NT5-Zl-z5j" secondAttribute="bottom" constant="-4" id="9nB-Y0-Rml"/>
+                    <constraint firstItem="jIC-X6-aYg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="KuL-eh-GQq"/>
+                    <constraint firstItem="jIC-X6-aYg" firstAttribute="leading" secondItem="NT5-Zl-z5j" secondAttribute="trailing" constant="13" id="W0C-kX-N0i"/>
+                    <constraint firstItem="NT5-Zl-z5j" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-4" id="hTs-RM-oHa"/>
+                    <constraint firstItem="NT5-Zl-z5j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="63" id="lsk-4X-g1L"/>
+                    <constraint firstAttribute="bottom" secondItem="jIC-X6-aYg" secondAttribute="bottom" constant="5" id="qX0-vl-rEB"/>
+                    <constraint firstAttribute="trailing" secondItem="jIC-X6-aYg" secondAttribute="trailing" constant="5" id="ves-KX-thd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="arrivalLabel" destination="M90-kx-Xey" id="zNu-OQ-LjA"/>
+                <outlet property="cardView" destination="jIC-X6-aYg" id="p4e-Wv-PHR"/>
+                <outlet property="detailsLabel" destination="Ax9-al-rE9" id="AoV-O0-SEc"/>
+                <outlet property="inSideView" destination="j6D-PK-Ar9" id="K7F-DP-7oL"/>
+                <outlet property="outSideView" destination="NT5-Zl-z5j" id="ybl-2h-wZm"/>
+            </connections>
+            <point key="canvasLocation" x="247.10144927536234" y="81.696428571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Base">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey">
+            <color red="0.59600001573562622" green="0.60000002384185791" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="overlay">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.96100002527236938" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

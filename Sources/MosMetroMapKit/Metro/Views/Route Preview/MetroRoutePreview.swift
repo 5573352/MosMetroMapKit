@@ -31,17 +31,23 @@ public class MetroRoutePreview: UIView {
         viewState.onChange()
     }
     
-    
     public struct ViewState {
-        let from: String
-        let to: String
-        let onPointSelect: (Direction) -> ()
-        let onClose: () -> ()
-        let onChange: () -> ()
-        let onPageChange: (Int) -> ()
-        let routes: [RoutePreviewCollectionCell.ViewState]
+        let from          : String
+        let to            : String
+        let onPointSelect : ((Direction)->())
+        let onClose       : (()->())
+        let onChange      : (()->())
+        let onPageChange  : ((Int)->())
+        let routes        : [RoutePreviewCollectionCell.ViewState]
         
-        static let initial = ViewState(from: "", to: "", onPointSelect: {_ in}, onClose: {}, onChange: {}, onPageChange: {_ in}, routes: [])
+        static let initial = ViewState(
+            from          : "",
+            to            : "",
+            onPointSelect : {_ in},
+            onClose       : {},
+            onChange      : {},
+            onPageChange  : {_ in},
+            routes        : [])
     }
     
     var viewState: ViewState = .initial {
@@ -50,12 +56,11 @@ public class MetroRoutePreview: UIView {
         }
     }
     
-    
     public override func awakeFromNib() {
         super.awakeFromNib()
         routesCollectionView.dataSource = self
         routesCollectionView.delegate = self
-        routesCollectionView.register(UINib(nibName: "RoutePreviewCollectionCell", bundle: nil), forCellWithReuseIdentifier: RoutePreviewCollectionCell.reuseID)
+        routesCollectionView.register(RoutePreviewCollectionCell.nib, forCellWithReuseIdentifier: RoutePreviewCollectionCell.identifire)
         let tapFrom = UITapGestureRecognizer(target: self, action: #selector(handlePointSelect(_:)))
         tapFrom.numberOfTapsRequired = 1
         let tapTo = UITapGestureRecognizer(target: self, action: #selector(handlePointSelect(_:)))
@@ -69,14 +74,11 @@ public class MetroRoutePreview: UIView {
         pageControl.borderWidth = 1
         pageControl.radius = 3.5
         pageControl.inactiveTransparency = 0
-        pageControl.tintColor = .textPrimary
+        pageControl.tintColor = .mm_TextPrimary
         pageControl.backgroundColor = .clear
-        //self.pageControl.border
-        pageControl.currentPageTintColor = .textPrimary
+        pageControl.currentPageTintColor = .mm_TextPrimary
         alertView.roundCorners(.all, radius: 14)
         alertView.layer.masksToBounds = false
-        
-        
         
         alertView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.16).cgColor
         alertView.layer.shadowOpacity = 1
@@ -113,22 +115,17 @@ extension MetroRoutePreview: UICollectionViewDataSource {
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RoutePreviewCollectionCell.reuseID, for: indexPath) as! RoutePreviewCollectionCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RoutePreviewCollectionCell.identifire, for: indexPath) as? RoutePreviewCollectionCell
+        else { return UICollectionViewCell() }
         cell.viewState = viewState.routes[indexPath.row]
         return cell
     }
-    
-    
 }
 
 extension MetroRoutePreview: UICollectionViewDelegate {
     
     public func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        //print(self.contentOffset.x / self.frame.size.width)
-        //(self.contentOffset.x / self.frame.size.width)
          self.pageControl.progress = Double((routesCollectionView.contentOffset.x / routesCollectionView.frame.size.width))
-        
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -136,21 +133,16 @@ extension MetroRoutePreview: UICollectionViewDelegate {
         item.onDetailsTap()
     }
     
-    
-    
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageWidth = scrollView.frame.size.width
         let currentPage = Int((scrollView.contentOffset.x + pageWidth / 2) / pageWidth)
         viewState.onPageChange(currentPage)
     }
-         
-    
 }
 
 extension MetroRoutePreview: UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width, height: collectionView.frame.height)
-        
     }
 }

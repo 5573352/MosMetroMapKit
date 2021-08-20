@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Regular.otf">
+            <string>MoscowSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WagonsLoadTableViewCell" rowHeight="117" id="KGk-i7-Jjw" customClass="WagonsLoadTableViewCell" customModule="MosMetro_X" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzY-la-tdB">
+                        <rect key="frame" x="20" y="12" width="280" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="N8b-On-8xf"/>
+                            <constraint firstAttribute="height" constant="18" id="uWF-hd-tLX"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="15"/>
+                        <color key="textColor" name="grey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="101-0a-Xxz">
+                        <rect key="frame" x="0.0" y="44" width="320" height="74"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="74" id="Nd7-cu-Ra9"/>
+                        </constraints>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ru1-dx-ruq">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="101-0a-Xxz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="00o-jY-LHj"/>
+                    <constraint firstAttribute="trailing" secondItem="hzY-la-tdB" secondAttribute="trailing" constant="20" id="D9c-ea-HIj"/>
+                    <constraint firstAttribute="trailing" secondItem="101-0a-Xxz" secondAttribute="trailing" id="I5x-fY-gUb"/>
+                    <constraint firstItem="101-0a-Xxz" firstAttribute="top" secondItem="hzY-la-tdB" secondAttribute="bottom" constant="14" id="Pxk-yh-dab"/>
+                    <constraint firstItem="hzY-la-tdB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="UPA-JQ-I8I"/>
+                    <constraint firstItem="hzY-la-tdB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="WXK-PG-42i"/>
+                    <constraint firstItem="hzY-la-tdB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="bpP-Fs-AM1"/>
+                    <constraint firstAttribute="bottom" secondItem="101-0a-Xxz" secondAttribute="bottom" constant="12" id="htu-zl-OCV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="firstStationLabel" destination="hzY-la-tdB" id="x3j-TJ-CIo"/>
+                <outlet property="wagonsCollectionView" destination="101-0a-Xxz" id="Al8-cz-gqE"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="138.95089285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="grey">
+            <color red="0.59600001573562622" green="0.60000002384185791" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

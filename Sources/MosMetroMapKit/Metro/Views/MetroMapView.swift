@@ -105,7 +105,7 @@ extension MetroMapView {
     }
     
     private func presentRoutePreview() {
-        routePreview = Bundle.main.loadNibNamed("ShortRoutePreview", owner: nil, options: nil)?.first as? MetroRoutePreview
+        routePreview = MetroRoutePreview.loadFromNib()
         guard let _routePreview = routePreview else { return }
         addSubview(_routePreview)
         _routePreview.pin(on: self, {[

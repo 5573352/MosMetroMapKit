@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Bold.otf">
+            <string>MoscowSans-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasePanFullScreenController" customModule="MosMetro_X" customModuleProvider="target">
+            <connections>
+                <outlet property="bgBlurView" destination="MKY-li-adS" id="51V-5T-kdV"/>
+                <outlet property="closeButton" destination="Vgb-rM-FXh" id="cV6-NF-OFd"/>
+                <outlet property="tableView" destination="TqM-Zo-yzH" id="qfn-gT-b9B"/>
+                <outlet property="tableViewTopAnchor" destination="MI1-Vc-clZ" id="fTg-b1-zB9"/>
+                <outlet property="titleLabel" destination="ARS-9G-tJb" id="e1W-4g-qjI"/>
+                <outlet property="view" destination="6gC-mo-EfM" id="80E-Ud-KZq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="6gC-mo-EfM">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MKY-li-adS">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aMY-vs-T41">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ARS-9G-tJb">
+                                <rect key="frame" x="20" y="24" width="340" height="22"/>
+                                <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="22"/>
+                                <color key="textColor" name="text"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vgb-rM-FXh">
+                                <rect key="frame" x="370" y="24" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="Sea-3n-Nme"/>
+                                    <constraint firstAttribute="height" constant="24" id="qYn-GF-jhG"/>
+                                </constraints>
+                                <state key="normal" image="close_pan"/>
+                                <connections>
+                                    <action selector="handleClose:" destination="-1" eventType="touchUpInside" id="858-3S-1gO"/>
+                                </connections>
+                            </button>
+                            <view alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11M-mz-NzT">
+                                <rect key="frame" x="0.0" y="62" width="414" height="1"/>
+                                <color key="backgroundColor" name="grey"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="vMW-UC-KP0"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="TqM-Zo-yzH">
+                                <rect key="frame" x="0.0" y="63" width="414" height="833"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ARS-9G-tJb" secondAttribute="trailing" constant="120" id="7z0-b1-RVs"/>
+                            <constraint firstAttribute="trailing" secondItem="Vgb-rM-FXh" secondAttribute="trailing" constant="20" symbolic="YES" id="9jJ-4p-N53"/>
+                            <constraint firstItem="ARS-9G-tJb" firstAttribute="leading" secondItem="aMY-vs-T41" secondAttribute="leading" constant="20" id="Fjq-a5-j9D"/>
+                            <constraint firstItem="11M-mz-NzT" firstAttribute="top" secondItem="ARS-9G-tJb" secondAttribute="bottom" constant="16" id="I70-SY-iSq"/>
+                            <constraint firstItem="TqM-Zo-yzH" firstAttribute="top" secondItem="11M-mz-NzT" secondAttribute="bottom" id="MI1-Vc-clZ"/>
+                            <constraint firstItem="Vgb-rM-FXh" firstAttribute="top" secondItem="aMY-vs-T41" secondAttribute="top" constant="24" id="Wnm-j2-f2o"/>
+                            <constraint firstItem="ARS-9G-tJb" firstAttribute="top" secondItem="aMY-vs-T41" secondAttribute="top" constant="24" id="bPp-9N-oEh"/>
+                            <constraint firstItem="Vgb-rM-FXh" firstAttribute="leading" secondItem="ARS-9G-tJb" secondAttribute="trailing" constant="10" id="ia0-xQ-Dec"/>
+                            <constraint firstItem="TqM-Zo-yzH" firstAttribute="leading" secondItem="aMY-vs-T41" secondAttribute="leading" id="ric-pX-wme"/>
+                            <constraint firstAttribute="bottom" secondItem="TqM-Zo-yzH" secondAttribute="bottom" id="u94-Lg-zdk"/>
+                            <constraint firstAttribute="trailing" secondItem="TqM-Zo-yzH" secondAttribute="trailing" id="ubb-kE-bQg"/>
+                            <constraint firstAttribute="trailing" secondItem="11M-mz-NzT" secondAttribute="trailing" id="um2-Pt-LfS"/>
+                            <constraint firstItem="11M-mz-NzT" firstAttribute="leading" secondItem="aMY-vs-T41" secondAttribute="leading" id="xLZ-hU-5LQ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7z0-b1-RVs"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <blurEffect style="prominent"/>
+                </visualEffectView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="0jH-VH-waa"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="MKY-li-adS" secondAttribute="bottom" id="6v9-G9-uMH"/>
+                <constraint firstItem="0jH-VH-waa" firstAttribute="trailing" secondItem="MKY-li-adS" secondAttribute="trailing" id="7TA-Cr-5yA"/>
+                <constraint firstItem="MKY-li-adS" firstAttribute="leading" secondItem="0jH-VH-waa" secondAttribute="leading" id="9Sd-BB-vIz"/>
+                <constraint firstItem="MKY-li-adS" firstAttribute="top" secondItem="6gC-mo-EfM" secondAttribute="top" id="vOh-0B-rJT"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <point key="canvasLocation" x="298.55072463768118" y="103.79464285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close_pan" width="24" height="24"/>
+        <namedColor name="grey">
+            <color red="0.59600001573562622" green="0.60000002384185791" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

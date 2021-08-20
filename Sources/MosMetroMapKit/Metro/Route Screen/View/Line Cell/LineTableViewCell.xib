@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Bold.otf">
+            <string>MoscowSans-Bold</string>
+        </array>
+        <array key="MoscowSans-Medium.otf">
+            <string>MoscowSans-Medium</string>
+        </array>
+        <array key="MoscowSans-Regular.otf">
+            <string>MoscowSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="156" id="KGk-i7-Jjw" customClass="LineTableViewCell" customModule="MosMetro_X" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="156"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lIp-QI-GxP">
+                        <rect key="frame" x="60" y="13" width="172" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="9iZ-eE-eAB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="16"/>
+                        <color key="textColor" name="text"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pjo-Af-d5c">
+                        <rect key="frame" x="240" y="13" width="60" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="Dav-83-HGy"/>
+                            <constraint firstAttribute="height" constant="22" id="XdY-wq-AdG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="15"/>
+                        <color key="textColor" name="grey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4u-nz-GFR">
+                        <rect key="frame" x="60" y="43" width="240" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="ceV-cX-i4V"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="15"/>
+                        <color key="textColor" name="grey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="A57-he-PWT">
+                        <rect key="frame" x="60" y="75" width="175" height="20"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first_wagon" translatesAutoresizingMaskIntoConstraints="NO" id="bia-4B-Bgp">
+                                <rect key="frame" x="0.0" y="0.0" width="35" height="20"/>
+                                <color key="tintColor" name="grey"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="middle_wagon" translatesAutoresizingMaskIntoConstraints="NO" id="chf-w9-Pna">
+                                <rect key="frame" x="35" y="0.0" width="35" height="20"/>
+                                <color key="tintColor" name="grey"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="middle_wagon" translatesAutoresizingMaskIntoConstraints="NO" id="Wlf-PG-ktQ">
+                                <rect key="frame" x="70" y="0.0" width="35" height="20"/>
+                                <color key="tintColor" name="grey"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="middle_wagon" translatesAutoresizingMaskIntoConstraints="NO" id="8jb-Cy-vBf">
+                                <rect key="frame" x="105" y="0.0" width="35" height="20"/>
+                                <color key="tintColor" name="grey"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="middle_wagon" translatesAutoresizingMaskIntoConstraints="NO" id="d5c-7E-g9n">
+                                <rect key="frame" x="140" y="0.0" width="35" height="20"/>
+                                <color key="tintColor" name="grey"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="175" id="3Y3-uM-O84"/>
+                            <constraint firstAttribute="height" constant="20" id="xZj-Q6-fa4"/>
+                        </constraints>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e86-o9-TIJ">
+                        <rect key="frame" x="60" y="103" width="240" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="bDM-cs-xGu"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="13"/>
+                        <color key="textColor" name="text"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRV-5P-l9f">
+                        <rect key="frame" x="60" y="137" width="11" height="11"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="11" id="5iD-vS-iIL"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="11" id="m4N-G6-PHs"/>
+                            <constraint firstAttribute="width" constant="11" id="qt7-c1-mY8"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="11" id="tTN-N6-Gm7"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re1-xh-tm6">
+                        <rect key="frame" x="81" y="132" width="219" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="GUd-jY-KxQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="16"/>
+                        <color key="textColor" name="text"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bD9-XJ-wzL">
+                        <rect key="frame" x="63" y="146" width="5" height="21"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rs6-6A-a77">
+                                <rect key="frame" x="1" y="1" width="3" height="22"/>
+                                <color key="backgroundColor" name="Base"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="5" id="KoW-3t-b7I"/>
+                            <constraint firstAttribute="trailing" secondItem="rs6-6A-a77" secondAttribute="trailing" constant="1" id="WL0-xu-ICi"/>
+                            <constraint firstItem="rs6-6A-a77" firstAttribute="leading" secondItem="bD9-XJ-wzL" secondAttribute="leading" constant="1" id="qF6-XV-0W8"/>
+                            <constraint firstAttribute="height" constant="21" id="wTq-vB-PKA"/>
+                            <constraint firstAttribute="bottom" secondItem="rs6-6A-a77" secondAttribute="bottom" constant="-2" id="xgX-6e-MgK"/>
+                            <constraint firstItem="rs6-6A-a77" firstAttribute="top" secondItem="bD9-XJ-wzL" secondAttribute="top" constant="1" id="xlj-iZ-9FS"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TuJ-SF-eoN">
+                        <rect key="frame" x="20" y="12" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="Rrs-C6-N0T"/>
+                            <constraint firstAttribute="width" constant="24" id="qMj-GQ-YES"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FeL-TG-Gr9">
+                        <rect key="frame" x="20" y="132" width="0.0" height="22"/>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
+                        <color key="textColor" name="grey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="P4u-nz-GFR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="4SE-a0-TXQ"/>
+                    <constraint firstItem="bD9-XJ-wzL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="63" id="B9J-mG-1Xr"/>
+                    <constraint firstItem="A57-he-PWT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="BHF-U1-YTL"/>
+                    <constraint firstItem="A57-he-PWT" firstAttribute="top" secondItem="P4u-nz-GFR" secondAttribute="bottom" constant="10" id="DXp-Uc-lsV"/>
+                    <constraint firstItem="TuJ-SF-eoN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="EWi-5v-Nkx"/>
+                    <constraint firstAttribute="trailing" secondItem="e86-o9-TIJ" secondAttribute="trailing" constant="20" id="IVS-Vv-1gF"/>
+                    <constraint firstItem="FeL-TG-Gr9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="JR3-KZ-al8"/>
+                    <constraint firstItem="TuJ-SF-eoN" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="KYP-Yt-ymU"/>
+                    <constraint firstItem="lIp-QI-GxP" firstAttribute="leading" secondItem="TuJ-SF-eoN" secondAttribute="trailing" constant="16" id="Lnz-ts-eQ8"/>
+                    <constraint firstItem="bD9-XJ-wzL" firstAttribute="top" secondItem="fRV-5P-l9f" secondAttribute="bottom" constant="-2" id="MFj-wq-oF1"/>
+                    <constraint firstItem="pjo-Af-d5c" firstAttribute="leading" secondItem="lIp-QI-GxP" secondAttribute="trailing" constant="8" id="OR6-eY-igA"/>
+                    <constraint firstAttribute="trailing" secondItem="P4u-nz-GFR" secondAttribute="trailing" constant="20" id="QJh-Uh-9g3"/>
+                    <constraint firstItem="FeL-TG-Gr9" firstAttribute="top" secondItem="Re1-xh-tm6" secondAttribute="top" id="QaZ-u7-9z9"/>
+                    <constraint firstItem="fRV-5P-l9f" firstAttribute="top" secondItem="P4u-nz-GFR" secondAttribute="bottom" priority="997" constant="10" id="TMO-Xh-R2N"/>
+                    <constraint firstItem="fRV-5P-l9f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="UG5-vt-Ana"/>
+                    <constraint firstItem="fRV-5P-l9f" firstAttribute="top" secondItem="e86-o9-TIJ" secondAttribute="bottom" constant="16" id="WIu-Xc-23E"/>
+                    <constraint firstItem="e86-o9-TIJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="60" id="Xvp-mQ-XqW"/>
+                    <constraint firstAttribute="bottom" secondItem="bD9-XJ-wzL" secondAttribute="bottom" constant="-1" id="Y97-p8-pFA"/>
+                    <constraint firstItem="Re1-xh-tm6" firstAttribute="top" secondItem="e86-o9-TIJ" secondAttribute="bottom" constant="11" id="ZJY-Wo-fq5"/>
+                    <constraint firstItem="Re1-xh-tm6" firstAttribute="top" secondItem="P4u-nz-GFR" secondAttribute="bottom" priority="997" constant="10" id="a5M-EO-Cyp"/>
+                    <constraint firstAttribute="trailing" secondItem="pjo-Af-d5c" secondAttribute="trailing" constant="20" id="avY-Xs-aM8"/>
+                    <constraint firstItem="Re1-xh-tm6" firstAttribute="leading" secondItem="fRV-5P-l9f" secondAttribute="trailing" constant="10" id="bmH-nA-I9Q"/>
+                    <constraint firstItem="lIp-QI-GxP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="cFz-B0-gsn"/>
+                    <constraint firstAttribute="trailing" secondItem="Re1-xh-tm6" secondAttribute="trailing" constant="20" id="chL-Ar-IvI"/>
+                    <constraint firstItem="P4u-nz-GFR" firstAttribute="top" secondItem="lIp-QI-GxP" secondAttribute="bottom" constant="8" id="fgi-tK-Sjd"/>
+                    <constraint firstAttribute="bottom" secondItem="Re1-xh-tm6" secondAttribute="bottom" constant="12" id="kCV-9h-Mg6"/>
+                    <constraint firstItem="pjo-Af-d5c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="kDr-ep-0LJ"/>
+                    <constraint firstItem="FeL-TG-Gr9" firstAttribute="bottom" secondItem="Re1-xh-tm6" secondAttribute="bottom" id="lPJ-dz-cay"/>
+                    <constraint firstItem="e86-o9-TIJ" firstAttribute="top" secondItem="A57-he-PWT" secondAttribute="bottom" constant="8" id="siy-2n-zh2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="adviceLabel" destination="e86-o9-TIJ" id="5yO-Bz-qJT"/>
+                <outlet property="directionLabel" destination="P4u-nz-GFR" id="FtH-6K-eeg"/>
+                <outlet property="leftImageView" destination="TuJ-SF-eoN" id="iTB-aJ-SSJ"/>
+                <outlet property="linePathMiddleView" destination="rs6-6A-a77" id="uaZ-7f-T8R"/>
+                <outlet property="linePathView" destination="bD9-XJ-wzL" id="cwC-AK-3Mq"/>
+                <outlet property="mainTitleLabel" destination="lIp-QI-GxP" id="TkV-mi-upR"/>
+                <outlet property="stationCircle" destination="fRV-5P-l9f" id="9ix-sF-I4y"/>
+                <outlet property="stationCircleToAdviceLabel" destination="WIu-Xc-23E" id="nBq-2z-0rt"/>
+                <outlet property="stationCircleToDirectionLabel" destination="TMO-Xh-R2N" id="zDS-CW-wwP"/>
+                <outlet property="stopNameLabel" destination="Re1-xh-tm6" id="OPW-Sz-dda"/>
+                <outlet property="stopNameToAdviceLabel" destination="ZJY-Wo-fq5" id="CD5-UC-0p2"/>
+                <outlet property="stopNameToDirectionLabel" destination="a5M-EO-Cyp" id="f7E-UD-YzQ"/>
+                <outlet property="timeLabel" destination="pjo-Af-d5c" id="6MP-D5-jmz"/>
+                <outlet property="timeToStop" destination="FeL-TG-Gr9" id="Gfb-xl-YTa"/>
+                <outlet property="wagonsStackView" destination="A57-he-PWT" id="TU5-va-Jzm"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="136.60714285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="first_wagon" width="36" height="14"/>
+        <image name="middle_wagon" width="36" height="14"/>
+        <namedColor name="Base">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey">
+            <color red="0.59600001573562622" green="0.60000002384185791" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
