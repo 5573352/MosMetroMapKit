@@ -33,14 +33,14 @@ class LineLoadWagonsTableViewCell : UITableViewCell {
                 RunLoop.current.add(self.timer, forMode: RunLoop.Mode.common)
                 hasSetTimer = true
             }
-            arrivalLabel.text = "\("In".localized()) \(timeToTrain.asString(style: .abbreviated))"
+            arrivalLabel.text = "\(NSLocalizedString("In", tableName: nil, bundle: .mm_Map, value: "", comment: "")) \(timeToTrain.asString(style: .abbreviated))"
         }
     }
     
     @objc
     private func updateTime() {
         if timeToTrain <= 0 {
-            arrivalLabel.text = "Arrived".localized()
+            arrivalLabel.text = NSLocalizedString("Arrived", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         } else {
             timeToTrain -= 1
         }

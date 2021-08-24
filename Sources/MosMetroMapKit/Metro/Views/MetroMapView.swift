@@ -192,7 +192,7 @@ extension MetroMapView {
 extension MetroMapView: MetroMapScrollViewDelegate {
 
     public func onSingleTap(_ scrollView: MetroMapScrollView, point: CGPoint) {
-        self.onMapTap?(point)
+//        self.onMapTap?(point)
     }
     
     public func onBubbleButtonTap(_ scrollView: MetroMapScrollView, direction: Direction, currentSegmentIndex: Int) {
@@ -200,7 +200,7 @@ extension MetroMapView: MetroMapScrollViewDelegate {
     }
     
     public func onBubbleSegmentChange(_ scrollView: MetroMapScrollView, segmentIndex: Int) {
-        self.onBubbleSegmentChange?(segmentIndex)
+//        self.onBubbleSegmentChange?(segmentIndex)
     }
     
     public func onStationTap(_ scrollView: MetroMapScrollView, station id: Int?) {

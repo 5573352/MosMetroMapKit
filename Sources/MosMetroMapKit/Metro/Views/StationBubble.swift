@@ -145,8 +145,8 @@ public class StationBubble: UIView {
         return stackView
     }()
     
-    private let toButton = IconButton(.left, text: "To1".localized(), icon: #imageLiteral(resourceName: "route_to"), iconWidth: 20, iconHeight: 20)
-    private let fromButton = IconButton(.left, text: "From1".localized(), icon: #imageLiteral(resourceName: "route_from"), iconWidth: 20, iconHeight: 20)
+    private let toButton = IconButton(.left, text: NSLocalizedString("To1", tableName: nil, bundle: .mm_Map, value: "", comment: ""), icon: #imageLiteral(resourceName: "route_to"), iconWidth: 20, iconHeight: 20)
+    private let fromButton = IconButton(.left, text: NSLocalizedString("From1", tableName: nil, bundle: .mm_Map, value: "", comment: ""), icon: #imageLiteral(resourceName: "route_from"), iconWidth: 20, iconHeight: 20)
     
 }
 

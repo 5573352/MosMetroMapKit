@@ -23,11 +23,11 @@ extension MetroErrors: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .routeNotFound:
-            return "Route not found".localized()
+            return NSLocalizedString("Route not found", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         case .sameStations:
-            return "Same stations".localized()
+            return NSLocalizedString("Same stations", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         case .vertexNotFound:
-            return "Vertex not found".localized()
+            return NSLocalizedString("Vertex not found", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         }
     }
 }
@@ -766,7 +766,7 @@ extension MetroService {
         var towards = ""
         var directionID = 0
         if let secondStop = stops[safe: 1] {
-            towards = firstStop.ordering < secondStop.ordering ? String.localizedStringWithFormat("Towards %@".localized(), lastLineStation.name) : String.localizedStringWithFormat("Towards %@".localized(), firstLineStation.name)
+            towards = firstStop.ordering < secondStop.ordering ? String.localizedStringWithFormat(NSLocalizedString("Towards %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), lastLineStation.name) : String.localizedStringWithFormat(NSLocalizedString("Towards %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), firstLineStation.name)
             directionID = firstStop.ordering < secondStop.ordering ? lastLineStation.id : firstLineStation.id
             // если первая станция - последняя а следующаая - первая
             if (firstStop.ordering < secondStop.ordering) ||

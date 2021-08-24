@@ -22,7 +22,7 @@ class InfoForSheduleCell : UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .clear
-        self.infoLabel.text = "Nearest trains".localized()
+        self.infoLabel.text = NSLocalizedString("Nearest trains", tableName: nil, bundle: .mm_Map, value: "", comment: "")
     }
 
     override func prepareForReuse() {

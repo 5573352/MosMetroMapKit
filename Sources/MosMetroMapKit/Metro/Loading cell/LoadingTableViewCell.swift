@@ -28,6 +28,6 @@ class LoadingTableViewCell: UITableViewCell {
             self.loadingSpinner  .style = .medium
         }
         self.loadingSpinner.startAnimating()
-        self.loadingLabel.text = "Loading...".localized()
+        self.loadingLabel.text = NSLocalizedString("Loading...", tableName: nil, bundle: .mm_Map, value: "", comment: "")
     }
 }

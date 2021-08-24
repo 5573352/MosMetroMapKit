@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  MosmetroNew
+
+  Created by Сеня Римиханов on 28.07.2020.
+  Copyright © 2020 Гусейн Римиханов. All rights reserved.
+*/
+CFBundleDisplayName = "Metro";
+NSLocationWhenInUseUsageDescription = "The app uses location services for showing you your current location on subway map (for nearest station) and on city map. With allowed location services you can build routes in one click on maps (your location automatically goes to «from» field in routes) and find nearest places of interest near you.";
+NSUserTrackingUsageDescription = "App uses third-party libraries for analytics puproses";
+NSCameraUsageDescription = "App uses camera to make photos and to scan QR-codes";
+NSPhotoLibraryUsageDescription = "For downloading selected images or videos from media library";

@@ -15,8 +15,9 @@ public class MetroMapController: BaseController {
     public var onRetry : (()->())?
     private var currentOption = 1
     
-    private var stationFrom: Station? {
+    public var stationFrom: Station? {
         didSet {
+            print("🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧 \(stationFrom?.name)")
             let lastState = self.metroMapView.fieldsState
             if stationFrom != nil {
                 let fromState = StationSelectTextField.ViewState(color: stationFrom!.line.color,
@@ -36,8 +37,9 @@ public class MetroMapController: BaseController {
         }
     }
     
-    private var stationTo: Station? {
+    public var stationTo: Station? {
         didSet {
+            print("🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧 \(stationTo?.name)")
             let lastState = self.metroMapView.fieldsState
             if stationTo != nil {
                 let toState = StationSelectTextField.ViewState(color: stationTo!.line.color,
@@ -433,34 +435,23 @@ extension MetroMapController {
         }
     }
     
-    private func findRoute() {
+    public func findRoute() {
         routes = []
         guard let metroService = self.metroService else { return }
-        guard let from = self.stationFrom, let to = self.stationTo else { return }
+        guard let from = self.stationFrom,
+              let to = self.stationTo
+        else {
+            print("NOT ALL STATIONS IN STATE")
+            return
+        }
         let options = RoutingOptions(routeSorting: RoutingOptions.UserRouteSortingOption.init(rawValue: currentOption) ?? .classic)
 
         metroService.route(from: from, to: to, options: options, completion: { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let routes):
-                let params: [String: Any] = [
-                    "from": [
-                        "id"   : from.id,
-                        "line" : from.line.name,
-                        "name" : from.name
-                    ],
-                    "to": [
-                        "id"   : to.id,
-                        "line" : to.line.name,
-                        "name" : to.name
-                    ],
-                    "variants" : routes.count,
-                    "totalTime": routes.map { $0.metadata.totalTime }
-                ]
                 DispatchQueue.main.async {
                     self.routes = routes
-//                    self.closeFilterController()
-//                    self.closeRouteSettingsController()
                     self.metroMapView.routeState = self.makeRouteState()
                     if let first = self.routes.first {
                         self.metroMapView.metroMapScrollView.drawRoute(first.drawMetadata)
@@ -481,8 +472,8 @@ extension MetroMapController {
         var routesData = [RoutePreviewCollectionCell.ViewState]()
         for (index,route) in routes.enumerated() {
 
-            let arrivalTime = String.localizedStringWithFormat("arriving in %@".localized(), Utils.getArrivalTime(route.metadata.totalTime))
-            let transitionsAndCost = "\(String.localizedStringWithFormat("transfers count".localized(), route.metadata.transfers)) • \(route.metadata.cost)₽ • \(arrivalTime)"
+            let arrivalTime = String.localizedStringWithFormat(NSLocalizedString("arriving in %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), Utils.getArrivalTime(route.metadata.totalTime))
+            let transitionsAndCost = "\(String.localizedStringWithFormat(NSLocalizedString("transfers count", tableName: nil, bundle: .mm_Map, value: "", comment: ""), route.metadata.transfers)) • \(route.metadata.cost)₽ • \(arrivalTime)"
 
             let state = RoutePreviewCollectionCell.ViewState(time: Utils.getTotalTime(route.metadata.totalTime),
                                                              subtitle: transitionsAndCost,

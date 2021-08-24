@@ -1,0 +1,359 @@
+/*
+  Localazible.strings
+  MetroTest
+  
+  Created by Сеня Римиханов on 29.02.2020.
+  Copyright © 2020 Гусейн Римиханов. All rights reserved.
+*/
+
+
+"lk_main_org" = "SUE «Moscow Metro»";
+//MARK: - Tab bar
+"Metro" = "Metro";
+"City" = "City";
+"More" = "More";
+"News" = "News";
+"Cabinet" = "Cabinet";
+
+//MARK: - Permissions
+"Permissions" = "Permissions";
+"We do not collect your private data, permissions are needed only for comfortable usage of application" = "We do not collect your private data, permissions are needed only for comfortable usage of application";
+"Allow" = "Allow";
+"Allowed" = "Allowed";
+"Continue" = "Continue";
+"Geo position" = "Geo position used for:";
+"Push notifications" = "Push notifications used for:";
+"🚇 For detecting neareast subway station for you" = "🚇 Detecting neareast subway station for you";
+"📍 Routes and places search based on your location" = "📍 Routes and places searching based on your location";
+"⚠️ We inform about all service changes in subway" = "⚠️ Informing about all service changes in subway";
+"📊 We inform about promotions and surveys of the Moscow transport complex" = "📊 Informing about promotions and surveys of the Moscow transport complex";
+"🤖 Required for a chat-bot" = "🤖 For a chat-bot";
+
+//MARK: - Metro Module
+//MARK: - Main screen
+"From" = "From";
+"To" = "To";
+"From1" = "From";
+"To1" = "To";
+
+//MARK: - Station search
+"Favorites" = "Favorites";
+"History" = "History";
+"Search results" = "Search results";
+"Remove" = "Remove";
+"Station search" = "Station search";
+
+//MARK: - Station screen
+"Exits and transport" = "Exits and transport";
+"Station on city map" = "Station on city map";
+"With exits and transport" = "With exits and transport";
+"Worktime" = "Worktime";
+"Add to bookmarks" = "Add to bookmarks";
+"First and last trains" = "First and last trains";
+"Remove from bookmarks" = "Remove from bookmarks";
+"Contact us" = "Contact us";
+"Transfers" = "Transfers";
+"More info" = "More info";
+"Station history, photos etc" = "Station history, photos etc";
+"On city map" = "On city map";
+"If you found a mistake" = "If you found a mistake";
+"Trains load" = "Trains load";
+"Arrived" = "Arrived";
+"In %d s." = "In %d s.";
+"Last update – " = "Last update – ";
+
+//MARK: - Filter
+"Filters" = "Filters";
+"Apply" = "Apply";
+"Clear" = "Clear";
+
+//MARK: - Station Features
+"Services" = "Services";
+"ATM available" = "ATM available";
+"Flowers shop" = "Flowers shop";
+"Coffee" = "Coffee";
+"Gadget charger" = "Gadget charger";
+"WC" = "WC";
+"Candy shop" = "Candy shop";
+"Optics shop" = "Optics shop";
+"Mobile carrier store" = "Mobile carrier store";
+"Theatre tickets" = "Theatre tickets";
+"Food" = "Food";
+"Vending" = "Vending";
+"Print" = "Print" ;
+"Sales point" = "Sales point";
+"Avalaible for people with low mobility" = "Avalaible for people with low mobility";
+"Elevator" = "Elevator" ;
+"Information desk" = "Information desk" ;
+"Park and Ride" = "Park and Ride";
+
+//MARK: - Trains time screen
+"Schedule of the first and last trains at st. %@" = "Schedule of the first and last trains at st. %@";
+"Even" = "Even";
+"Odd" = "Odd";
+"First train" = "First train";
+"Last train" = "Last train";
+"Weekdays" = "Weekdays";
+"Weekend" = "Weekend";
+"Days" = "Days";
+
+//MARK: - Route
+"The coming of the trains and congestion" = "The coming of the trains and congestion";
+"No transfers" = "No transfers";
+"%d min" = "%d min";
+"Transfer" = "Transfer";
+"Get on the last" = "Get on the last";
+"Get in the center" = "Get in the center";
+"Get on the first" = "Get on the first";
+"Arriving in %@" = "Arriving in %@";
+"Show" = "Show";
+"Hide" = "Hide";
+"arriving in %@" = "arriving in %@";
+"Details" = "Details";
+"From %@" = "From %@";
+"To %@" = "To %@";
+"Walk to the station" = "Walk to the station";
+"Towards %@" = "towards %@";
+"all wagons are suitable" = "all wagons are suitable";
+"Get on: %@" = "Get on %@";
+"first wagon" = "first wagon";
+"closer to end" = "closer to end";
+"closer to front" = "closer to front";
+"last wagon" = "last wagon";
+"middle of train" = "middle of train";
+"Entry validation" = "Entry validation";
+"Exit vaildation" = "Exit vaildation";
+"Pay %@" = "Pay %@";
+"No payment" = "No payment";
+"Same stations" = "You`ve selected same stations";
+"Route not found" = "We can not build route for this points";
+"Vertex not found" = "We can not find such stations";
+"Walk" = "Walk";
+
+//MARK: - City
+"Coordinates copied" = "Coordinates copied";
+"%d m" = "%d m";
+"%@ km" = "%@ km";
+"Route" = "Route";
+"Bookmark" = "Bookmark";
+"Loading..." = "Loading...";
+"Loading \"%@\"" = "Loading \"%@\"";
+"My location" = "My location";
+"Stops nearby" = "Stops nearby";
+"Route has toll roads" = "Route has toll roads";
+
+//MARK: - City guide
+"from3" = "from";
+
+//MARK: - City Search
+"Search for places or adress" = "Search for places or adress";
+"Categories" = "Categories";
+"Runs along car roads" = "Runs along car roads";
+"Calories ≈" = "Calories ≈";
+
+"Cafe" = "Cafe";
+"Groceries" = "Groceries";
+"Subway stations" = "Subway stations";
+"Pharmacy" = "Pharmacy";
+"Organizations nearby" = "Organizations nearby";
+
+//MARK: - Main Menu
+"Bookmarks will be here" = "Bookmarks will be here";
+"Find places on map and add them to bookmarks" = "Find places on map and add them to bookmarks";
+"And here will be your search history" = "And here will be your search history";
+"Just use application and you will see how recent places appear here" = "Just use application and you will see how recent places appear here";
+"Search results" = "Search results";
+"Favourites" = "Favourites";
+"Recent" = "Recent";
+"Categories" = "Categories";
+"Search for places or adress" = "Search for places or adress";
+"BookMarks" = "BookMarks";
+"Here will be your search history" = "Here will be your search history";
+
+"Bars and pubs" = "Bars and pubs";
+"Hospitals" = "Hospitals";
+"Shopping centers" = "Shopping centers     ";
+"Hotels" = "Hotels";
+
+//MARK: - City business screen
+"Additional info" = "Additional info";
+"Features and detailed info" = "Features and detailed info";
+
+//MARK: - City favorites
+"Add" = "Add";
+"Name" = "Name";
+"Adress" = "Adress";
+"Type" = "Type" ;
+"Favorite add" = "Favorite add";
+
+
+//MARK: - NEWS
+"Important" = "Important";
+"News and Events" = "News and Events";
+"Read" = "Read";
+"Articles" = "Articles";
+
+//MARK: - MORE
+"more_nn800" = "In honor of the anniversary of Nizhny Novgorod, we have launched a service of free transfer from long-distance trains to the subway. Click to see more";
+"Decoration" = "Decoration";
+"Application icon" = "Application icon";
+"Light" = "Light";
+"Dark" = "Dark";
+"Same as on the device" = "Same as on the device";
+"Customize the app for yourself" = "Customize the app for yourself";
+"Customize" = "Customize";
+"You couldn't change the icon this time, please try again later" = "You couldn't change the icon this time, please try again later";
+
+"How do you like the app?" = "How do you like the app?";
+"RageTextView" = "Write down what we can do better and what you didn't like";
+"Send" = "Send";
+"Change icon" = "Change icon";
+"You can choose the icon that you like best" = "You can choose the icon that you like best";
+"Change App icon" = "Change App icon";
+"Rate the app" = "Rate the app";
+"Feedback" = "Feedback";
+"Write us if you have any questions or want to send a request" = "Write us if you have any questions or want to send a request";
+"Write" = "Write";
+
+"There are problems..." = "There are problems...";
+"It is awesome" = "It is awesome";
+"Go to App Store" = "Go to App Store";
+"Thank you for your rating!" = "Thank you for your rating!";
+"Rate or write a review about the app in the App Store" = "Rate or write a review about the app in the App Store";
+"Write" = "Write";
+"Not now" = "Not now";
+"What didn't you like?" = "What didn't you like?";
+"We continue to work on the app to make it better. Tell us what's wrong and we'll try to fix it" = "We continue to work on the app to make it better. Tell us what's wrong and we'll try to fix it";
+
+"Rate the app" = "Rate the app";
+"Rate" = "Rate";
+"Help us get better" = "Help us get better!";
+"Reference information" = "Reference information";
+"Available on our official website" = "Available on our official website";
+"Visit" = "Visit";
+
+"About app" = "About app";
+"Version %@" = "Version %@";
+"License" = "License";
+"Settings" = "Settings";
+"Language" = "Language";
+"Russian" = "Russian";
+"English" = "English";
+ 
+"Done1" = "Done";
+
+//MARK: - MCD Route
+"Train's arriving" = "Train's arriving";
+"Schedule online" = "Schedule online";
+"MCD schedule" = "MCD schedule";
+"Route " = "Route ";
+
+//MARK: - PaymentController
+"timeLeftToPay %@" = "Time left: %@";
+"timeIsOver" = "Time is over";
+
+//MARK: - OnBoarding
+"LittleAboutLK" = "A little about the Cabinet";
+"answerQuestions" = "We answer frequently asked questions about the cabinet";
+"weCollected" = "We have collected all your questions about the cabinet and want to answer them. This selection will be shown only once and will not bother you again. You can skip it :)";
+"ReadMore" = "Read more";
+"IKnowEverything" = "I know everything, skip it";
+"AboutRegistraion" = "About registraion";
+"WhyNeedRegistr" = "Why do i need to register?";
+"WantToRemind" = "We would like to remind you that in the old version of the app, registration was also mandatory. It was just more simplified :)
+
+    Now we have improved registration, made it more secure, and added many ways to log in for your convenience.
+
+    In addition, we want to note that we are already working on adding the ability to top up cards without authorization and registration";
+
+"further" = "Further";
+"AboutPayment" = "About payment and linking";
+"payWithAnyCard" = "You can pay with any card";
+"You don't have to link" = "You don't have to link your card to pay for it.
+
+    Click \"Top up balance\" → \"Card number\" → \" Specify card number\"";
+"About the transfer" = "About the transfer";
+"Once again about the transfer" = "Once again about the transfer";
+"Briefly, how the transfer works:" = "Briefly, how the transfer works:
+
+1) You have a card \"A\", you want to transfer funds from it somewhere
+
+2) Tie on card \"B\"
+
+⚠️ This is IMPORTANT! There should be no tickets on the \"B\" card (Single, TAT), otherwise they will be overwritten from the \"A\" card»
+
+3) In the menu, select the card \"A\", in the menu item, select \"Transfer balance\".
+
+4) choose which card to transfer to. In our case, this is map \"B\"
+
+Continued on the next screen";
+
+"punkt5" = "Briefly, how the transfer works:
+
+5) confirm the transfer. in this case, the card \"a\" will be blocked forever";
+"Why is it blocked?" = "Why is it blocked?";
+"This is necessary so that you do not clone the cards – the Troika card stores the balance on the card itself, and not on the servers. On the servers, we have the latest data from the map." = "This is necessary so that you do not clone the cards – the Troika card stores the balance on the card itself, and not on the servers. On the servers, we have the latest data from the map.";
+"6) wait 12 hours. this is done to ensure that exactly all passes and the last balance reached the system" = "6) Wait 12 hours. this is done to ensure that exactly all passes and the last balance reached the system";
+"Continued on the next screen" = "Continued on the next screen";
+"as soon as you see the message" = "6) as soon as you see the message \"the card is ready for transfer\", then everything is cool, you can write funds to the card \"b\"
+
+7) how and where to write it?
+
+🚉 Then go to the nearest metro station, go to the yellow terminal → \"choose a card operation\" → \" transfer tickets to the troika card\"";
+"Thank You!" = "Thank You!";
+
+
+// Excursions
+
+"Pedestrian" = "Pedestrian";
+"Transport" = "Transport";
+"Author" = "Author";
+"Duration" = "Duration";
+"Type" = "Type";
+"Video" = "Video";
+"Project" = "Project";
+"Start walking" = "Start walking";
+
+
+// MARK: - **APP Clip** переводы
+
+// Entry VC
+"Top-up «Troyka» card" = "Top-up «Troyka» card";
+"Plan \nyour route" = "Plan \nyour route";
+"Transport card" = "Transport card";
+"Scheme & route \nplanner" = "Scheme & route \nplanner";
+"Quick and easy \nway to top up your \ntransport card" = "Quick and easy \nway to top up your \ntransport card";
+
+// Scanning
+
+"Place your card number inside the window " = "Place your card number inside the window ";
+
+// TOP-up Stuff
+"Next" = "Next";
+"Payment" = "Payment";
+"Or choose ticket" = "Or choose ticket";
+"Where to find card number?" = "Where to find card number?";
+"Got it" = "Got it";
+"Everything is okay 😎" = "Everything is okay 😎";
+"Wait, we are veryfiyng your card..." = "Wait, we are veryfiyng your card...";
+"Your 10-digit number is located in the upper-left corner of your card`s back side." = "Your 10-digit number is located in the upper-left corner of your card`s back side.";
+"Scan with camera" = "Scan with camera";
+"OR" = "OR";
+"Enter your card number" = "Enter your card number";
+
+// Details
+"Amount:" = "Amount:";
+"Ticket:" = "Ticket:";
+"On card:" = "On card:";
+
+// Activate
+"Find yellow terminal at Metro station" = "Find yellow terminal at Metro station";
+"Tap «Remote top-up»" = "Tap «Remote top-up»";
+"Place your card near reader" = "Place your card near reader";
+"Wait for activation" = "Wait for activation";
+"Moscow Metro" = "Moscow Metro";
+"Or choose from recents" = "Or choose from recents";
+"Stored value" = "Stored value";
+
+
+

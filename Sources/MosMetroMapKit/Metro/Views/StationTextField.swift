@@ -34,8 +34,8 @@ public class StationSelectTextField: UIView {
         let onTap: () -> ()
         let onClear: () -> ()
         
-        static let initialFrom = ViewState(color: .MKTextfield, image: nil, title: "From".localized(), onTap: {} ,onClear: {})
-        static let initialTo = ViewState(color: .MKTextfield, image: nil, title: "To".localized(), onTap: {} ,onClear: {})
+        static let initialFrom = ViewState(color: .MKTextfield, image: nil, title: NSLocalizedString("From", tableName: nil, bundle: .mm_Map, value: "", comment: ""), onTap: {} ,onClear: {})
+        static let initialTo = ViewState(color: .MKTextfield, image: nil, title: NSLocalizedString("To", tableName: nil, bundle: .mm_Map, value: "", comment: ""), onTap: {} ,onClear: {})
     }
     
     

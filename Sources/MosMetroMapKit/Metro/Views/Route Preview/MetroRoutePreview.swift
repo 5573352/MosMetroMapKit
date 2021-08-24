@@ -15,7 +15,8 @@ public class MetroRoutePreview: UIView {
     @IBOutlet weak var toImageView: UIImageView!
     @IBOutlet weak var toLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
-//    @IBOutlet var alertView: UIView!
+
+    @IBOutlet weak var maskLabel : UILabel!
     
     @IBOutlet weak var changeButton: UIButton!
     @IBOutlet weak var collectionView : UICollectionView!
@@ -59,6 +60,7 @@ public class MetroRoutePreview: UIView {
     
     public override func awakeFromNib() {
         super.awakeFromNib()
+        maskLabel.text = NSLocalizedString("You can travel on metro and MCC only with mask", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(RoutePreviewCollectionCell.nib, forCellWithReuseIdentifier: RoutePreviewCollectionCell.identifire)

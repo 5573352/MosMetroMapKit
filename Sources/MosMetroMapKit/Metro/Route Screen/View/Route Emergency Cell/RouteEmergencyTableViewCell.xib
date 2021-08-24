@@ -42,18 +42,12 @@
                                 <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Service changes on route"/>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See more" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geh-v2-aB5">
                                 <rect key="frame" x="210" y="14.5" width="56" height="15.5"/>
                                 <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="13"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="See more"/>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJ4-7g-1kW">
                                 <rect key="frame" x="202" y="0.0" width="1" height="44"/>
@@ -91,7 +85,9 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="mainLabel" destination="RmA-lT-j6G" id="gFf-np-7uc"/>
                 <outlet property="mainView" destination="bb3-Z7-0Qk" id="zqM-LP-5uc"/>
+                <outlet property="seeMore" destination="geh-v2-aB5" id="i8l-6E-Faa"/>
             </connections>
             <point key="canvasLocation" x="89.855072463768124" y="84.375"/>
         </tableViewCell>

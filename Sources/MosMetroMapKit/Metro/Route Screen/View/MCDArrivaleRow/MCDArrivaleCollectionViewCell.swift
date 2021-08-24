@@ -49,7 +49,7 @@ class MCDArrivaleCollectionViewCell: UICollectionViewCell {
             
             var detailsText = "№\(viewState.routeNumb)"
             if let platform = viewState.platform {
-                detailsText = detailsText + " • \("pl.".localized())\(platform) "
+                detailsText = detailsText + " • \(NSLocalizedString("pl.", tableName: nil, bundle: .mm_Map, value: "", comment: ""))\(platform) "
             }
             detailsLabel.text = detailsText
         }

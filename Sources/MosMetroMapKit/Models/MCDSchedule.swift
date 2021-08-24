@@ -46,9 +46,9 @@ struct MCDThread {
         let period = TimePeriod(start: currentDate, end: arrivalRegion)
         print(period.minutes)
         if period.minutes < 1 {
-            return "Arrived".localized()
+            return NSLocalizedString("Arrived", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         } else {
-            return "\("In".localized()) \(String.localizedStringWithFormat("%d min".localized(), period.minutes))"
+            return "\(NSLocalizedString("In", tableName: nil, bundle: .mm_Map, value: "", comment: "")) \(String.localizedStringWithFormat(NSLocalizedString("%d min", tableName: nil, bundle: .mm_Map, value: "", comment: ""), period.minutes))"
         }
     }
 

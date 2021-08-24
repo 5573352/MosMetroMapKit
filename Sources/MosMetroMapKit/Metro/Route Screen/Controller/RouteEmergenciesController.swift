@@ -106,7 +106,7 @@ extension RouteEmergenciesController {
     }
     
     private func setup() {
-        self.titleLabel.text = "Emergencies".localized()
+        self.titleLabel.text = NSLocalizedString("Emergencies", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(LoadingTableViewCell.nib, forCellReuseIdentifier: LoadingTableViewCell.identifire)

@@ -21,15 +21,15 @@ class SectionExpander: UIView {
     var isExpanded: Bool! {
         didSet {
             if isExpanded {
-                self.expandButton.setTitle("Hide".localized(), for: .normal)
+                self.expandButton.setTitle(NSLocalizedString("Hide", tableName: nil, bundle: .mm_Map, value: "", comment: ""), for: .normal)
             } else {
-                self.expandButton.setTitle("Show".localized(), for: .normal)
+                self.expandButton.setTitle(NSLocalizedString("Show", tableName: nil, bundle: .mm_Map, value: "", comment: ""), for: .normal)
             }
         }
     }
     
     override func awakeFromNib() {
-        self.expandButton.setTitle("Show".localized(), for: .normal)
+        self.expandButton.setTitle(NSLocalizedString("Show", tableName: nil, bundle: .mm_Map, value: "", comment: ""), for: .normal)
         self.expandButton.setTitleColor(.mm_Main, for: .normal)
         self.expandButton.addTarget(self, action: #selector(handleButtonTap), for: .touchUpInside)
         self.chipView.backgroundColor = .overlay

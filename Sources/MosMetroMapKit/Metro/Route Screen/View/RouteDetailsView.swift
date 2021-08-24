@@ -492,7 +492,7 @@ extension RouteDetailsView: UITableViewDelegate {
                     expandView.isExpanded.toggle()
                     self.handleExpandAndClose(section: section)
                 }
-                expandView.stationsCountLabel.text =  String.localizedStringWithFormat("stations count".localized(), viewState.sections[section].rows.count)
+                expandView.stationsCountLabel.text =  String.localizedStringWithFormat(NSLocalizedString("stations count", tableName: nil, bundle: .mm_Map, value: "", comment: ""), viewState.sections[section].rows.count)
                 guard let firstElement = viewState.sections[section].rows[safe: 0] as? ViewState.StopData else { return nil }
                 expandView.linePathView.backgroundColor = firstElement.stop.color
                 guard let item = viewState.sections[section].rows.first else { return expandView }

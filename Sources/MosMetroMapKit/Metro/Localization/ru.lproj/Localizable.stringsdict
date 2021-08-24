@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>routes count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@routes_count@</string>
+		<key>routes_count</key>
+		<dict>
+			<key>many</key>
+			<string>%d маршрутов</string>
+			<key>few</key>
+			<string>%d маршрута</string>
+			<key>two</key>
+			<string>%d маршрута</string>
+			<key>one</key>
+			<string>%d маршрут</string>
+			<key>zero</key>
+			<string>Нет маршрутов</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>other</key>
+			<string>%d маршрутов</string>
+		</dict>
+	</dict>
+	<key>images count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@images_count@</string>
+		<key>images_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>Нет фотографий</string>
+			<key>one</key>
+			<string>%d фотография</string>
+			<key>two</key>
+			<string>%d фотографии</string>
+			<key>few</key>
+			<string>%d фотографии</string>
+			<key>many</key>
+			<string>%d фотографий</string>
+			<key>other</key>
+			<string>%d фотографий</string>
+		</dict>
+	</dict>
+	<key>stations count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@stations_count@</string>
+		<key>stations_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>Нет станций</string>
+			<key>one</key>
+			<string>%d станция</string>
+			<key>two</key>
+			<string>%d станции</string>
+			<key>few</key>
+			<string>%d станции</string>
+			<key>many</key>
+			<string>%d станций</string>
+			<key>other</key>
+			<string>%d станций</string>
+		</dict>
+	</dict>
+	<key>transfers count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@transfers_count@</string>
+		<key>transfers_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>Без пересадок</string>
+			<key>one</key>
+			<string>%d пересадка</string>
+			<key>two</key>
+			<string>%d пересадки</string>
+			<key>few</key>
+			<string>%d пересадки</string>
+			<key>many</key>
+			<string>%d пересадок</string>
+			<key>other</key>
+			<string>%d пересадок</string>
+		</dict>
+	</dict>
+	<key>lkp hours count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@lkp_hours_count@</string>
+		<key>lkp_hours_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>0 часов</string>
+			<key>one</key>
+			<string>%d часа</string>
+			<key>two</key>
+			<string>%d часа</string>
+			<key>few</key>
+			<string>%d часа</string>
+			<key>many</key>
+			<string>%d часов</string>
+			<key>other</key>
+			<string>%d часа</string>
+		</dict>
+	</dict>
+	<key>lkp minutes count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@lkp_minutes_count@</string>
+		<key>lkp_minutes_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>0 минут</string>
+			<key>one</key>
+			<string>%d минуты</string>
+			<key>two</key>
+			<string>%d минут</string>
+			<key>few</key>
+			<string>%d минут</string>
+			<key>many</key>
+			<string>%d минут</string>
+			<key>other</key>
+			<string>%d минут</string>
+		</dict>
+	</dict>
+	<key>lkp age</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@lkp_age@</string>
+		<key>lkp_age</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>0 лет</string>
+			<key>one</key>
+			<string>%d год</string>
+			<key>two</key>
+			<string>%d года</string>
+			<key>few</key>
+			<string>%d года</string>
+			<key>many</key>
+			<string>%d лет</string>
+			<key>other</key>
+			<string>%d лет</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -24,8 +24,8 @@ class RouteRateTableViewCell : UITableViewCell {
         super.awakeFromNib()
         likeButton.roundCorners(.all, radius: 7)
         dislikeButton.roundCorners(.all, radius: 7)
-        _likeButton.titleLabel?.text        = "It`s okay".localized()
-        _dislikeButton.titleLabel?.text     = "So-so".localized()
+        _likeButton.titleLabel?.text        = NSLocalizedString("It`s okay", tableName: nil, bundle: .mm_Map, value: "", comment: "")
+        _dislikeButton.titleLabel?.text     = NSLocalizedString("So-so", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         _likeButton.iconImageView?.image    = #imageLiteral(resourceName: "like_hand")
         _dislikeButton.iconImageView?.image = #imageLiteral(resourceName: "dislike_hand")
     }

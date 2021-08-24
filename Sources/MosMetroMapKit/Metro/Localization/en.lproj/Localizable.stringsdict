@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>routes count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@routes_count@</string>
+		<key>routes_count</key>
+		<dict>
+			<key>many</key>
+			<string>%d routes</string>
+			<key>few</key>
+			<string>%d routes</string>
+			<key>two</key>
+			<string>%d routes</string>
+			<key>one</key>
+			<string>%d route</string>
+			<key>zero</key>
+			<string>No routes</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>other</key>
+			<string>%d routes</string>
+		</dict>
+	</dict>
+	<key>transfers count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@transfers_count@</string>
+		<key>transfers_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>No transfers</string>
+			<key>one</key>
+			<string>%d transfer</string>
+			<key>two</key>
+			<string>%d transfers</string>
+			<key>few</key>
+			<string>%d transfers</string>
+			<key>many</key>
+			<string>%d transfers</string>
+			<key>other</key>
+			<string>%d transfers</string>
+		</dict>
+	</dict>
+	<key>stations count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@stations_count@</string>
+		<key>stations_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>No stations</string>
+			<key>one</key>
+			<string>%d station</string>
+			<key>two</key>
+			<string>%d stations</string>
+			<key>few</key>
+			<string>%d stations</string>
+			<key>many</key>
+			<string>%d stations</string>
+			<key>other</key>
+			<string>%d stations</string>
+		</dict>
+	</dict>
+	<key>images count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@images_count@</string>
+		<key>images_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>No photos</string>
+			<key>one</key>
+			<string>%d photo</string>
+			<key>two</key>
+			<string>%d photos</string>
+			<key>few</key>
+			<string>%d photos</string>
+			<key>many</key>
+			<string>%d photos</string>
+			<key>other</key>
+			<string>%d photos</string>
+		</dict>
+	</dict>
+	<key>lkp hours count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@lkp_hours_count@</string>
+		<key>lkp_hours_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>0 hours</string>
+			<key>one</key>
+			<string>%d hour</string>
+			<key>two</key>
+			<string>%d hours</string>
+			<key>few</key>
+			<string>%d hours</string>
+			<key>many</key>
+			<string>%d hours</string>
+			<key>other</key>
+			<string>%d hours</string>
+		</dict>
+	</dict>
+	<key>lkp minutes count</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@lkp_minutes_count@</string>
+		<key>lkp_minutes_count</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>0 minutes</string>
+			<key>one</key>
+			<string>%d minute</string>
+			<key>two</key>
+			<string>%d minutes</string>
+			<key>few</key>
+			<string>%d minutes</string>
+			<key>many</key>
+			<string>%d minutes</string>
+			<key>other</key>
+			<string>%d minutes</string>
+		</dict>
+	</dict>
+	<key>lkp age</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@lkp_age@</string>
+		<key>lkp_age</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>d</string>
+			<key>zero</key>
+			<string>0 years old</string>
+			<key>one</key>
+			<string>%d years old</string>
+			<key>two</key>
+			<string>%d years old</string>
+			<key>few</key>
+			<string>%d years old</string>
+			<key>many</key>
+			<string>%d years old</string>
+			<key>other</key>
+			<string>%d years old</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

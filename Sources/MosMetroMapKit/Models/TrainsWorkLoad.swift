@@ -80,7 +80,7 @@ extension TrainWorkload {
                     // Это первая станция линии
                     if station.id == station.line.firstStationID {
                         guard let lastLineStationDTO = all.filter({ $0.id == station.line.lastStationID }).first else { continue }
-                        var towardsName = String.localizedStringWithFormat("Towards %@".localized(), Localize.currentLanguage() == "ru" ? lastLineStationDTO.name_ru : lastLineStationDTO.name_en )
+                        var towardsName = String.localizedStringWithFormat(NSLocalizedString("Towards %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), Localize.currentLanguage() == "ru" ? lastLineStationDTO.name_ru : lastLineStationDTO.name_en )
                         if let prompt = lastLineStationDTO.line?.firstStationPrompt {
                             towardsName = "\(prompt) \(towardsName)"
                         }
@@ -88,7 +88,7 @@ extension TrainWorkload {
                     } else {
                     // Это другая сторона линии
                         guard let lastLineStationDTO = all.filter({ $0.id == station.line.lastStationID }).first else { continue }
-                        var towardsName = String.localizedStringWithFormat("Towards %@".localized(), Localize.currentLanguage() == "ru" ? lastLineStationDTO.name_ru : lastLineStationDTO.name_en )
+                        var towardsName = String.localizedStringWithFormat(NSLocalizedString("Towards %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), Localize.currentLanguage() == "ru" ? lastLineStationDTO.name_ru : lastLineStationDTO.name_en )
                         if let prompt = lastLineStationDTO.line?.lastStationPrompt {
                             towardsName = "\(prompt) \(towardsName)"
                         }
@@ -98,7 +98,7 @@ extension TrainWorkload {
                    guard let fromStation = all.filter({ $0.id == fromID }).first, let line = fromStation.line else { continue }
                     let lastLineStationID = fromStation.lineOrder > station.ordering ? line.firstStationID : line.lastStationID
                     guard let lastLineStationDTO = all.filter({ $0.id == lastLineStationID }).first else { continue }
-                    var towardsName = String.localizedStringWithFormat("Towards %@".localized(), Localize.currentLanguage() == "ru" ? lastLineStationDTO.name_ru : lastLineStationDTO.name_en )
+                    var towardsName = String.localizedStringWithFormat(NSLocalizedString("Towards %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), Localize.currentLanguage() == "ru" ? lastLineStationDTO.name_ru : lastLineStationDTO.name_en )
                     if fromStation.lineOrder > station.ordering {
                         if let prompt = lastLineStationDTO.line?.firstStationPrompt {
                             towardsName = "\(prompt) \(towardsName)"

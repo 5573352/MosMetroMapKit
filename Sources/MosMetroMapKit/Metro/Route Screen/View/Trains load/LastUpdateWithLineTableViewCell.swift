@@ -22,7 +22,7 @@ class LastUpdateWithLineTableViewCell : UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = .clear
-        self.infoLabel.text = "Ближайшие поезда и их загруженность".localized()
+        self.infoLabel.text = NSLocalizedString("Ближайшие поезда и их загруженность", tableName: nil, bundle: .mm_Map, value: "", comment: "")
     }
 
     override func prepareForReuse() {

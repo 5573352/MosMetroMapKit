@@ -309,8 +309,8 @@ class RouteDetailsController: BaseController {
                                                                      wagons: $0.wagonsWorkload.map { LineLoadWagonsTableViewCell.ViewState.Load(rawValue: $0.rawValue)!  },
                                                                      isStanding: $0.status == .standing ? true : false)
                     }
-                    let infoWagonRows = RouteDetailsView.ViewState.InfoWagonLoad(color: sectionData.color, info: "Nearest trains and workload".localized())
-                    let lastUpdate = RouteDetailsView.ViewState.LastUpdateWagonLoad(color: sectionData.color, lastUpdate: "\("Last update – ".localized())\(Date().dateByAdding(3, .hour).toFormat("HH:mm:ss"))")
+                    let infoWagonRows = RouteDetailsView.ViewState.InfoWagonLoad(color: sectionData.color, info: NSLocalizedString("Nearest trains and workload", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
+                    let lastUpdate = RouteDetailsView.ViewState.LastUpdateWagonLoad(color: sectionData.color, lastUpdate: "\(NSLocalizedString("Last update – ", tableName: nil, bundle: .mm_Map, value: "", comment: ""))\(Date().dateByAdding(3, .hour).toFormat("HH:mm:ss"))")
                     if self.routeDetailsView.viewState.sections[safe: sectionData.sectionIndex] != nil {
                         var rows = [Any]()
                         rows.append(infoWagonRows)
@@ -368,15 +368,15 @@ class RouteDetailsController: BaseController {
             let data = section.directionID == section.station.line.firstStationID ? schedule.start : schedule.end
             if let three = MCDThread.getNearestThree(threads: data) {
                 var rows = [Any]()
-                let infoRow = RouteDetailsView.ViewState.MCDInfoWagonLoad(color: section.station.line.color, info: "Nearest trains".localized())
+                let infoRow = RouteDetailsView.ViewState.MCDInfoWagonLoad(color: section.station.line.color, info: NSLocalizedString("Nearest trains", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
                 let items: [MCDNearestTrainCell.ViewState] = three.map { item in
                     var detailsText = "№\(item.trainNum)"
                     if let platform = item.platform {
-                        detailsText = detailsText + " • \("pl.".localized())\(platform) "
+                        detailsText = detailsText + " • \(NSLocalizedString("pl.", tableName: nil, bundle: .mm_Map, value: "", comment: ""))\(platform) "
                     }
                     return MCDNearestTrainCell.ViewState(color: section.station.line.color, arrivalTime: item.getArrivalString(), onSelect: {}, isStanding: false, details: detailsText)
                 }
-                let lastUpdateRow = RouteDetailsView.ViewState.MCDLastUpdateWagonLoad(color: section.station.line.color, lastUpdate: "\("Last update – ".localized())\(Date().dateByAdding(3, .hour).toFormat("HH:mm:ss"))")
+                let lastUpdateRow = RouteDetailsView.ViewState.MCDLastUpdateWagonLoad(color: section.station.line.color, lastUpdate: "\( NSLocalizedString("Last update – ", tableName: nil, bundle: .mm_Map, value: "", comment: ""))\(Date().dateByAdding(3, .hour).toFormat("HH:mm:ss"))")
                 rows.append(infoRow)
                 rows.append(contentsOf: items)
                 rows.append(lastUpdateRow)
@@ -441,14 +441,14 @@ extension RouteDetailsController {
                 let data = section as! ValidationSection
                 switch data.type {
                 case .entryPayment(let val):
-                    let price = val != nil ? String.localizedStringWithFormat("Pay %@".localized(), "\(val!) ₽") : "No payment".localized()
+                    let price = val != nil ? String.localizedStringWithFormat(NSLocalizedString("Pay %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), "\(val!) ₽") : NSLocalizedString("No payment", tableName: nil, bundle: .mm_Map, value: "", comment: "")
                     
-                    let row = RouteDetailsView.ViewState.ValidationData(image: #imageLiteral(resourceName: "validation_entry"), price: price, title: "Entry validation".localized())
+                    let row = RouteDetailsView.ViewState.ValidationData(image: #imageLiteral(resourceName: "validation_entry"), price: price, title: NSLocalizedString("Entry validation", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
                     tableSections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [row], onExpandTap: nil))
                     
                 case .exitPayment(let val):
-                    let price = val != nil ? String.localizedStringWithFormat("Pay %@".localized(), "\(val!) ₽") : "No payment".localized()
-                    let row = RouteDetailsView.ViewState.ValidationData(image: #imageLiteral(resourceName: "validation_exit"), price: price, title: "Exit vaildation".localized())
+                    let price = val != nil ? String.localizedStringWithFormat(NSLocalizedString("Pay %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), "\(val!) ₽") : NSLocalizedString("No payment", tableName: nil, bundle: .mm_Map, value: "", comment: "")
+                    let row = RouteDetailsView.ViewState.ValidationData(image: #imageLiteral(resourceName: "validation_exit"), price: price, title: NSLocalizedString("Exit vaildation", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
                     tableSections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [row], onExpandTap: nil))
                 }
             //MARK: - EntrySection
@@ -457,7 +457,7 @@ extension RouteDetailsController {
                 timeForStations += data.totalTime
                 let timeStr = Utils.getTotalTime(data.totalTime)
                 let entryData = RouteDetailsView.ViewState.EntryData(image: #imageLiteral(resourceName: "pedestrian_light"),
-                                                                     text: data.type == .enter ? "Walk to the station".localized() : "Exit station".localized(),
+                                                                     text: data.type == .enter ? NSLocalizedString("Walk to the station", tableName: nil, bundle: .mm_Map, value: "", comment: "") : NSLocalizedString("Exit station", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
                                                                      time: timeStr)
                 tableSections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [entryData], onExpandTap: nil))
             //MARK: - LineSection
@@ -505,7 +505,7 @@ extension RouteDetailsController {
                 timeForStations += data.totalTime
                 let timeStr = Utils.getTotalTime(data.totalTime)
                 let transferData = RouteDetailsView.ViewState.TransferData(image: #imageLiteral(resourceName: "pedestrian_light"),
-                                                                           text: "Transfer".localized(),
+                                                                           text: NSLocalizedString("Transfer", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
                                                                            time: timeStr)
                 tableSections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [transferData], onExpandTap: nil))
             default:
@@ -514,57 +514,9 @@ extension RouteDetailsController {
         }
         initialLoadTrains()
         loadMCD()
-        var actionsRows = [Any]()
-
-        let onLike: () -> () = { [weak self] in
-            guard let self = self else { return }
-            let params: [String: Any] = ["isLiked": true,
-                                         "from": [
-                                            "id": fullRoute.from?.id ?? 0,
-                                            "name": fullRoute.from?.name ?? "",
-                                            "line": fullRoute.from?.line.name ?? ""
-                                         ],
-                                         "to": [
-                                            "id": fullRoute.to?.id ?? 0,
-                                            "name": fullRoute.to?.name ?? "",
-                                            "line": fullRoute.to?.line.name ?? ""
-                                         ],
-                                         "variant": self.index ]
-//            AnalyticsService.reportEvent(with: "AppClip.route.rate", parameters: params)
-            let alert = SPAlertView(title: "Thanks for your opinion".localized(), message: nil, preset: .done)
-            alert.haptic = .success
-            alert.duration = 1
-            alert.present()
-        }
-        
-        let onDislike: () -> () = { [weak self] in
-            guard let self = self else { return }
-            let params: [String: Any] = ["isLiked": false,
-                                         "from": [
-                                            "id": fullRoute.from?.id ?? 0,
-                                            "name": fullRoute.from?.name ?? "",
-                                            "line": fullRoute.from?.line.name ?? ""
-                                         ],
-                                         "to": [
-                                            "id": fullRoute.to?.id ?? 0,
-                                            "name": fullRoute.to?.name ?? "",
-                                            "line": fullRoute.to?.line.name ?? ""
-                                         ],
-                                         "variant": self.index ]
-//            AnalyticsService.reportEvent(with: "AppClip.route.rate", parameters: params)
-            let alert = SPAlertView(title: "Thanks for your opinion".localized(), message: nil, preset: .like)
-            alert.haptic = .success
-            alert.duration = 1
-            alert.present()
-        }
-        
-        let rateRow = RouteDetailsView.ViewState.Rate(onLike: onLike, onDislike: onDislike)
-        actionsRows.append(rateRow)
-        
-//        tableSections.append(Section(title: "Actions".localized(), isNeedToExpand: false, isExpanded: true, rows: actionsRows, onExpandTap: nil))
         timeForStations = 0
         return RouteDetailsView.ViewState(sections: tableSections, totalTime: Utils.getTotalTime(route.metadata.totalTime),
-                                          transfersAndCost: "\(String.localizedStringWithFormat("transfers count".localized(), route.metadata.transfers)) • \(route.metadata.cost) ₽")
+                                          transfersAndCost: "\(String.localizedStringWithFormat(NSLocalizedString("transfers count", tableName: nil, bundle: .mm_Map, value: "", comment: ""), route.metadata.transfers)) • \(route.metadata.cost) ₽")
     }
     
     override func loadView() {
@@ -582,19 +534,19 @@ extension RouteDetailsController {
         for wagon in wagons {
             switch wagon {
             case .all:
-                suitableWagons.append("all wagons are suitable".localized())
+                suitableWagons.append(NSLocalizedString("all wagons are suitable", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
             case .first:
-                suitableWagons.append("first wagon".localized())
+                suitableWagons.append(NSLocalizedString("first wagon", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
             case .nearFirst:
-                suitableWagons.append("closer to front".localized())
+                suitableWagons.append(NSLocalizedString("closer to front", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
             case .center:
-                suitableWagons.append("middle of train".localized())
+                suitableWagons.append(NSLocalizedString("middle of train", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
             case .nearEnd:
-                suitableWagons.append("closer to end" .localized())
+                suitableWagons.append(NSLocalizedString("closer to end", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
             case .end:
-                suitableWagons.append("last wagon".localized())
+                suitableWagons.append(NSLocalizedString("last wagon", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
             }
         }
-        return String.localizedStringWithFormat("Get on %@".localized(), suitableWagons.map{String($0)}.joined(separator: ", "))
+        return String.localizedStringWithFormat(NSLocalizedString("Get on %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), suitableWagons.map{String($0)}.joined(separator: ", "))
     }
 }

@@ -35,7 +35,7 @@ class RoutePreviewCollectionCell : UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        detailsButton.text = "Route details".localized()
+        detailsButton.text = NSLocalizedString("Route details", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
         swipeGesture.direction = .up
         addGestureRecognizer(swipeGesture)
