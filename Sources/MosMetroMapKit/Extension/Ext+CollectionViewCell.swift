@@ -11,7 +11,7 @@ import UIKit
 extension UICollectionViewCell {
     
     static var nib  : UINib{
-        return UINib(nibName: identifire, bundle: nil)
+        return UINib(nibName: identifire, bundle: .module)
     }
     
     static var identifire : String{

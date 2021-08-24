@@ -163,24 +163,26 @@ extension MetroMapView {
     }
     
     private func renderRoute() {
-        switch routeState {
-        case .hidden:
-            stationSelectionView.isHidden = false
-            if let preview = self.routePreview {
-                preview.removeFromSuperview()
-                self.routePreview = nil
-            }
-            metroMapScrollView.clearRoute()
-        case .presented(let state):
-            self.stationSelectionView.isHidden = true
-            if self.routePreview == nil {
-//                presentRoutePreview()
-                self.routePreview?.viewState = state
-            } else {
-                routePreview?.removeFromSuperview()
-                routePreview = nil
-                presentRoutePreview()
-                self.routePreview?.viewState = state
+        DispatchQueue.main.async {
+            switch self.routeState {
+            case .hidden:
+                self.stationSelectionView.isHidden = false
+                if let preview = self.routePreview {
+                    preview.removeFromSuperview()
+                    self.routePreview = nil
+                }
+                self.metroMapScrollView.clearRoute()
+            case .presented(let state):
+                self.stationSelectionView.isHidden = true
+                if self.routePreview == nil {
+                    self.presentRoutePreview()
+                    self.routePreview?.viewState = state
+                } else {
+                    self.routePreview?.removeFromSuperview()
+                    self.routePreview = nil
+                    self.presentRoutePreview()
+                    self.routePreview?.viewState = state
+                }
             }
         }
     }

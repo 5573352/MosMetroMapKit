@@ -22,7 +22,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RoutePreviewCell" id="NLm-9d-Iiz" customClass="RoutePreviewCollectionCell" customModule="MosMetro_X" customModuleProvider="target">
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="NLm-9d-Iiz" customClass="RoutePreviewCollectionCell" customModule="MosMetroMapKit">
             <rect key="frame" x="0.0" y="0.0" width="335" height="86"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="KLW-sE-T0J">
@@ -48,7 +48,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXY-gV-7ba">
-                        <rect key="frame" x="20" y="65" width="37" height="17"/>
+                        <rect key="frame" x="20" y="65" width="38.5" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="UbC-3A-xyh"/>
                         </constraints>
