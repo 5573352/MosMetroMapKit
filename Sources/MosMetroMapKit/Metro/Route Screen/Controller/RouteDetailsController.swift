@@ -561,7 +561,7 @@ extension RouteDetailsController {
         let rateRow = RouteDetailsView.ViewState.Rate(onLike: onLike, onDislike: onDislike)
         actionsRows.append(rateRow)
         
-        tableSections.append(Section(title: "Actions".localized(), isNeedToExpand: false, isExpanded: true, rows: actionsRows, onExpandTap: nil))
+//        tableSections.append(Section(title: "Actions".localized(), isNeedToExpand: false, isExpanded: true, rows: actionsRows, onExpandTap: nil))
         timeForStations = 0
         return RouteDetailsView.ViewState(sections: tableSections, totalTime: Utils.getTotalTime(route.metadata.totalTime),
                                           transfersAndCost: "\(String.localizedStringWithFormat("transfers count".localized(), route.metadata.transfers)) • \(route.metadata.cost) ₽")

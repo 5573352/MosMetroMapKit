@@ -82,7 +82,7 @@ public class MetroMapController: BaseController {
 //    // MARK: ШЕЛУХА
 //    private var detailEmergencyController  : DetailArticleController!
 //    private var emergencyControllerFPC     : FloatingPanelController!
-//    private var routesControllerFPC        : BasePanelController!
+    private var routesControllerFPC        : BasePanelController!
 //
 //    // MARK: Filter
 //    private var filterController           : MetroFilterController?
@@ -90,7 +90,7 @@ public class MetroMapController: BaseController {
 //    // MARK: Route
 //    private var routeSettingsController    : RouteSettingsController?
 //
-//    private var routesController : RoutesViewController!
+    private var routesController : RoutesViewController!
     
     private var spinner = UIActivityIndicatorView(style: .gray)
     
@@ -123,6 +123,28 @@ public class MetroMapController: BaseController {
 }
 // MARK: Common Extensions
 extension MetroMapController {
+    
+    private func presentRouteDetailsController(_ selectedIndex: Int) {
+        let routesController = RoutesViewController()
+        routesController.metroService = self.metroService
+        routesController.currentIndex = selectedIndex
+        routesController.routes = routes
+        routesController.onPageChange = { [weak self] index in
+            guard let self = self else { return }
+            self.handleRouteChange(index)
+            if let preview = self.metroMapView.routePreview {
+                preview.collectionView.scrollToItem(at: IndexPath(row: index, section: 0), at: .right, animated: true)
+            }
+        }
+        let destination = BaseNavigationController(rootViewController: routesController)
+        routesControllerFPC = BasePanelController(contentVC: destination, positions: .fullScreen, state: .full)
+        routesControllerFPC.delegate = self
+        routesControllerFPC.behavior = RoutesPanelBehavior()
+        routesControllerFPC.surfaceView.grabberHandle.isHidden = true
+        routesController.parentPanelController = routesControllerFPC
+        destination.navigationBar.prefersLargeTitles = false
+        self.present(routesControllerFPC, animated: true)
+    }
     
     private func handleFilters() {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
@@ -464,7 +486,10 @@ extension MetroMapController {
 
             let state = RoutePreviewCollectionCell.ViewState(time: Utils.getTotalTime(route.metadata.totalTime),
                                                              subtitle: transitionsAndCost,
-                                                             onDetailsTap: { },
+                                                             onDetailsTap: {[weak self] in
+                                                                guard let self = self else { return }
+                                                                self.presentRouteDetailsController(index)
+                                                             },
                                                              index: index)
             routesData.append(state)
         }

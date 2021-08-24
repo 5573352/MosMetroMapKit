@@ -35,7 +35,7 @@ extension _TransformAnimateCell {
 extension UITableViewCell {
     
     static var nib  : UINib{
-        return UINib(nibName: identifire, bundle: nil)
+        return UINib(nibName: identifire, bundle: .mm_Map)
     }
     
     static var identifire : String{

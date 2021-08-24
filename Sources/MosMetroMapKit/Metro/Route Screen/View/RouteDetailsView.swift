@@ -325,6 +325,7 @@ extension RouteDetailsView: UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.identifire, for: indexPath) as? LoadingTableViewCell
             else { return UITableViewCell() }
             return cell
+            break
         case .loaded:
             switch viewState.sections[indexPath.section].rows[indexPath.row] {
             case is ViewState.SingleStopCell:
