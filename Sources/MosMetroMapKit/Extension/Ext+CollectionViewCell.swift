@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UICollectionViewCell {
+public extension UICollectionViewCell {
     
     static var nib  : UINib{
         return UINib(nibName: identifire, bundle: .module)
