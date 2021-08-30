@@ -77,6 +77,8 @@ public class MetroMapView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private let chatButton     = BlurControl(frame: .zero, cornerRadius: 10, buttonImage: #imageLiteral(resourceName: "nav_back_icon"))
 }
 
 // MARK: PRIVATE METHODS
@@ -94,7 +96,19 @@ extension MetroMapView {
             $0.bottomAnchor.constraint(equalTo: $1.bottomAnchor, constant: 0),
             ]})
         
-        //MARK: Blur View
+        self.chatButton.onTap = { [weak self] in
+            guard let self = self else { return }
+            self.onChatButtonTap?()
+        }
+        
+        self.chatButton.pin(on: self, {[
+            $0.heightAnchor.constraint(equalToConstant: 45),
+            $0.leftAnchor.constraint(equalTo: $1.leftAnchor, constant: 8),
+            $0.widthAnchor.constraint(equalToConstant: 45),
+            $0.topAnchor.constraint(equalTo: $1.safeAreaLayoutGuide.topAnchor, constant: 0)
+        ]})
+        self.insertSubview(chatButton, at: 5)
+        
         blurView.alpha = 0.5
         blurView.pin(on: self, {[
             $0.heightAnchor.constraint(equalToConstant: 44),

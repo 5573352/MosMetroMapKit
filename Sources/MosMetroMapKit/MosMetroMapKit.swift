@@ -20,6 +20,8 @@ public class MapKit {
                     self.mapVC.viewState = .loading
                     self.mapVC.metroService = self.metroService
                     self.mapVC.viewState = .loaded
+                    self.mapVC.modalTransitionStyle = .coverVertical
+                    self.mapVC.modalPresentationStyle = .fullScreen
                     vc.present(self.mapVC, animated: true) {
                         self.mapVC.viewState = .loading
                         if self.mapVC.metroService != nil {

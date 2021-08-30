@@ -43,7 +43,7 @@
                         <constraint firstAttribute="width" constant="12" id="uGy-Y6-uKo"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnX-h5-kZV">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MnX-h5-kZV">
                     <rect key="frame" x="362" y="41" width="32" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="0OA-gD-35z"/>
@@ -116,7 +116,7 @@
                     <rect key="frame" x="58.5" y="0.0" width="297" height="28"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can travel on metro and MCC only with mask" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDX-fL-tUT">
-                            <rect key="frame" x="34" y="7.5" width="243" height="13"/>
+                            <rect key="frame" x="34" y="8.5" width="243" height="11"/>
                             <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="11"/>
                             <color key="textColor" name="text"/>
                             <nil key="highlightedColor"/>
