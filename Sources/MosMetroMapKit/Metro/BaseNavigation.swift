@@ -49,8 +49,7 @@ class BaseNavigationController: UINavigationController {
             appereance.shadowColor                  = .clear
             appereance.largeTitleTextAttributes     = largeTitle
             appereance.titleTextAttributes          = defaultTitle
-            appereance.setBackIndicatorImage(#imageLiteral(resourceName: "nav_back_icon"), transitionMaskImage: #imageLiteral(resourceName: "nav_back_icon"))
-
+            appereance.setBackIndicatorImage(UIImage(named: "nav_back_icon", in: .mm_Map, compatibleWith: nil)!, transitionMaskImage: UIImage(named: "nav_back_icon", in: .mm_Map, compatibleWith: nil)!)
             self.navigationBar.standardAppearance   = appereance
             self.navigationBar.compactAppearance    = appereance
             self.navigationBar.scrollEdgeAppearance = self.navigationBar.standardAppearance

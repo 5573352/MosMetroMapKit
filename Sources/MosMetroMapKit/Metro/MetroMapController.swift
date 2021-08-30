@@ -117,9 +117,11 @@ public class MetroMapController: BaseController {
             self.spinner.stopAnimating()
             self.setupError()
         case . loaded :
-            self.spinner.isHidden = true
-            self.spinner.stopAnimating()
-            self.setupLoaded()
+            DispatchQueue.main.async {
+                self.spinner.isHidden = true
+                self.spinner.stopAnimating()
+                self.setupLoaded()
+            }
         }
     }
 }
@@ -217,6 +219,7 @@ extension MetroMapController {
     }
     
     private func setupLoaded() {
+        
         if self.metroMapView == nil {
             self.metroMapView = self.lazyMetroMapView()
         }
@@ -344,42 +347,27 @@ extension MetroMapController {
     }
     
     private func lazyMetroMapView() -> MetroMapView? {
-        guard let metroService = self.metroService, let options = metroService.mapDrawingOptions else { return nil }
-        
-        let metroMapView = MetroMapView(frame: UIScreen.main.bounds, mapDrawOptions: options)
-        
-        metroMapView.fieldsState = makeInitialFieldState()
-        
-        metroMapView.onMapTap = { [weak self] point in
-            guard let self = self else { return }
-            let filtered = metroService.tapGrids.filter { $0.value.contains(point)}
-            if !filtered.isEmpty {
-                guard let firstKey = filtered.first?.key else { return }
-                self.handleMapTap(firstKey)
-            } else {
-                self.handleMapTap(nil)
+            guard let metroService = self.metroService, let options = metroService.mapDrawingOptions else { return nil }
+            
+            let metroMapView = MetroMapView(frame: UIScreen.main.bounds, mapDrawOptions: options)
+            
+            metroMapView.fieldsState = makeInitialFieldState()
+            
+            metroMapView.onMapTap = { [weak self] point in
+                guard let self = self else { return }
+                let filtered = metroService.tapGrids.filter { $0.value.contains(point)}
+                if !filtered.isEmpty {
+                    guard let firstKey = filtered.first?.key else { return }
+                    self.handleMapTap(firstKey)
+                } else {
+                    self.handleMapTap(nil)
+                }
             }
-        }
-        
-        metroMapView.onFilterButtonTap = { [weak self] in
-            guard let self = self else { return }
-//            self.presentFilterController()
-//            AnalyticsService.reportEvent(with: "AppClip.metro.tap.filter")
-        }
-        
-        metroMapView.onChatButtonTap = { [weak self] in
-            guard let self = self else { return }
-            self.dismiss(animated: true, completion: nil)
-//            AnalyticsService.reportEvent(with: "AppClip.metro.tap.back")
-        }
-        
-        metroMapView.onSettingButtonTap = { [weak self] in
-            guard let self = self else { return }
-//            self.presentRouteSettingsController()
-//            AnalyticsService.reportEvent(with: "AppClip.metro.tap.settings")
-        }
-
-        return metroMapView
+            metroMapView.onChatButtonTap = { [weak self] in
+                guard let self = self else { return }
+                self.dismiss(animated: true, completion: nil)
+            }
+            return metroMapView
     }
     
     private func handleTextFieldClear(_ direction: Direction) {

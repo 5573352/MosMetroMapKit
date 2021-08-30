@@ -226,8 +226,12 @@ public class MapViewLayered: UIView {
             }
             
             if let fromCoordinate = self.fromCoordinate, let toCoordinate = self.toCoordinate {
-                let fromImageBubble = #imageLiteral(resourceName: "from_bubble")
-                let toImageBubble = #imageLiteral(resourceName: "to_bubble")
+                let fromImageBubble =                 UIImage(named: "from_bubble", in: .mm_Map, compatibleWith: nil)!
+
+
+                let toImageBubble = UIImage(named: "to_bubble", in: .mm_Map, compatibleWith: nil)!
+                
+
                 let fromImageLayer = CALayer()
                 fromImageLayer.frame = CGRect(x: fromCoordinate.x-25, y: fromCoordinate.y-45, width: 50, height: 50 * 1.12)
                 fromImageLayer.contents = fromImageBubble.cgImage

@@ -299,11 +299,15 @@ extension MetroMapScrollView {
     private func imageForEmergency(_ status: Emergency.StationEmergency.Status) -> UIImage {
         switch status {
         case .closed:
-            return #imageLiteral(resourceName: "closed_emergency")
+//            return #imageLiteral(resourceName: "")
+            return UIImage(named: "closed_emergency", in: .mm_Map, compatibleWith: nil)!
+
         case .emergency:
-            return #imageLiteral(resourceName: "emergency_emergency")
+            return UIImage(named: "emergency_emergency", in: .mm_Map, compatibleWith: nil)!
+            
         case .info:
-            return #imageLiteral(resourceName: "info_emergency")
+//            return #imageLiteral(resourceName: "")
+            return UIImage(named: "info_emergency", in: .mm_Map, compatibleWith: nil)!
         }
     }
     

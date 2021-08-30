@@ -107,7 +107,7 @@ extension RoutesViewController {
     
     private func setup() {
         view.backgroundColor = .navigationBar
-        let leftBarButtonItem = UIBarButtonItem.menuButton(self, action: #selector(self.close), image: #imageLiteral(resourceName: "arrow down templatte"))
+        let leftBarButtonItem = UIBarButtonItem.menuButton(self, action: #selector(self.close), image: UIImage(named: "arrow down templatte", in: .mm_Map, compatibleWith: nil)!)
         self.navigationItem.leftBarButtonItem = leftBarButtonItem
         self.navigationItem.leftBarButtonItem?.tintColor = .mm_Main
         self.navigationItem.titleView = routePageControl

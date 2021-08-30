@@ -88,7 +88,7 @@ public class StationSelectTextField: UIView {
     private let eraseButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(#imageLiteral(resourceName: "selection_view_close"), for: .normal)
+        button.setImage(UIImage(named: "selection_view_close", in: .mm_Map, compatibleWith: nil), for: .normal)
         button.contentMode = .center
         button.backgroundColor = .clear
         button.imageEdgeInsets = UIEdgeInsets(top: 2, left: 0, bottom: 0, right: -5)

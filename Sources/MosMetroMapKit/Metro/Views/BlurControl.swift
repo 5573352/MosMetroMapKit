@@ -31,12 +31,12 @@ class BlurControl: BlurView {
     //MARK: - Init
     init(frame: CGRect, cornerRadius: CGFloat, buttonImage: UIImage) {
         super.init(frame: frame, cornerRadius: cornerRadius)
-        
         setup(buttonImage)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        print("🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧🚧")
     }
     
     @objc

@@ -112,7 +112,7 @@ extension LineLoadWagonsTableViewCell: UICollectionViewDataSource {
         guard
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OneWagonCollectionViewCell.identifire, for: indexPath) as? OneWagonCollectionViewCell
         else { return UICollectionViewCell() }
-        cell.wagonImageView.image = indexPath.row == 0 ? #imageLiteral(resourceName: "first_wagon") : #imageLiteral(resourceName: "middle_wagon")
+        cell.wagonImageView.image = indexPath.row == 0 ? UIImage(named: "first_wagon", in: .mm_Map, compatibleWith: nil)! : UIImage(named: "middle_wagon", in: .mm_Map, compatibleWith: nil)!
         cell.wagonImageView.tintColor = colorForWagon(viewState.wagons[indexPath.row])
         return cell
     }

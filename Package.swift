@@ -37,7 +37,7 @@ let package = Package(
                 "Localize_Swift"
             ],
             resources: [
-                .process("Metro/Constants/Fonts"),
+                .process("Constants/Fonts"),
                 .process("Metro/Localization")
             ]
         ),

@@ -6,7 +6,20 @@ struct MosMetroMapKit {
 
 public class MapKit {
  
-    private init() {}
+    private init() {
+        // This registers the fonts
+        _ = UIFont.registerFont(bundle: .mm_Map, fontName: "MoscowSans-Medium", fontExtension: "otf")
+        _ = UIFont.registerFont(bundle: .mm_Map, fontName: "MoscowSans-Bold", fontExtension: "otf")
+        _ = UIFont.registerFont(bundle: .mm_Map, fontName: "MoscowSans-Light", fontExtension: "otf")
+        _ = UIFont.registerFont(bundle: .mm_Map, fontName: "MoscowSans-Regular", fontExtension: "otf")
+        _ = UIFont.registerFont(bundle: .mm_Map, fontName: "MoscowSans-Extrabold", fontExtension: "otf")
+
+        // This prints out all the fonts available you should notice that your custom font appears in this list
+        for family in UIFont.familyNames.sorted() {
+            let names = UIFont.fontNames(forFamilyName: family)
+            print("Family: \(family) Font names: \(names)")
+        }
+    }
     public static var shared = MapKit()
     
     
@@ -42,7 +55,7 @@ public class MapKit {
         })
     }
     
-    public func createRoute(_ stationA: String = "Говорово", _ stationB: String = "Тверская") {
+    public func createRoute(_ stationA: String = "Измайловская", _ stationB: String = "Красносельская") {
         DispatchQueue.main.async {
             guard self.metroService.stations.isEmpty == false else {
                 self.createRoute(stationA, stationB)
@@ -58,5 +71,31 @@ public class MapKit {
             self.mapVC.stationFrom = A
             self.mapVC.stationTo = B
         }
+    }
+}
+
+extension UIFont {
+    static func registerFont(bundle: Bundle, fontName: String, fontExtension: String) -> Bool {
+
+        guard let fontURL = bundle.url(forResource: fontName, withExtension: fontExtension) else {
+            fatalError("Couldn't find font \(fontName)")
+        }
+
+        guard let fontDataProvider = CGDataProvider(url: fontURL as CFURL) else {
+            fatalError("Couldn't load data from the font \(fontName)")
+        }
+
+        guard let font = CGFont(fontDataProvider) else {
+            fatalError("Couldn't create font from data")
+        }
+
+        var error: Unmanaged<CFError>?
+        let success = CTFontManagerRegisterGraphicsFont(font, &error)
+        guard success else {
+            print("Error registering font: maybe it was already registered.")
+            return false
+        }
+
+        return true
     }
 }

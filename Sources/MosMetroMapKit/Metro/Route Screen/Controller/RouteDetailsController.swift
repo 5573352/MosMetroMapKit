@@ -427,7 +427,7 @@ extension RouteDetailsController {
                 panel.track(scrollView: vc.tableView)
             }
             let emergenciesRow = RouteDetailsView.ViewState.EmergencyData(onSelect: onSelect)
-            tableSections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [emergenciesRow], onExpandTap: nil))
+//            tableSections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [emergenciesRow], onExpandTap: nil))
         }
         for section in fullRoute.sections {
             switch section {
@@ -443,12 +443,16 @@ extension RouteDetailsController {
                 case .entryPayment(let val):
                     let price = val != nil ? String.localizedStringWithFormat(NSLocalizedString("Pay %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), "\(val!) ₽") : NSLocalizedString("No payment", tableName: nil, bundle: .mm_Map, value: "", comment: "")
                     
-                    let row = RouteDetailsView.ViewState.ValidationData(image: #imageLiteral(resourceName: "validation_entry"), price: price, title: NSLocalizedString("Entry validation", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
+                    let row = RouteDetailsView.ViewState.ValidationData(
+                        image: UIImage(named: "validation_entry", in: .mm_Map, compatibleWith: nil)!,
+                                                                        price: price, title: NSLocalizedString("Entry validation", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
                     tableSections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [row], onExpandTap: nil))
                     
                 case .exitPayment(let val):
                     let price = val != nil ? String.localizedStringWithFormat(NSLocalizedString("Pay %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), "\(val!) ₽") : NSLocalizedString("No payment", tableName: nil, bundle: .mm_Map, value: "", comment: "")
-                    let row = RouteDetailsView.ViewState.ValidationData(image: #imageLiteral(resourceName: "validation_exit"), price: price, title: NSLocalizedString("Exit vaildation", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
+                    let row = RouteDetailsView.ViewState.ValidationData(
+                        image: UIImage(named: "validation_exit", in: .mm_Map, compatibleWith: nil)!,
+                        price: price, title: NSLocalizedString("Exit vaildation", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
                     tableSections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [row], onExpandTap: nil))
                 }
             //MARK: - EntrySection
@@ -456,7 +460,8 @@ extension RouteDetailsController {
                 let data = section as! EntrySection
                 timeForStations += data.totalTime
                 let timeStr = Utils.getTotalTime(data.totalTime)
-                let entryData = RouteDetailsView.ViewState.EntryData(image: #imageLiteral(resourceName: "pedestrian_light"),
+                let entryData = RouteDetailsView.ViewState.EntryData(
+                    image: UIImage(named: "pedestrian_light", in: .mm_Map, compatibleWith: nil)!,
                                                                      text: data.type == .enter ? NSLocalizedString("Walk to the station", tableName: nil, bundle: .mm_Map, value: "", comment: "") : NSLocalizedString("Exit station", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
                                                                      time: timeStr)
                 tableSections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [entryData], onExpandTap: nil))
@@ -504,7 +509,8 @@ extension RouteDetailsController {
                 let data = section as! TransferSection
                 timeForStations += data.totalTime
                 let timeStr = Utils.getTotalTime(data.totalTime)
-                let transferData = RouteDetailsView.ViewState.TransferData(image: #imageLiteral(resourceName: "pedestrian_light"),
+                let transferData = RouteDetailsView.ViewState.TransferData(
+                    image: UIImage(named: "pedestrian_light", in: .mm_Map, compatibleWith: nil)!,
                                                                            text: NSLocalizedString("Transfer", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
                                                                            time: timeStr)
                 tableSections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [transferData], onExpandTap: nil))
