@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import SwiftyJSON
 import Localize_Swift
+import SwiftyJSON
 
 class LineDTO {
     // MARK: Stored Properties

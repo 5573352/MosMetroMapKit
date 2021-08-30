@@ -14,16 +14,30 @@ let package = Package(
             targets: ["MosMetroMapKit"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/marcosgriselli/ViewAnimator", .upToNextMajor(from: "3.1.0")),
+        .package(url: "https://github.com/ivanvorobei/SPAlert", .exact("2.1.4")),
+        .package(url: "https://github.com/malcommac/SwiftDate", .upToNextMajor(from: "6.3.1")),
+        .package(url: "https://github.com/SwiftyJSON/SwiftyJSON", .upToNextMajor(from: "5.0.1")),
+        .package(url: "https://github.com/exyte/Macaw", .upToNextMajor(from: "0.9.7")),
+        .package(url: "https://github.com/scenee/FloatingPanel", .upToNextMajor(from: "2.4.0")),
+        .package(name: "Localize_Swift", url: "https://github.com/marmelroy/Localize-Swift", .upToNextMajor(from: "3.2.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "MosMetroMapKit",
-            dependencies: [],
+            dependencies: [
+                "ViewAnimator",
+                "SPAlert",
+                "SwiftDate",
+                "SwiftyJSON",
+                "Macaw",
+                "FloatingPanel",
+                "Localize_Swift"
+            ],
             resources: [
+                .process("Metro/Constants/Fonts"),
                 .process("Metro/Localization")
             ]
         ),
