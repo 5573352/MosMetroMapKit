@@ -107,7 +107,7 @@ extension MetroMapView {
             $0.heightAnchor.constraint(equalToConstant: 45),
             $0.leftAnchor.constraint(equalTo: $1.leftAnchor, constant: 8),
             $0.widthAnchor.constraint(equalToConstant: 45),
-            $0.topAnchor.constraint(equalTo: $1.safeAreaLayoutGuide.topAnchor, constant: 0)
+            $0.topAnchor.constraint(equalTo: $1.safeAreaLayoutGuide.topAnchor, constant: 25)
         ]})
         self.insertSubview(chatButton!, at: 5)
         
