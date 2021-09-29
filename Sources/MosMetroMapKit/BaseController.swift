@@ -1,16 +1,14 @@
 //
 //  BaseController.swift
-//  MosmetroClip
 //
 //  Created by Павел Кузин on 13.04.2021.
-//  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit
 import FloatingPanel
 import Localize_Swift
 
-public class BaseController: UIViewController {
+class BaseController: UIViewController {
     
     var floatingPanelController : FloatingPanelController!
     

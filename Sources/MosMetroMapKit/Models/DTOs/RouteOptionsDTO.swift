@@ -1,9 +1,7 @@
 //
 //  RouteOptionsDTO.swift
-//  MosmetroClip
 //
 //  Created by Павел Кузин on 20.04.2021.
-//  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
 import Foundation
@@ -19,7 +17,6 @@ class RoutingOptionsDTO {
     var isMCDdisabled = false
     var isMCCdisabled = false
     
-    // MARK: Primary key
     static func primaryKey() -> String? {
         return "id"
     }

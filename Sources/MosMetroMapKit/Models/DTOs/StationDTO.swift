@@ -1,9 +1,7 @@
 //
 //  StationDTO.swift
-//  MosmetroClip
 //
 //  Created by Павел Кузин on 12.04.2021.
-//  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
 import Foundation
@@ -107,7 +105,6 @@ class RectangleDTO {
 
 public class StationDTO {
     
-    // MARK: Stored properties
     var id        : Int = 0
     var name_ru   : String = ""
     var name_en   : String = "Station"
@@ -130,44 +127,41 @@ public class StationDTO {
     var services  = [String]()
     var graphics  : StationGraphics?
     
-    // MARK: Linked objects and Lists
     var line        : LineDTO?
     var worktime    = [WorktimeDTO]()
     var exits       = [ExitDTO]()
     var transitions = [StationDTO]()
     
-    // MARK: Primary key
     static func primaryKey() -> String? {
         return "id"
     }
     
-    // MARK: Indexed properties
     static func indexedProperties() -> [String] {
         return ["name_ru","name_en"]
     }
     
-    // MARK: Get only properties
-    var name: String {
+    var name : String {
         return Localize.currentLanguage() == "ru" ? self.name_ru : self.name_en
     }
     
     func map(_ data: JSON, lines: [LineDTO]) {
-        self.id = data["id"].intValue
-        self.name_ru = data["name"]["ru"].stringValue
-        self.name_en = data["name"]["en"].stringValue
-        self.isFuture = data["perspective"].boolValue
-        self.latitude = data["location"]["lat"].doubleValue
+        self.id        = data["id"].intValue
+        self.name_ru   = data["name"]["ru"].stringValue
+        self.name_en   = data["name"]["en"].stringValue
+        self.isFuture  = data["perspective"].boolValue
+        self.latitude  = data["location"]["lat"].doubleValue
         self.longitude = data["location"]["lon"].doubleValue
-        //self.x = data["svg_station_center"]["x"].doubleValue
-        //self.y = data["svg_station_center"]["y"].doubleValue
+//        self.x         = data["svg_station_center"]["x"].doubleValue
+//        self.y         = data["svg_station_center"]["y"].doubleValue
         self.lineOrder = data["ordering"].intValue
         self.enterTime = data["enterTime"].int ?? 0
-        self.exitTime = data["exitTime"].int ?? 0
-        self.isMCD = data["mcd"].bool ?? false
-        self.isMCC = data["mcc"].bool ?? false
+        self.exitTime  = data["exitTime"].int ?? 0
+        self.isMCD     = data["mcd"].bool ?? false
+        self.isMCC     = data["mcc"].bool ?? false
         self.isOutside = data["outside"].bool ?? false
         self.enterTime = data["enterTime"].intValue
-        self.exitTime = data["exitTime"].intValue
+        self.exitTime  = data["exitTime"].intValue
+        
         if let servicesArray = data["services"].array {
             for item in servicesArray {
                 self.services.append(item.stringValue)
@@ -188,9 +182,11 @@ public class StationDTO {
         self.graphics = svg
         self.x = data["stationSvg"]["x"].doubleValue
         self.y = data["stationSvg"]["y"].doubleValue
+        
         if let line = lines.filter({ $0.id == data["lineId"].intValue }).first {
             self.line = line
         }
+        
         if !data["exits"].isEmpty {
             for (key,subJson) in data["exits"] {
                 let exitDTO = ExitDTO()
