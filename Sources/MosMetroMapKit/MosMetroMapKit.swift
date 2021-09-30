@@ -8,6 +8,8 @@ import UIKit
 
 public class MapKit {
     
+    static var enableSettings = true
+    
     @objc
     public func closeMetro() {
         self.mapVC.dismiss(animated: true)
@@ -34,7 +36,7 @@ public class MapKit {
     
     
     private var mapVC = MetroMapController()
-    public var metroService = MetroService(isPerspective: false)
+    var metroService = MetroService(isPerspective: false)
     
     public func openMetroMap(on vc: UIViewController, _ completion: (()->())? = nil) {
         self.metroService.loadAllDatabase(callback: { result in

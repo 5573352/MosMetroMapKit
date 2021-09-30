@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Medium.otf">
+            <string>MoscowSans-Medium</string>
+        </array>
+        <array key="MoscowSans-Regular.otf">
+            <string>MoscowSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="EmergencyCell" rowHeight="85" id="KGk-i7-Jjw" customClass="EmergencyCell" customModule="MosMetroMapKit">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAh-K2-DW2">
+                        <rect key="frame" x="20" y="0.0" width="280" height="85"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kIS-7J-5py">
+                                <rect key="frame" x="16" y="16" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="Mfk-k7-WS8"/>
+                                    <constraint firstAttribute="height" constant="16" id="yL1-qm-zUu"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5X-0Z-hTZ">
+                                <rect key="frame" x="40" y="16" width="224" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="q57-gM-Ie4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
+                                <color key="textColor" name="mm_TextPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T08-eW-hmN">
+                                <rect key="frame" x="16" y="41" width="248" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="GiL-ym-Bvd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
+                                <color key="textColor" name="mm_TextPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pattern" translatesAutoresizingMaskIntoConstraints="NO" id="8yd-1v-7Tn">
+                                <rect key="frame" x="0.0" y="79" width="280" height="6"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="6" id="BtX-4q-97I"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="r5X-0Z-hTZ" firstAttribute="leading" secondItem="kIS-7J-5py" secondAttribute="trailing" constant="8" id="1KY-RR-qWf"/>
+                            <constraint firstItem="8yd-1v-7Tn" firstAttribute="top" secondItem="T08-eW-hmN" secondAttribute="bottom" constant="10" id="FXS-6H-dwy"/>
+                            <constraint firstItem="kIS-7J-5py" firstAttribute="top" secondItem="FAh-K2-DW2" secondAttribute="top" constant="16" id="Izh-GX-ioL"/>
+                            <constraint firstItem="r5X-0Z-hTZ" firstAttribute="top" secondItem="FAh-K2-DW2" secondAttribute="top" constant="16" id="Wxu-cq-SzU"/>
+                            <constraint firstItem="8yd-1v-7Tn" firstAttribute="leading" secondItem="FAh-K2-DW2" secondAttribute="leading" id="ZNg-pX-XX2"/>
+                            <constraint firstItem="T08-eW-hmN" firstAttribute="leading" secondItem="FAh-K2-DW2" secondAttribute="leading" constant="16" id="aGP-Ns-yOX"/>
+                            <constraint firstItem="kIS-7J-5py" firstAttribute="leading" secondItem="FAh-K2-DW2" secondAttribute="leading" constant="16" id="dB5-DN-ce8"/>
+                            <constraint firstAttribute="trailing" secondItem="r5X-0Z-hTZ" secondAttribute="trailing" constant="16" id="dhg-EN-ORM"/>
+                            <constraint firstAttribute="trailing" secondItem="T08-eW-hmN" secondAttribute="trailing" constant="16" id="nU6-FV-e03"/>
+                            <constraint firstAttribute="bottom" secondItem="8yd-1v-7Tn" secondAttribute="bottom" id="rjJ-T5-0RN"/>
+                            <constraint firstAttribute="trailing" secondItem="8yd-1v-7Tn" secondAttribute="trailing" id="uVl-aI-RMK"/>
+                            <constraint firstItem="T08-eW-hmN" firstAttribute="top" secondItem="r5X-0Z-hTZ" secondAttribute="bottom" constant="7" id="zdO-HX-Xua"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="FAh-K2-DW2" secondAttribute="bottom" id="O8f-2J-y3h"/>
+                    <constraint firstItem="FAh-K2-DW2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="PBW-FC-wkL"/>
+                    <constraint firstAttribute="trailing" secondItem="FAh-K2-DW2" secondAttribute="trailing" constant="20" id="Qin-fe-tIs"/>
+                    <constraint firstItem="FAh-K2-DW2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gX9-ei-8Ba"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="backgroundContentView" destination="FAh-K2-DW2" id="ipa-bi-lla"/>
+                <outlet property="emergencyDescriptionLabel" destination="T08-eW-hmN" id="hHk-sW-UDF"/>
+                <outlet property="emergencyTitleLabel" destination="r5X-0Z-hTZ" id="N7v-FQ-Lyx"/>
+                <outlet property="iconImageView" destination="kIS-7J-5py" id="cNn-mq-zwt"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="112.16517857142857"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="pattern" width="343" height="6"/>
+        <namedColor name="mm_TextPrimary">
+            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

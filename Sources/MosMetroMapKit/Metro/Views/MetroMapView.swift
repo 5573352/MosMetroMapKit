@@ -1,49 +1,48 @@
 //
-//  MetroMapView.swift
 //  MosmetroNew
 //
 //  Created by Сеня Римиханов on 12.05.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit
 
-public struct FieldState {
-    let to: StationSelectTextField.ViewState
-    let from: StationSelectTextField.ViewState
-}
-
-public enum SelectionViewState {
-    case hidden
-    case presented(FieldState)
-}
-
-public enum BubbleState {
-    case hidden
-    case presented(StationBubble.ViewState)
-}
-
-public enum RouteState {
-    case hidden
-    case presented(MetroRoutePreview.ViewState)
-}
-
-public class MetroMapView: UIView {
+class MetroMapView : UIView, MetroMapScrollViewDelegate {
+    
+    func onSingleTap(_ scrollView: MetroMapScrollView, point: CGPoint) {
+        self.onMapTap?(point)
+    }
 
     public var metroMapScrollView : MetroMapScrollView!
-    public lazy var stationSelectionView = self.lazyStationSelectionView()
+    public lazy var stationSelectionView = StationSelectionView()
     
-    public var onChatButtonTap     : (() -> ())?
-    public var onDeeplinkButtonTap : (()->())?
-    public var onFilterButtonTap   : (() -> ())?
-    public var onSettingButtonTap  : (() -> ())?
-    public var onMapTap            : ((CGPoint) -> ())?
-    public var onStationSelectFromBubble: ((_ currentIndex: Int, _ direction: Direction) -> ())?
-    public var onBubbleSegmentChange: ((_ segmentIndex: Int) -> ())?
+    public var onMapTap            : ((CGPoint)->())?
+    public var onChatButtonTap     : (()->())?
+    public var onFilterButtonTap   : (()->())?
+    public var onSettingButtonTap  : (()->())?
     
     let blurEffect = UIBlurEffect(style: .prominent)
     
     var blurView: UIVisualEffectView!
+    
+    struct FieldState {
+        let to   : StationSelectTextField.ViewState
+        let from : StationSelectTextField.ViewState
+    }
+    
+    enum SelectionViewState {
+        case hidden
+        case presented(FieldState)
+    }
+    
+    enum BubbleState {
+        case hidden
+        case presented(StationBubble.ViewState)
+    }
+    
+    enum RouteState {
+        case hidden
+        case presented(MetroRoutePreview.ViewState)
+    }
 
     public var fieldsState: FieldState = FieldState(to: .initialFrom, from: .initialTo) {
         didSet {
@@ -77,57 +76,45 @@ public class MetroMapView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private var chatButton : BlurControl?// (frame: .zero, cornerRadius: 10, buttonImage: #imageLiteral(resourceName: "arrow-backward"))
 }
 
-// MARK: PRIVATE METHODS
 extension MetroMapView {
 
     private func setup(mapOptions: MapDrawingOptions) {
         self.blurView = UIVisualEffectView(effect: blurEffect)
-        //MARK: SCROLL VIEW
+        
         self.metroMapScrollView = MetroMapScrollView(with: mapOptions)
         self.metroMapScrollView.metroScrollDelegate = self
-        metroMapScrollView.pin(on: self, {[
+        self.metroMapScrollView.pin(on: self, {[
             $0.topAnchor.constraint(equalTo: $1.topAnchor, constant: 0),
             $0.leftAnchor.constraint(equalTo: $1.leftAnchor, constant: 0),
             $0.rightAnchor.constraint(equalTo: $1.rightAnchor, constant: 0),
-            $0.bottomAnchor.constraint(equalTo: $1.bottomAnchor, constant: 0),
-            ]})
-        
-        self.chatButton = BlurControl(frame: .zero, cornerRadius: 10, buttonImage: UIImage(named: "arrow-backward",in: .mm_Map, compatibleWith: nil)!)
-        
-        self.chatButton?.onTap = { [weak self] in
-            guard let self = self else { return }
-            self.onChatButtonTap?()
-        }
-        
-        self.chatButton?.pin(on: self, {[
-            $0.heightAnchor.constraint(equalToConstant: 45),
-            $0.leftAnchor.constraint(equalTo: $1.leftAnchor, constant: 8),
-            $0.widthAnchor.constraint(equalToConstant: 45),
-            $0.topAnchor.constraint(equalTo: $1.safeAreaLayoutGuide.topAnchor, constant: 25)
+            $0.bottomAnchor.constraint(equalTo: $1.bottomAnchor, constant: 0)
         ]})
-        self.insertSubview(chatButton!, at: 5)
         
-        blurView.alpha = 0.5
-        blurView.pin(on: self, {[
+        self.stationSelectionView.pin(on: self, {[
+            $0.heightAnchor.constraint(equalToConstant: 44),
+            $0.leftAnchor.constraint(equalTo: $1.leftAnchor, constant: 16),
+            $0.rightAnchor.constraint(equalTo: $1.rightAnchor, constant: -16),
+            $0.bottomAnchor.constraint(equalTo: $1.safeAreaLayoutGuide.bottomAnchor, constant: -15)
+        ]})
+        
+        self.blurView.alpha = 0.5
+        self.blurView.pin(on: self, {[
             $0.heightAnchor.constraint(equalToConstant: 44),
             $0.rightAnchor.constraint(equalTo: $1.rightAnchor, constant: 0),
             $0.leftAnchor.constraint(equalTo: $1.leftAnchor, constant: 0),
-            $0.topAnchor.constraint(equalTo: $1.topAnchor, constant: 0),
+            $0.topAnchor.constraint(equalTo: $1.topAnchor, constant: 0)
         ]})
     }
     
     private func presentRoutePreview() {
-        routePreview = MetroRoutePreview.loadFromNib()
+        self.routePreview = MetroRoutePreview.loadFromNib()
         guard let _routePreview = routePreview else { return }
-        addSubview(_routePreview)
         _routePreview.pin(on: self, {[
             $0.bottomAnchor.constraint(equalTo: $1.safeAreaLayoutGuide.bottomAnchor, constant: 0),
             $0.leftAnchor.constraint(equalTo: $1.leftAnchor, constant: 0),
-            $0.rightAnchor.constraint(equalTo: $1.rightAnchor, constant: 0),
+            $0.rightAnchor.constraint(equalTo: $1.rightAnchor, constant: 0)
         ]})
     }
 
@@ -136,23 +123,9 @@ extension MetroMapView {
             blur.constraints.forEach {
                 if $0.firstAttribute == NSLayoutConstraint.Attribute.height {
                     $0.constant = height
-                    
                 }
             }
         }
-    }
-    
-    private func lazyStationSelectionView() -> StationSelectionView {
-        let stationSelectionView = StationSelectionView()
-        stationSelectionView.onTap = { [weak self] direction in
-            guard let self = self else { return }
-            //self.onTextFieldTap?(direction)
-        }
-        stationSelectionView.onClear = { [weak self] direction in
-            guard let self = self else { return }
-            //self.onTextFieldClear?(direction)
-        }
-        return stationSelectionView
     }
 
     private func renderFields() {
@@ -179,47 +152,25 @@ extension MetroMapView {
     }
     
     private func renderRoute() {
-        DispatchQueue.main.async {
-            switch self.routeState {
-            case .hidden:
-                self.stationSelectionView.isHidden = false
-                if let preview = self.routePreview {
-                    preview.removeFromSuperview()
-                    self.routePreview = nil
-                }
-                self.metroMapScrollView.clearRoute()
-            case .presented(let state):
-                self.stationSelectionView.isHidden = true
-                if self.routePreview == nil {
-                    self.presentRoutePreview()
-                    self.routePreview?.viewState = state
-                } else {
-                    self.routePreview?.removeFromSuperview()
-                    self.routePreview = nil
-                    self.presentRoutePreview()
-                    self.routePreview?.viewState = state
-                }
+        switch self.routeState {
+        case .hidden:
+            self.stationSelectionView.isHidden = false
+            if let preview = self.routePreview {
+                preview.removeFromSuperview()
+                self.routePreview = nil
+            }
+            self.metroMapScrollView.clearRoute()
+        case .presented(let state):
+            self.stationSelectionView.isHidden = true
+            if self.routePreview == nil {
+                self.presentRoutePreview()
+                self.routePreview?.viewState = state
+            } else {
+                self.routePreview?.removeFromSuperview()
+                self.routePreview = nil
+                self.presentRoutePreview()
+                self.routePreview?.viewState = state
             }
         }
-    }
-}
-
-// MARK: MetroMapScrollViewDelegate implementation
-extension MetroMapView: MetroMapScrollViewDelegate {
-
-    public func onSingleTap(_ scrollView: MetroMapScrollView, point: CGPoint) {
-//        self.onMapTap?(point)
-    }
-    
-    public func onBubbleButtonTap(_ scrollView: MetroMapScrollView, direction: Direction, currentSegmentIndex: Int) {
-        
-    }
-    
-    public func onBubbleSegmentChange(_ scrollView: MetroMapScrollView, segmentIndex: Int) {
-//        self.onBubbleSegmentChange?(segmentIndex)
-    }
-    
-    public func onStationTap(_ scrollView: MetroMapScrollView, station id: Int?) {
-        
     }
 }

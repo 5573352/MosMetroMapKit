@@ -32,11 +32,19 @@ class LineDTO {
     }
     
     var originalImage: UIImage {
-        return UIImage(named: "line_\(self.order)") ?? UIImage()
+        if let path = Bundle.mm_Map.path(forResource: "line_\(self.order)", ofType: "png"),
+            let image = UIImage(contentsOfFile: path) {
+            return image
+        }
+        return UIImage()
     }
     
     var invertedImage: UIImage {
-        return UIImage(named: "line_\(self.order) inverted") ?? UIImage()
+        if let path = Bundle.mm_Map.path(forResource: "line_\(self.order) inverted", ofType: "png"),
+            let image = UIImage(contentsOfFile: path) {
+            return image
+        }
+        return UIImage()
     }
     
     var uiColor: UIColor {

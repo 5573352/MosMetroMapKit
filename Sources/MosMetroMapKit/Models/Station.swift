@@ -55,9 +55,9 @@ struct Station: Hashable {
         let status: Status
         
         enum Status: String {
+            case info = "INFO"
             case closed = "CLOSED"
             case emergency = "EMERGENCY"
-            case info = "INFO"
         }
     }
     
@@ -122,39 +122,39 @@ struct Station: Hashable {
         var image: UIImage {
             switch self {
             case .bank:
-                return #imageLiteral(resourceName: "Bank")
+                return UIImage(named: "Bank", in: .mm_Map, compatibleWith: nil)!
             case .coffee:
-                return #imageLiteral(resourceName: "Coffee")
+                return UIImage(named: "Coffee", in: .mm_Map, compatibleWith: nil)!
             case .flowers:
-                return #imageLiteral(resourceName: "flowers")
+                return UIImage(named: "flowers", in: .mm_Map, compatibleWith: nil)!
             case .battery:
-                return #imageLiteral(resourceName: "Battery")
+                return UIImage(named: "Battery", in: .mm_Map, compatibleWith: nil)!
             case .toilet:
-                return #imageLiteral(resourceName: "WC")
+                return UIImage(named: "WC", in: .mm_Map, compatibleWith: nil)!
             case .candyshop:
-                return #imageLiteral(resourceName: "Lollipop on Apple iOS 13 1")
+                return UIImage(named: "Lollipop on Apple iOS 13 1", in: .mm_Map, compatibleWith: nil)!
             case .optics:
-                return #imageLiteral(resourceName: "Glasses on Apple iOS 13")
+                return UIImage(named: "Glasses on Apple iOS 13", in: .mm_Map, compatibleWith: nil)!
             case .carrier:
-                return #imageLiteral(resourceName: "Mobile Phone with Arrow on Apple iOS 13")
+                return UIImage(named: "Mobile Phone with Arrow on Apple iOS 13", in: .mm_Map, compatibleWith: nil)!
             case .theatre:
-                return #imageLiteral(resourceName: "Performing Arts on Apple iOS 13 1")
+                return UIImage(named: "Performing Arts on Apple iOS 13 1", in: .mm_Map, compatibleWith: nil)!
             case .food:
-                return #imageLiteral(resourceName: "Pizza on Apple iOS 13")
+                return UIImage(named: "Pizza on Apple iOS 13", in: .mm_Map, compatibleWith: nil)!
             case .vending:
-                return #imageLiteral(resourceName: "Chocolate Bar on Apple iOS 13 1")
+                return UIImage(named: "Chocolate Bar on Apple iOS 13 1", in: .mm_Map, compatibleWith: nil)!
             case .print:
-                return #imageLiteral(resourceName: "Printer on Apple iOS 13")
+                return UIImage(named: "Printer on Apple iOS 13", in: .mm_Map, compatibleWith: nil)!
             case .sales:
-                return #imageLiteral(resourceName: "Shopping Bags on Apple iOS 13")
+                return UIImage(named: "Shopping Bags on Apple iOS 13", in: .mm_Map, compatibleWith: nil)!
             case .invalid:
-                return #imageLiteral(resourceName: "Wheelchair Symbol on Apple iOS 13")
+                return UIImage(named: "Wheelchair Symbol on Apple iOS 13", in: .mm_Map, compatibleWith: nil)!
             case .elevator:
-                return #imageLiteral(resourceName: "Elevator on Emojipedia 13 1")
+                return UIImage(named: "Elevator on Emojipedia 13 1", in: .mm_Map, compatibleWith: nil)!
             case .info:
-                return #imageLiteral(resourceName: "Woman Raising Hand on Apple iOS 13")
+                return UIImage(named: "Woman Raising Hand on Apple iOS 13", in: .mm_Map, compatibleWith: nil)!
             case .parking:
-                return #imageLiteral(resourceName: "P Button on Apple iOS 13")
+                return UIImage(named: "P Button on Apple iOS 13", in: .mm_Map, compatibleWith: nil)!
             }
         }
     }

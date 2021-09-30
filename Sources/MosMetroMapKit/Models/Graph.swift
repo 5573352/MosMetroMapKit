@@ -6,19 +6,19 @@
 
 import Foundation
 
-public protocol Graphable {
+protocol Graphable {
     func createVertex(id: Int, x: Double, y: Double, isMCD: Bool, isOutside: Bool, isMCC: Bool)
     func add(id: Int, _ type: EdgeType, from source: Vertex, to destination: Vertex, weight: Double, isTransition: Bool)
 }
 
-public class Graph : Graphable {
+class Graph : Graphable {
     
-    public func remove(edge: Edge) {
+    func remove(edge: Edge) {
         guard let _ = adjacencyDict[edge.source] else { return }
         adjacencyDict[edge.source]?.removeAll(where: { $0 == edge })
     }
     
-    public func restore(edges: [Edge]) {
+    func restore(edges: [Edge]) {
         for edge in edges {
             guard let _ = adjacencyDict[edge.source] else { continue }
             adjacencyDict[edge.source]?.append(edge)
@@ -41,7 +41,7 @@ public class Graph : Graphable {
         }
     }
     
-    public func constructPath(from vertecies: [Vertex]) -> [Edge] {
+    func constructPath(from vertecies: [Vertex]) -> [Edge] {
         var edges = [Edge]()
         for index in stride(from: 0, to: vertecies.count - 1, by: 1) {
             if let edge = findEdgeFor(v1: vertecies[index], v2: vertecies[index+1]) {
@@ -74,7 +74,7 @@ public class Graph : Graphable {
         }
     }
     
-    public func add(id: Int, _ type: EdgeType, from source: Vertex, to destination: Vertex, weight: Double, isTransition: Bool) {
+    func add(id: Int, _ type: EdgeType, from source: Vertex, to destination: Vertex, weight: Double, isTransition: Bool) {
         switch type {
         case .directed:
             addDirectedEdge(id: id, from: source, to: destination, weight: weight, isTransition: isTransition)
@@ -83,9 +83,9 @@ public class Graph : Graphable {
         }
     }
     
-    public var adjacencyDict : [Vertex: [Edge]] = [:]
+    var adjacencyDict : [Vertex: [Edge]] = [:]
     
-    public func findEdgeFor(v1: Vertex, v2: Vertex) -> Edge? {
+    func findEdgeFor(v1: Vertex, v2: Vertex) -> Edge? {
         if let edgesV1 = adjacencyDict[v1] {
             let result = edgesV1.filter { $0.destination == v2 }
             if !result.isEmpty {
@@ -95,7 +95,7 @@ public class Graph : Graphable {
         return nil
     }
     
-    public func findEdge(by id: Int, isTransition: Bool) -> Edge? {
+    func findEdge(by id: Int, isTransition: Bool) -> Edge? {
         let result = adjacencyDict.values.filter { (element) -> Bool in
             return element.contains(where: { $0.id == id && $0.isTransition == isTransition })
         }
@@ -107,7 +107,7 @@ public class Graph : Graphable {
         return nil
     }
     
-    public func findEdgeFor(v1: Vertex, v2: Vertex, isTransition: Bool) -> Edge? {
+    func findEdgeFor(v1: Vertex, v2: Vertex, isTransition: Bool) -> Edge? {
         if let edgesV1 = adjacencyDict[v1] {
             let result = edgesV1.filter { $0.destination == v2 || $0.isTransition == isTransition}
             if !result.isEmpty {

@@ -8,14 +8,14 @@
 
 import UIKit
 
-class BasePanController: BaseController {
+class BasePanController : BaseController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
     }
 }
 
-class BasePanFullScreenController: BasePanController {
+class BasePanFullScreenController : BasePanController {
     
     var onClose: (() -> ())?
     

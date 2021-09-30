@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasePanFullScreenController" customModule="MosMetro_X" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasePanFullScreenController" customModule="MosMetroMapKit">
             <connections>
                 <outlet property="bgBlurView" destination="MKY-li-adS" id="51V-5T-kdV"/>
                 <outlet property="closeButton" destination="Vgb-rM-FXh" id="cV6-NF-OFd"/>
@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ARS-9G-tJb">
-                                <rect key="frame" x="20" y="24" width="340" height="26"/>
+                                <rect key="frame" x="20" y="24" width="340" height="22"/>
                                 <fontDescription key="fontDescription" name="MoscowSans-Bold" family="Moscow Sans" pointSize="22"/>
                                 <color key="textColor" name="text"/>
                                 <nil key="highlightedColor"/>
@@ -53,14 +53,14 @@
                                 </connections>
                             </button>
                             <view alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11M-mz-NzT">
-                                <rect key="frame" x="0.0" y="66" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="62" width="414" height="1"/>
                                 <color key="backgroundColor" name="grey"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="vMW-UC-KP0"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="TqM-Zo-yzH">
-                                <rect key="frame" x="0.0" y="67" width="414" height="829"/>
+                                <rect key="frame" x="0.0" y="63" width="414" height="833"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>

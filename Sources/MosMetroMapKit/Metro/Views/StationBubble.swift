@@ -1,9 +1,7 @@
 //
 //  StationBubble.swift
-//  MosmetroNew
 //
 //  Created by Сеня Римиханов on 14.05.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit
@@ -60,12 +58,12 @@ class BubbleSegmentView: UIView {
     }
 }
 
-public class StationBubble: UIView {
+class StationBubble: UIView {
     
-    public var onButtonTap: ((_ currentIndex: Int, _ direction: Direction) -> ())?
-    public var onSegmentSelect: ((Int) -> ())?
+    var onButtonTap: ((_ currentIndex: Int, _ direction: Direction) -> ())?
+    var onSegmentSelect: ((Int) -> ())?
     
-    public struct ViewState        {
+    struct ViewState        {
         let coordinates    : MapPoint
         let zoomRect       : CGRect
         let segments       : [Segment]
@@ -81,7 +79,7 @@ public class StationBubble: UIView {
     }
     
     
-    public var viewState: ViewState = .initial {
+    var viewState: ViewState = .initial {
         didSet {
             render()
         }
@@ -145,13 +143,9 @@ public class StationBubble: UIView {
         return stackView
     }()
     
-    private let toButton = IconButton(.left, text: NSLocalizedString("To1", tableName: nil, bundle: .mm_Map, value: "", comment: ""), icon: #imageLiteral(resourceName: "route_to"), iconWidth: 20, iconHeight: 20)
-    private let fromButton = IconButton(.left, text: NSLocalizedString("From1", tableName: nil, bundle: .mm_Map, value: "", comment: ""), icon: #imageLiteral(resourceName: "route_from"), iconWidth: 20, iconHeight: 20)
-    
+    private let toButton = IconButton(.left, text: NSLocalizedString("To1", tableName: nil, bundle: .mm_Map, value: "", comment: ""), icon: UIImage(named: "route_to", in: .mm_Map, compatibleWith: nil)!, iconWidth: 20, iconHeight: 20)
+    private let fromButton = IconButton(.left, text: NSLocalizedString("From1", tableName: nil, bundle: .mm_Map, value: "", comment: ""), icon: UIImage(named: "route_from", in: .mm_Map, compatibleWith: nil)!, iconWidth: 20, iconHeight: 20)
 }
-
-
-// MARK: – Public methods
 
 extension StationBubble {
     

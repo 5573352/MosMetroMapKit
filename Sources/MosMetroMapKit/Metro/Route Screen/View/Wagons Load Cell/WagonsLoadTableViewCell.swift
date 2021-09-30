@@ -34,12 +34,7 @@ class WagonsLoadTableViewCell: UITableViewCell {
         super.awakeFromNib()
         wagonsCollectionView.dataSource = self
         wagonsCollectionView.delegate = self
-        wagonsCollectionView.register(UINib(nibName: "WagonLoadCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: WagonLoadCollectionViewCell.reuseID)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
+        wagonsCollectionView.register(WagonLoadCollectionViewCell.nib, forCellWithReuseIdentifier: WagonLoadCollectionViewCell.identifire)
     }
 }
 
@@ -51,7 +46,7 @@ extension WagonsLoadTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let item = viewState.items[safe: indexPath.row] else { return UICollectionViewCell() }
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WagonLoadCollectionViewCell.reuseID, for: indexPath) as! WagonLoadCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WagonLoadCollectionViewCell.identifire, for: indexPath) as! WagonLoadCollectionViewCell
         cell.viewState = item
         return cell
     }

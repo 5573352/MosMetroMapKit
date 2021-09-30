@@ -1,21 +1,18 @@
 //
 //  StationSelectionView.swift
-//  MosmetroNew
 //
 //  Created by Сеня Римиханов on 10.05.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-public class StationSelectionView: UIView {
+class StationSelectionView: UIView {
     
     public let fromTextField = StationSelectTextField()
     public let toTextField = StationSelectTextField()
     
-    public var onTap: ((Direction) -> ())?
-    public var onClear: ((Direction) -> ())?
+    var onTap: ((Direction) -> ())?
+    var onClear: ((Direction) -> ())?
     
     private let stackView: UIStackView = {
         let stackView = UIStackView()

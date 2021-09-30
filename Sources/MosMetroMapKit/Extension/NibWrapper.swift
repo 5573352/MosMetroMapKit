@@ -25,7 +25,9 @@ import UIKit
 
     /// Dynamic member lookup to transfer writable keypath to the final view
     public subscript<U>(dynamicMember keyPath: WritableKeyPath<T,U>) -> U {
-        get { unwrapped[keyPath: keyPath] }
+        get {
+            unwrapped[keyPath: keyPath]
+        }
         set {
             var unwrappedView = unwrapped
             unwrappedView[keyPath: keyPath] = newValue
@@ -53,7 +55,6 @@ class NibWrapperView<T: UIView>: UIView {
     private func prepareContentView() {
         contentView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(contentView)
-
         contentView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true

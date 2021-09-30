@@ -1,6 +1,5 @@
 //
 //  BlurControl.swift
-//  PackageTester
 //
 //  Created by Кузин Павел on 17.08.2021.
 //
@@ -81,14 +80,12 @@ extension BlurControl {
     
     private func setupLayout() {
         self.contentView.addSubview(iconImageView)
-        iconImageView.pin(on: contentView, {
-            [
-                $0.widthAnchor.constraint(equalToConstant: 27),
-                $0.heightAnchor.constraint(equalToConstant: 27),
-                $0.centerYAnchor.constraint(equalTo: $1.centerYAnchor),
-                $0.centerXAnchor.constraint(equalTo: $1.centerXAnchor)
-            ]
-        })
+        iconImageView.pin(on: contentView, {[
+            $0.widthAnchor.constraint(equalToConstant: 27),
+            $0.heightAnchor.constraint(equalToConstant: 27),
+            $0.centerYAnchor.constraint(equalTo: $1.centerYAnchor),
+            $0.centerXAnchor.constraint(equalTo: $1.centerXAnchor)
+        ]})
     }
 }
 

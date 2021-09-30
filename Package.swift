@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "MosMetroMapKit",
     defaultLocalization: "ru",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v13)],
     products: [
         .library(
             name: "MosMetroMapKit",
@@ -15,6 +15,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/ivanvorobei/SPAlert",                              .exact("2.1.4")),
         .package(url: "https://github.com/exyte/Macaw",                                      .upToNextMajor(from: "0.9.7")),
+        .package(url: "https://github.com/SDWebImage/SDWebImage",                            .upToNextMajor(from: "5.0.0")),
         .package(url: "https://github.com/malcommac/SwiftDate",                              .upToNextMajor(from: "6.3.1")),
         .package(url: "https://github.com/scenee/FloatingPanel",                             .upToNextMajor(from: "2.4.0")),
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON",                            .upToNextMajor(from: "5.0.1")),
@@ -25,17 +26,20 @@ let package = Package(
         .target(
             name: "MosMetroMapKit",
             dependencies: [
-                "ViewAnimator",
                 "SPAlert",
-                "SwiftDate",
-                "SwiftyJSON",
                 "Macaw",
+                "SwiftDate",
+                "SDWebImage",
                 "FloatingPanel",
+                "SwiftyJSON",
+                "ViewAnimator",
                 "Localize_Swift"
             ],
             resources: [
                 .process("Constants/Fonts"),
-                .process("Metro/Localization")
+                .process("Metro/Localization"),
+                .process("Metro/Icons/Original"),
+                .process("Metro/Icons/Inverted")
             ]
         ),
         .testTarget(

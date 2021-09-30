@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Medium.otf">
+            <string>MoscowSans-Medium</string>
+        </array>
+        <array key="MoscowSans-Regular.otf">
+            <string>MoscowSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="115" id="KGk-i7-Jjw" customClass="TrainScheduleTableViewCell" customModule="MosMetroMapKit">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVk-LR-wKu">
+                        <rect key="frame" x="20" y="12" width="280" height="15"/>
+                        <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="15"/>
+                        <color key="textColor" name="mm_TextPrimary"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Xpd-7w-Acj">
+                        <rect key="frame" x="230" y="39" width="70" height="64"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="First train" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVy-mW-Dz7">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="16"/>
+                                <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
+                                <color key="textColor" name="mm_TextSecondary"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Odd"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhD-ZK-rjE">
+                                <rect key="frame" x="0.0" y="24" width="70" height="16"/>
+                                <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="13"/>
+                                <color key="textColor" name="mm_TextPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZt-0h-vnP">
+                                <rect key="frame" x="0.0" y="48" width="70" height="16"/>
+                                <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="13"/>
+                                <color key="textColor" name="mm_TextPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="YHP-x4-1od"/>
+                            <constraint firstAttribute="width" constant="70" id="dSC-3c-QdK"/>
+                        </constraints>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JHr-aN-x56">
+                        <rect key="frame" x="160" y="39" width="70" height="64"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="First train" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwI-7C-cXY">
+                                <rect key="frame" x="0.0" y="0.0" width="70" height="16"/>
+                                <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
+                                <color key="textColor" name="mm_TextSecondary"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Even"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhI-EQ-buu">
+                                <rect key="frame" x="0.0" y="24" width="70" height="16"/>
+                                <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="13"/>
+                                <color key="textColor" name="mm_TextPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V31-3u-UHm">
+                                <rect key="frame" x="0.0" y="48" width="70" height="16"/>
+                                <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="13"/>
+                                <color key="textColor" name="mm_TextPrimary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="7Xh-dM-6sh"/>
+                            <constraint firstAttribute="width" constant="70" id="7wV-7f-riI"/>
+                        </constraints>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="First train" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ji-Ho-Bwv">
+                        <rect key="frame" x="20" y="66" width="132" height="13"/>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
+                        <color key="textColor" name="mm_TextSecondary"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="First train"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="First train" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXz-4V-ezQ">
+                        <rect key="frame" x="20" y="87" width="132" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="y1C-56-YFt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
+                        <color key="textColor" name="mm_TextSecondary"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Last train"/>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JHr-aN-x56" firstAttribute="leading" secondItem="wXz-4V-ezQ" secondAttribute="trailing" constant="8" id="4or-Av-4kn"/>
+                    <constraint firstItem="8ji-Ho-Bwv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7lz-j4-wdn"/>
+                    <constraint firstItem="UVk-LR-wKu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="DbH-tV-sg2"/>
+                    <constraint firstItem="wXz-4V-ezQ" firstAttribute="top" secondItem="8ji-Ho-Bwv" secondAttribute="bottom" constant="8" id="HIZ-Tv-HDW"/>
+                    <constraint firstItem="Xpd-7w-Acj" firstAttribute="leading" secondItem="JHr-aN-x56" secondAttribute="trailing" id="Ipo-pf-unw"/>
+                    <constraint firstAttribute="bottom" secondItem="wXz-4V-ezQ" secondAttribute="bottom" constant="12" id="TRR-wh-YME"/>
+                    <constraint firstItem="Xpd-7w-Acj" firstAttribute="top" secondItem="UVk-LR-wKu" secondAttribute="bottom" constant="12" id="Wfz-w2-jvm"/>
+                    <constraint firstItem="wXz-4V-ezQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ZTd-DJ-t69"/>
+                    <constraint firstItem="JHr-aN-x56" firstAttribute="top" secondItem="UVk-LR-wKu" secondAttribute="bottom" constant="12" id="acc-np-M1O"/>
+                    <constraint firstAttribute="bottom" secondItem="Xpd-7w-Acj" secondAttribute="bottom" constant="12" id="b57-Rz-LkN"/>
+                    <constraint firstAttribute="trailing" secondItem="UVk-LR-wKu" secondAttribute="trailing" constant="20" id="mXr-3A-DGJ"/>
+                    <constraint firstAttribute="trailing" secondItem="Xpd-7w-Acj" secondAttribute="trailing" constant="20" id="p2Z-6g-8IB"/>
+                    <constraint firstItem="JHr-aN-x56" firstAttribute="leading" secondItem="8ji-Ho-Bwv" secondAttribute="trailing" constant="8" id="pdh-hY-f2q"/>
+                    <constraint firstItem="UVk-LR-wKu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="xeq-rd-Tz5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="evenStack" destination="JHr-aN-x56" id="YgL-6s-fWU"/>
+                <outlet property="mainTitleLabel" destination="UVk-LR-wKu" id="9uG-fS-TFi"/>
+                <outlet property="oddStack" destination="Xpd-7w-Acj" id="I88-XC-cQt"/>
+            </connections>
+            <point key="canvasLocation" x="89.855072463768124" y="97.433035714285708"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="mm_TextPrimary">
+            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mm_TextSecondary">
+            <color red="0.59600001573562622" green="0.60000002384185791" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

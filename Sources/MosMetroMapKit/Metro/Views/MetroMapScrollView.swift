@@ -8,14 +8,11 @@
 
 import UIKit
 
-public protocol MetroMapScrollViewDelegate: class {
-    func onStationTap(_ scrollView: MetroMapScrollView, station id: Int?)
+protocol MetroMapScrollViewDelegate : AnyObject {
     func onSingleTap(_ scrollView: MetroMapScrollView, point: CGPoint)
-    func onBubbleButtonTap(_ scrollView: MetroMapScrollView, direction: Direction, currentSegmentIndex: Int)
-    func onBubbleSegmentChange(_ scrollView: MetroMapScrollView, segmentIndex: Int)
 }
 
-public class MetroMapScrollView: UIScrollView {
+class MetroMapScrollView : UIScrollView {
     
     public var mapView: MapViewLayered!
     public weak var metroScrollDelegate: MetroMapScrollViewDelegate?
@@ -42,9 +39,9 @@ public class MetroMapScrollView: UIScrollView {
         setup()
     }
     
-    public func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        print("SCALE - \(scrollView.zoomScale)")
-        print("OFFSET - \(scrollView.contentOffset)")
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        typeOut("SCALE - \(scrollView.zoomScale)")
+        typeOut("OFFSET - \(scrollView.contentOffset)")
         if userLocationImageView != nil {
             self.userLocationImageView.transform = CGAffineTransform(scaleX: 1.0/scrollView.zoomScale, y: 1.0/scrollView.zoomScale)
         }
@@ -77,12 +74,12 @@ extension MetroMapScrollView {
         for item in data {
             let frame = CGRect(x: item.value.coordinate.x-8, y: item.value.coordinate.y-8, width: 16, height: 16)
             if item.value.services.count > 1 {
-                let markerView = Bundle.main.loadNibNamed("MarkerViewLabel", owner: nil, options: nil)?.first as! MarkerLabelView
+                let markerView = MarkerLabelView.loadFromNib()
                 markerView.countLabel.text = "\(item.value.services.count)+"
                 markerView.frame = frame
                 self.mapView.addSubview(markerView)
             } else {
-                let markerView = Bundle.main.loadNibNamed("MarkerView", owner: nil, options: nil)?.first as! MarkerView
+                let markerView = MarkerView.loadFromNib()
                 markerView.iconImageView.image = item.value.services[0].image
                 markerView.frame = frame
                 self.mapView.addSubview(markerView)
@@ -94,8 +91,8 @@ extension MetroMapScrollView {
         let layer = CALayer()
         var rect = path.boundingBox
         rect.size = CGSize(width: rect.width + 4, height: rect.height + 4)
-        rect.origin.x = rect.origin.x - 2
-        rect.origin.y = rect.origin.y - 2
+        rect.origin.x -= 2
+        rect.origin.y -= 2
         layer.frame = rect
         layer.contents = image
         layer.contentsGravity = .resizeAspect
@@ -104,18 +101,59 @@ extension MetroMapScrollView {
         stationPath.removeFromSuperlayer()
     }
     
+    private func handleAlternative(_ emergency: Emergency) {
+        for conn in emergency.alternativeConnections {
+            if let element = self.mapOptions.connections["connection-\(conn.id)"] {
+                if let shapeData = element as? ShapeDrawingData {
+                    self.mapView.layer.insertSublayer(self.mapView.drawShape(shapeData),at: 0)
+                }
+                if let groupData = element as? ShapesGroup {
+                    let shapeContainer = CAShapeLayer()
+                    shapeContainer.name = "connection-\(conn.id)"
+                    shapeContainer.minificationFilter = .nearest
+                    shapeContainer.magnificationFilter = .nearest
+                    groupData.shapes.forEach { shapeContainer.addSublayer(self.mapView.drawShape($0)) }
+                    self.mapView.layer.insertSublayer(shapeContainer, at: 0)
+                }
+            }
+        }
+        
+        for trans in emergency.alternativeTransitions {
+            if let element = self.mapOptions.transitions["transition-\(trans.id)"] {
+                if let gradientImage = element as? GradientDrawingData {
+                    self.mapView.drawGradient(gradientImage)
+                }
+            }
+        }
+        
+        for station in emergency.alternativeStations {
+            if let element = self.mapOptions.stations["station-\(station.id)"] {
+                if let shapeData = element as? ShapeDrawingData {
+                    self.mapView.layer.addSublayer(self.mapView.drawShape(shapeData))
+                }
+                if let groupData = element as? ShapesGroup {
+                    let shapeContainer = CAShapeLayer()
+                    shapeContainer.name = "station-\(station.id)"
+                    shapeContainer.minificationFilter = .nearest
+                    shapeContainer.magnificationFilter = .nearest
+                    groupData.shapes.forEach { shapeContainer.addSublayer(self.mapView.drawShape($0)) }
+                    self.mapView.layer.addSublayer(shapeContainer)
+                }
+            }
+        }
+    }
+    
     public func drawEmergencies(_ emergencies: [Emergency]) {
         for emergency in emergencies {
             for station in emergency.stations {
                 guard let sublayers = mapView.layer.sublayers,
                 let stationPath =  sublayers.filter({ $0.name ==  "station-\(station.id)" }).first as? CAShapeLayer else { continue }
-                // Если элемент одиночный
                 if let path = stationPath.path {
                     if station.status != .info {
                         let image = imageForEmergency(station.status).cgImage
                         self.addEmergency(stationPath: stationPath, path: path, image: image)
                     }
-                } else { // если элемент состоит из саблээров
+                } else {
                     if let sublayers = stationPath.sublayers {
                         if !sublayers.isEmpty {
                             let combinedPath = CGMutablePath()
@@ -150,7 +188,7 @@ extension MetroMapScrollView {
                 for conn in conns {
                     if connectionsRedraw.contains(conn.name ?? "") {
                         if let shape = conn as? CAShapeLayer {
-                            shape.strokeColor = UIColor.grey.cgColor
+                            shape.strokeColor = UIColor.mm_TextSecondary.cgColor
                             shape.fillColor = UIColor.clear.cgColor
                             shape.lineWidth = 1
                             shape.lineDashPattern = [0.5,2]
@@ -162,52 +200,12 @@ extension MetroMapScrollView {
                 }
             }
             
-            for conn in emergency.alternativeConnections {
-                if let element = self.mapOptions.connections["connection-\(conn.id)"] {
-                    if let shapeData = element as? ShapeDrawingData {
-                        self.mapView.layer.insertSublayer(self.mapView.drawShape(shapeData),at: 0)
-                    }
-                    
-                    if let groupData = element as? ShapesGroup {
-                        let shapeContainer = CAShapeLayer()
-                        shapeContainer.name = "connection-\(conn.id)"
-                        shapeContainer.minificationFilter = .nearest
-                        shapeContainer.magnificationFilter = .nearest
-                        groupData.shapes.forEach { shapeContainer.addSublayer(self.mapView.drawShape($0)) }
-                        self.mapView.layer.insertSublayer(shapeContainer, at: 0)
-                    }
-                }
-            }
-            
-            for trans in emergency.alternativeTransitions {
-                if let element = self.mapOptions.transitions["transition-\(trans.id)"] {
-                    if let gradientImage = element as? GradientDrawingData {
-                        self.mapView.drawGradient(gradientImage)
-                    }
-                }
-            }
-            
-            for station in emergency.alternativeStations {
-                if let element = self.mapOptions.stations["station-\(station.id)"] {
-                    if let shapeData = element as? ShapeDrawingData {
-                        self.mapView.layer.addSublayer(self.mapView.drawShape(shapeData))
-                    }
-                    
-                    if let groupData = element as? ShapesGroup {
-                        let shapeContainer = CAShapeLayer()
-                        shapeContainer.name = "station-\(station.id)"
-                        shapeContainer.minificationFilter = .nearest
-                        shapeContainer.magnificationFilter = .nearest
-                        groupData.shapes.forEach { shapeContainer.addSublayer(self.mapView.drawShape($0)) }
-                        self.mapView.layer.addSublayer(shapeContainer)
-                    }
-                }
-            }
+            self.handleAlternative(emergency)
         }
     }
     
     public func drawBubble(_ coordinate: MapPoint, isFrom: Bool) {
-        let image = isFrom ? UIImage(named: "from_bubble") : UIImage(named: "to_bubble")
+        let image = isFrom ? #imageLiteral(resourceName: "from_bubble") : #imageLiteral(resourceName: "to_bubble")
         let bubble = UIImageView(image: image)
         bubble.tag = isFrom ? 998 : 999
         bubble.frame = CGRect(x: coordinate.x-25, y: coordinate.y-45, width: 50, height: 50 * 1.12)
@@ -236,34 +234,16 @@ extension MetroMapScrollView {
     }
     
     public func drawRoute(_ drawingData: RouteDrawMetadata) {
-        clearRoute()
-        addTransparentView()
+        self.clearRoute()
+        self.addTransparentView()
         let routeView = MapViewLayered(frame: self.mapView!.bounds)
         routeView.stations = mapOptions.stations.filter { drawingData.stationKeys.contains($0.key) }
-        routeView.connections  =  mapOptions.connections.filter { drawingData.connectionKeys.contains($0.key) }
         routeView.captions = mapOptions.captions.filter { drawingData.textsKeys.contains($0.key) }
         routeView.transitions = mapOptions.transitions.filter { drawingData.transfersKeys.contains($0.key) }
+        routeView.connections  =  mapOptions.connections.filter { drawingData.connectionKeys.contains($0.key) }
         routeView.fromCoordinate = drawingData.fromCoordinate
         routeView.toCoordinate = drawingData.toCoordinate
         routeView.layer.setNeedsDisplay()
-        
-        //        let fromImageBubble = #imageLiteral(resourceName: "from_bubble")
-        //        let toImageBubble = #imageLiteral(resourceName: "to_bubble")
-        //        let fromImageLayer = CALayer()
-        //        fromImageLayer.frame = CGRect(x: drawingData.fromCoordinate.x-25, y: drawingData.fromCoordinate.y-45, width: 50, height: 50 * 1.12)
-        //        fromImageLayer.contents = fromImageBubble.cgImage
-        //        fromImageLayer.contentsGravity = .resizeAspect
-        //        fromImageLayer.contentsScale = UIScreen.main.scale+1
-        //
-        //        let toImageLayer = CALayer()
-        //        toImageLayer.frame = CGRect(x: drawingData.toCoordinate.x-25, y: drawingData.toCoordinate.y-45, width: 50, height: 50 * 1.12)
-        //        toImageLayer.contents = toImageBubble.cgImage
-        //        toImageLayer.contentsGravity = .resizeAspect
-        //        toImageLayer.contentsScale = UIScreen.main.scale+1
-        
-        
-        
-        
         
         self.mapView?.addSubview(routeView)
         var zoomRect = calculateRouteZoom(routeView.connections, routeView.captions)
@@ -271,13 +251,8 @@ extension MetroMapScrollView {
         let newRect = zoomRect.applying(CGAffineTransform(scaleX: 1.3, y: 1.6))
         zoomRect.size.width = newRect.width
         zoomRect.size.height = newRect.height
-        
-        //zoomRect.origin.y -= 200
         zoomRect.origin.x -= 50
-        
-        
-        
-        
+
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.5, delay: 0, options: [UIView.AnimationOptions.curveEaseInOut], animations: {
                 self.zoom(to: zoomRect, animated: false)
@@ -289,24 +264,17 @@ extension MetroMapScrollView {
         let routeViews = self.mapView.subviews.filter {  $0.tag == 777 || $0 is MapViewLayered }
         routeViews.forEach { $0.removeFromSuperview() }
     }
-    
 }
 
-
-// MARK: PRIVATE METHODS
 extension MetroMapScrollView {
     
     private func imageForEmergency(_ status: Emergency.StationEmergency.Status) -> UIImage {
         switch status {
         case .closed:
-//            return #imageLiteral(resourceName: "")
             return UIImage(named: "closed_emergency", in: .mm_Map, compatibleWith: nil)!
-
         case .emergency:
             return UIImage(named: "emergency_emergency", in: .mm_Map, compatibleWith: nil)!
-            
         case .info:
-//            return #imageLiteral(resourceName: "")
             return UIImage(named: "info_emergency", in: .mm_Map, compatibleWith: nil)!
         }
     }
@@ -324,7 +292,7 @@ extension MetroMapScrollView {
     
     private func addTransparentView() {
         let transparentView = UIView(frame: self.mapView!.bounds)
-        transparentView.backgroundColor = .MKBase
+        transparentView.backgroundColor = .mm_Base
         transparentView.alpha = 0.8
         transparentView.tag = 777
         self.mapView!.addSubview(transparentView)
@@ -339,26 +307,25 @@ extension MetroMapScrollView {
         self.mapView?.captions = mapOptions.captions
         self.mapView?.layer.setNeedsDisplay()
         self.mapView.layoutIfNeeded()
-        mapView?.isUserInteractionEnabled = true
+        self.mapView?.isUserInteractionEnabled = true
     }
     
     private func setup() {
-        showsVerticalScrollIndicator = false
-        showsHorizontalScrollIndicator = false
-        decelerationRate = UIScrollView.DecelerationRate.normal
-        backgroundColor = .MKBase
-        delegate = self
+        self.showsVerticalScrollIndicator = false
+        self.showsHorizontalScrollIndicator = false
+        self.decelerationRate = UIScrollView.DecelerationRate.normal
+        self.backgroundColor = .mm_Base
+        self.delegate = self
         self.contentInsetAdjustmentBehavior = .never
-        contentSize =  mapOptions.mapSize
-        maximumZoomScale = 2
-        minimumZoomScale = 0.20
+        self.contentSize =  mapOptions.mapSize
+        self.maximumZoomScale = 2
+        self.minimumZoomScale = 0.20
         self.contentMode = .center
-        drawMap()
+        self.drawMap()
        
-        contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        setupTaps()
-        addSubview(mapView!)
-        
+        self.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        self.setupTaps()
+        self.addSubview(mapView!)
     }
     
     private func setupTaps() {
@@ -375,13 +342,6 @@ extension MetroMapScrollView {
     private func handleSingleTap(tap: UITapGestureRecognizer) {
         let touchPoint = tap.location(in: self.mapView)
         self.metroScrollDelegate?.onSingleTap(self, point: touchPoint)
-        //        let filtered = mapOptions. .filter { $0.value.contains(touchPoint)}
-        //        if !filtered.isEmpty {
-        //            guard let first = filtered.first else { return }
-        //            self.metroScrollDelegate?.onStationTap(self, station: first.key)
-        //        } else {
-        //            self.metroScrollDelegate?.onStationTap(self, station: nil)
-        //        }
     }
     
     @objc
@@ -399,18 +359,13 @@ extension MetroMapScrollView {
         zoomRect.size.width  = self.frame.size.width  / scale
         zoomRect.origin.x = center.x - (center.x * self.zoomScale)
         zoomRect.origin.y = center.y - (center.y * self.zoomScale)
-        
         return zoomRect
     }
 }
 
-extension MetroMapScrollView: UIScrollViewDelegate  {
+extension MetroMapScrollView: UIScrollViewDelegate {
     
-    public func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mapView
-    }
-    
-    public func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
-        
     }
 }

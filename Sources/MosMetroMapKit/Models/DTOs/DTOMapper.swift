@@ -8,7 +8,7 @@ import UIKit
 import SwiftDate
 import Localize_Swift
 
-public class DTOMapper {
+class DTOMapper {
     
     public var service  : MetroService?
     public var stations : [Int : StationDTO]?
@@ -136,8 +136,8 @@ public class DTOMapper {
     func map(_ dto: LineDTO) -> Line {
         let color          = UIColor.hexStringToUIColor(hex: dto.color)
         let name           = Localize.currentLanguage() == "ru" ? dto.name_ru : dto.name_en
-        let originalIcon   = UIImage(named: "line_\(dto.order)") ?? UIImage()
-        let invertedIcon   = UIImage(named: "line_\(dto.order) inverted") ?? UIImage()
+        let originalIcon   = UIImage(contentsOfFile: Bundle.mm_Map.path(forResource: "line_\(dto.order)", ofType: "png") ?? "") ?? UIImage()
+        let invertedIcon   = UIImage(contentsOfFile: Bundle.mm_Map.path(forResource: "line_\(dto.order) inverted", ofType: "png") ?? "") ?? UIImage()
         let neighbourLines = [Line.NeighbourLine]()
 //        for lineID in dto.neighbourLinesIDs {
 //            if let neighbourLineDTO = realmContext.fetch(LineDTO.self, primaryKey: lineID) {
