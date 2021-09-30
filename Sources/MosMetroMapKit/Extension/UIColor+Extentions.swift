@@ -1,17 +1,13 @@
 //
 //  UIColor+Extentions.swift
-//  MosmetroNew
 //
 //  Created by Павел Кузин on 24.11.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit
 
-
 extension UIColor {
     
-    // MARK: COLOR CHECK
     /**
      Boolean Parameter for determine whether a selected UIColor (for ex picked by the user) is dark or bright, so change the color of a line of text that sits on top of that color, for better readability.
      */
@@ -21,7 +17,6 @@ extension UIColor {
         return white > 0.5
     }
     
-    //MARK: - HEX3
     /**
      The function recycles the HEX string and returns a UIColor value
      - Parameters:
@@ -33,7 +28,6 @@ extension UIColor {
         self.init(red: CGFloat((Float((c & 0xff0000) >> 16)) / 255.0), green: CGFloat((Float((c & 0xff00) >> 8)) / 255.0), blue: CGFloat((Float(c & 0xff)) / 255.0), alpha: 1)
     }
     
-    //MARK: - HEX
     /**
      The function recycles the HEX string and returns a UIColor value
      - Parameters: hex : HEX string - a value of a color
@@ -60,9 +54,4 @@ extension UIColor {
             alpha: CGFloat(1.0)
         )
     }
-    
-
-}
-extension UIColor {
-
 }

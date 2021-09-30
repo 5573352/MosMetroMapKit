@@ -1,19 +1,17 @@
 //
 //  Station.swift
-//  MosmetroClip
 //
 //  Created by Павел Кузин on 12.04.2021.
-//  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit
 
-public struct Worktime: Hashable {
+struct Worktime: Hashable {
     let open: String
     let close: String
 }
 
-public struct Exit: Hashable {
+struct Exit: Hashable {
     let number: Int
     let name: String
     let coordinate: MapPoint
@@ -22,28 +20,29 @@ public struct Exit: Hashable {
     let trolleys: [String]
 }
 
-public struct TrainsSchedule: Hashable {
-    public static func == (lhs: TrainsSchedule, rhs: TrainsSchedule) -> Bool {
-        return lhs.towardsName == rhs.towardsName
-    }
+struct TrainsSchedule: Hashable {
     
-    let towardsName: String
-    let items: [Schedule]
+    let towardsName : String
+    let items       : [Schedule]
     
     struct Schedule: Hashable {
-        let isWeekend: Bool
-        let firstTrain: String
-        let lastTrain: String
-        let dayType: DayType
+        let isWeekend  : Bool
+        let firstTrain : String
+        let lastTrain  : String
+        let dayType    : DayType
     }
     
     enum DayType: String {
-        case odd = "ODD"
+        case odd  = "ODD"
         case even = "EVEN"
+    }
+    
+    public static func == (lhs: TrainsSchedule, rhs: TrainsSchedule) -> Bool {
+        return lhs.towardsName == rhs.towardsName
     }
 }
 
-public struct Station: Hashable {
+struct Station: Hashable {
     
     public static func == (lhs: Station, rhs: Station) -> Bool {
         return lhs.id == rhs.id
@@ -63,23 +62,23 @@ public struct Station: Hashable {
     }
     
     public enum Feature: String, CaseIterable {
-        case bank = "BANK"
-        case coffee = "COFFEE"
-        case flowers = "FLOWERS"
-        case battery = "BATTERY"
-        case toilet = "TOILET"
+        case bank      = "BANK"
+        case coffee    = "COFFEE"
+        case flowers   = "FLOWERS"
+        case battery   = "BATTERY"
+        case toilet    = "TOILET"
         case candyshop = "CANDY"
-        case optics = "OPTICS"
-        case carrier = "CARRIER"
-        case theatre = "THEATRE"
-        case food = "FOOD"
-        case vending = "VENDING"
-        case print = "PRINT"
-        case sales = "SALES"
-        case invalid = "INVALID"
-        case elevator = "ELEVATOR"
-        case info = "INFO"
-        case parking = "PARKING"
+        case optics    = "OPTICS"
+        case carrier   = "CARRIER"
+        case theatre   = "THEATRE"
+        case food      = "FOOD"
+        case vending   = "VENDING"
+        case print     = "PRINT"
+        case sales     = "SALES"
+        case invalid   = "INVALID"
+        case elevator  = "ELEVATOR"
+        case info      = "INFO"
+        case parking   = "PARKING"
         
         var stationDesc: String {
             switch self {

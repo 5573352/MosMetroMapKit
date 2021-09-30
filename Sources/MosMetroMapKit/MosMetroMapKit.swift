@@ -1,10 +1,19 @@
+//
+//  MapKit.swift
+//
+//  Created by Кузин Павел on 20.08.2021.
+//
+
 import UIKit
 
-struct MosMetroMapKit {
-    
-}
-
 public class MapKit {
+    
+    @objc
+    public func closeMetro() {
+        self.mapVC.dismiss(animated: true)
+    }
+    
+    public var timeoutInSeconds : TimeInterval = 5
  
     private init() {
         // This registers the fonts
@@ -20,6 +29,7 @@ public class MapKit {
             print("Family: \(family) Font names: \(names)")
         }
     }
+    
     public static var shared = MapKit()
     
     
@@ -75,6 +85,7 @@ public class MapKit {
 }
 
 extension UIFont {
+    
     static func registerFont(bundle: Bundle, fontName: String, fontExtension: String) -> Bool {
 
         guard let fontURL = bundle.url(forResource: fontName, withExtension: fontExtension) else {
@@ -95,7 +106,6 @@ extension UIFont {
             print("Error registering font: maybe it was already registered.")
             return false
         }
-
         return true
     }
 }

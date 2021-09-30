@@ -1,9 +1,7 @@
 //
 //  TrainsWorkLoad.swift
-//  MosmetroClip
 //
 //  Created by Павел Кузин on 21.04.2021.
-//  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
 import Foundation
@@ -15,17 +13,17 @@ struct TrainWorkload {
     let wayData: [WayData]
     
     struct WayData {
-        let towardsStationName: String
-        let towardsStationOrder: Int
-        let towardsStationID: Int
-        let data: [TrainData]
+        let towardsStationName  : String
+        let towardsStationOrder : Int
+        let towardsStationID    : Int
+        let data                : [TrainData]
     }
     
     struct TrainData {
-        let trainNumber: String
-        let status: WagonState
-        let arrivalTime: Int
-        let wagonsWorkload: [Workload]
+        let trainNumber    : String
+        let status         : WagonState
+        let arrivalTime    : Int
+        let wagonsWorkload : [Workload]
     }
     
     enum WagonState {
@@ -38,10 +36,10 @@ struct TrainWorkload {
     
     enum Workload: String {
         case low        = "low"
-        case medium     = "medium"
-        case mediumHigh = "mediumHigh"
         case high       = "high"
+        case medium     = "medium"
         case unknown    = "unknown"
+        case mediumHigh = "mediumHigh"
     }
 }
 
@@ -55,15 +53,16 @@ extension TrainWorkload {
                 if let key = Int(x.key) {
                    result[key] = x.value.stringValue
                 }
-                
             })
             
             let sorted = wagonsDict.sorted(by: { $0.key < $1.key })
             
-            let trainData = TrainData(trainNumber: train["id"].stringValue,
-                                      status: WagonState.state(time: arrivalTime),
-                                      arrivalTime: arrivalTime,
-                                      wagonsWorkload: sorted.compactMap { Workload(rawValue: $0.value ) })
+            let trainData = TrainData(
+                trainNumber: train["id"].stringValue,
+                status: WagonState.state(time: arrivalTime),
+                arrivalTime: arrivalTime,
+                wagonsWorkload: sorted.compactMap { Workload(rawValue: $0.value ) }
+            )
             trains.append(trainData)
         }
         

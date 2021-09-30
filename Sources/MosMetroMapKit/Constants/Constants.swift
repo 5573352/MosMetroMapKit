@@ -1,9 +1,7 @@
 //
 //  Constants.swift
-//  MosmetroNew
 //
 //  Created by Сеня Римиханов on 04.05.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit
@@ -42,5 +40,5 @@ enum Constants {
     }
 }
 
-class MetroSearchBar: UISearchBar { }
-class CitySearchBar : UISearchBar { }
+class CitySearchBar  : UISearchBar { }
+class MetroSearchBar : UISearchBar { }

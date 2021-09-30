@@ -1,6 +1,5 @@
 //
 //  Graph.swift
-//  PackageTester
 //
 //  Created by Кузин Павел on 17.08.2021.
 //
@@ -8,12 +7,11 @@
 import Foundation
 
 public protocol Graphable {
-    
     func createVertex(id: Int, x: Double, y: Double, isMCD: Bool, isOutside: Bool, isMCC: Bool)
     func add(id: Int, _ type: EdgeType, from source: Vertex, to destination: Vertex, weight: Double, isTransition: Bool)
 }
 
-public class Graph: Graphable {
+public class Graph : Graphable {
     
     public func remove(edge: Edge) {
         guard let _ = adjacencyDict[edge.source] else { return }
@@ -32,7 +30,6 @@ public class Graph: Graphable {
             if item.isMCD {
                 adjacencyDict[item] = nil
             }
-            
         }
     }
     
@@ -41,7 +38,6 @@ public class Graph: Graphable {
             if item.isMCC {
                 adjacencyDict[item] = nil
             }
-            
         }
     }
     
@@ -55,7 +51,6 @@ public class Graph: Graphable {
         return edges
     }
     
-    
     public func vertex(by id: Int) -> Vertex? {
         return self.adjacencyDict.filter { $0.key.id == id }.keys.first
     }
@@ -63,8 +58,6 @@ public class Graph: Graphable {
     fileprivate func addDirectedEdge(id: Int, from source: Vertex, to destination: Vertex, weight: Double, isTransition: Bool) {
         let edge = Edge(id: id, source: source, destination: destination, weight: weight, isTransition: isTransition)
         adjacencyDict[source]!.append(edge)
-        
-        
     }
     
     fileprivate func addUndirectedEdge(id: Int, vertices: (Vertex, Vertex), weight: Double, isTransition: Bool) {
@@ -88,15 +81,9 @@ public class Graph: Graphable {
         case .undirected:
             addUndirectedEdge(id: id, vertices: (source, destination), weight: weight, isTransition: isTransition)
         }
-        
-        
     }
     
-    
-    
     public var adjacencyDict : [Vertex: [Edge]] = [:]
-    
-    
     
     public func findEdgeFor(v1: Vertex, v2: Vertex) -> Edge? {
         if let edgesV1 = adjacencyDict[v1] {
@@ -112,13 +99,11 @@ public class Graph: Graphable {
         let result = adjacencyDict.values.filter { (element) -> Bool in
             return element.contains(where: { $0.id == id && $0.isTransition == isTransition })
         }
-        
         if !result.isEmpty {
             if let first = result.first, let edge = first.filter({ $0.id == id }).first {
                 return edge
             }
         }
-        
         return nil
     }
     
@@ -131,24 +116,16 @@ public class Graph: Graphable {
         }
         return nil
     }
-    
-    
-    
-    
 }
 
-public protocol AStarPathable: class {
+public protocol AStarPathable : AnyObject {
     associatedtype KeyType: Hashable
-    
     func neighbors(of nodeKey: KeyType) -> [KeyType]
-    
     func cost(from source: KeyType, to dest: KeyType, isAvoidingMCD: Bool, isAvoidingMCC: Bool) -> Double?
-    
     func heuristic(from source: KeyType, to dest: KeyType) -> Double
-    
 }
 
-extension Graph: AStarPathable {
+extension Graph : AStarPathable {
     
     public typealias KeyType = Vertex
     
@@ -158,24 +135,20 @@ extension Graph: AStarPathable {
         } else {
             return []
         }
-        
     }
     
     public func cost(from source: Vertex, to dest: Vertex, isAvoidingMCD: Bool, isAvoidingMCC: Bool) -> Double? {
         if let edgesFromSource = adjacencyDict[source] {
             let result = edgesFromSource.filter { $0.destination == dest }
             if !result.isEmpty {
-                guard let first = result.first else { return nil }
+                guard
+                    let first = result.first
+                else { return nil }
                 if first.source.isMCD || first.destination.isMCD {
                     if isAvoidingMCD {
                         return first.weight + 250
                     }
                 }
-//                if first.source.isMCC || first.destination.isMCC {
-//                    if isAvoidingMCC {
-//                        return first.weight + 350
-//                    }
-//                }
                 return first.weight
             }
         }
@@ -185,14 +158,11 @@ extension Graph: AStarPathable {
     public func heuristic(from s: Vertex, to t: Vertex) -> Double {
         let dx = abs(s.x - t.x)
         let dy = abs(s.y - t.y)
-//        return max(dx,dy) + 0.41 * min(dx,dy)
         return 1 * (dx + dy) + (1 - 2 * 1) * min(dx, dy)
-        
     }
-    
 }
 
-extension Graph: NSCopying {
+extension Graph : NSCopying {
     
     public func copy(with zone: NSZone? = nil) -> Any {
         let copy = Graph()

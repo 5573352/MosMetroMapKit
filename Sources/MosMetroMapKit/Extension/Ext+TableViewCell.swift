@@ -1,9 +1,7 @@
 //
 //  Ext+TableViewCell.swift
-//  MosmetroNew
 //
 //  Created by Кузин Павел on 18.06.2021.
-//  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit

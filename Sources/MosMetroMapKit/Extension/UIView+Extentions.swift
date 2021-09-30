@@ -1,9 +1,7 @@
 //
 //  UIView+Extentions.swift
-//  MosmetroNew
 //
 //  Created by Павел Кузин on 24.11.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit
@@ -31,7 +29,6 @@ enum Corners {
 }
 
 extension UIView {
-    // MARK: - Load From Nib
     /**
      Load the view from a nib file called with the name of the class;
       - note: The first object of the nib file **must** be of the matching class
@@ -44,7 +41,6 @@ extension UIView {
         return nib.instantiate(withOwner: nil, options: nil).first as! Self
     }
     
-    // MARK: - Constraints
     /**
      Method **adds** a view to the superView, seted translatesAutoresizingMaskIntoConstraints to **false** and activates constrates
      - parameters:
@@ -58,7 +54,6 @@ extension UIView {
         }
     }
     
-    // MARK: - Round Cornerns
     /**
      Sets the cornerRadius for selected corners from **Corners** enum
      - parameters:
@@ -124,7 +119,6 @@ extension UIView {
         }
     }
     
-    //MARK: - AS Image
     /**
     Converts the view into an image
      */
@@ -135,7 +129,6 @@ extension UIView {
         }
     }
     
-    //MARK: - Set Gradient Background
     /**
      Adds a gradient layer **at 0** to the view with a color from **top** to **botom**
      */
@@ -176,8 +169,8 @@ extension UIView {
     }
 }
 
-//MARK: - Shadows
 extension UIView {
+    
     public func setShadow() {
         self.layer.shadowColor   = UIColor.black.cgColor
         self.layer.shadowOpacity = 0.1

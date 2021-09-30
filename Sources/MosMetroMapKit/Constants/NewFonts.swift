@@ -1,9 +1,7 @@
 //
 //  NewFonts.swift
-//  MosmetroNew
 //
 //  Created by Владимир Камнев on 16.06.2021.
-//  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit

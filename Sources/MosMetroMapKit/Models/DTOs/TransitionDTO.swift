@@ -19,7 +19,7 @@ class TransitionPartDTO {
     }
 }
 
-class TransitionDTO: EdgeDTO {
+class TransitionDTO : EdgeDTO {
     
     var wagons = [TransitionPartDTO]()
     var pathVideoURL: String = "no"

@@ -1,40 +1,37 @@
 //
 //  GraphicsModels.swift
-//  MosmetroNew
 //
 //  Created by Сеня Римиханов on 27.05.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 public struct ShapesGroup {
-    var shapes: [ShapeDrawingData]
+    var shapes : [ShapeDrawingData]
 }
 
 public struct GradientDrawingData {
-    let cgImage: CGImage
-    let frame: CGRect
+    let cgImage : CGImage
+    let frame   : CGRect
 }
+
 public struct ShapeDrawingData {
-    var path: CGPath
-    let name: String
-    var fillColor: UIColor?
-    var strokeColor: UIColor?
-    var strokeWidth: CGFloat?
-    var transform: CGAffineTransform
-    
+    var path        : CGPath
+    let name        : String
+    var fillColor   : UIColor?
+    var strokeColor : UIColor?
+    var strokeWidth : CGFloat?
+    var transform   : CGAffineTransform
 }
 
 public struct AdditionalDrawindData {
-    let cgImage: CGImage
-    let frame: CGRect
+    let cgImage : CGImage
+    let frame   : CGRect
 }
 
 public struct TextDrawingData {
-    let frame: CGRect
-    let text: String
+    let frame : CGRect
+    let text  : String
 }
 
 public struct MapDrawingOptions {

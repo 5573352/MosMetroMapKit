@@ -1,9 +1,7 @@
 //
 //  FloatingPanel+Extentions.swift
-//  MosmetroNew
 //
 //  Created by Павел Кузин on 08.12.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit

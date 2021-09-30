@@ -1,9 +1,7 @@
 //
 //  MCDSchedule.swift
-//  MosmetroNew
 //
 //  Created by Сеня Римиханов on 20.12.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit

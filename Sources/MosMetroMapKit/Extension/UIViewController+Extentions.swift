@@ -1,9 +1,7 @@
 //
 //  UIViewController+Extentions.swift
-//  MosmetroNew
 //
 //  Created by Павел Кузин on 07.12.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit
@@ -11,7 +9,6 @@ import FloatingPanel
 
 extension UIViewController {
     
-    // MARK: Keyboard hide when tapped around
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false

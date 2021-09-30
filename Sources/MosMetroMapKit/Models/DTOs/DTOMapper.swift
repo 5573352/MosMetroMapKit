@@ -139,22 +139,22 @@ public class DTOMapper {
         let originalIcon   = UIImage(named: "line_\(dto.order)") ?? UIImage()
         let invertedIcon   = UIImage(named: "line_\(dto.order) inverted") ?? UIImage()
         let neighbourLines = [Line.NeighbourLine]()
-        for lineID in dto.neighbourLinesIDs {
-            if let neighbourLineDTO = realmContext.fetch(LineDTO.self, primaryKey: lineID) {
-                let line = map(neighbourLineDTO)
-                neighbourLines.append(
-                    Line.NeighbourLine(
-                        id             : line.id,
-                        name           : line.name,
-                        color          : line.color,
-                        originalIcon   : line.originalIcon,
-                        invertedIcon   : line.invertedIcon,
-                        firstStationID : line.firstStationID,
-                        lastStationID  : line.lastStationID
-                    )
-                )
-            }
-        }
+//        for lineID in dto.neighbourLinesIDs {
+//            if let neighbourLineDTO = realmContext.fetch(LineDTO.self, primaryKey: lineID) {
+//                let line = map(neighbourLineDTO)
+//                neighbourLines.append(
+//                    Line.NeighbourLine(
+//                        id             : line.id,
+//                        name           : line.name,
+//                        color          : line.color,
+//                        originalIcon   : line.originalIcon,
+//                        invertedIcon   : line.invertedIcon,
+//                        firstStationID : line.firstStationID,
+//                        lastStationID  : line.lastStationID
+//                    )
+//                )
+//            }
+//        }
         return Line(
             id                : dto.id,
             name              : name,

@@ -1,12 +1,16 @@
-
+//
+//  TrainsWorkLoad.swift
+//
+//  Created by Павел Кузин on 21.04.2021.
+//
 
 public class Vertex {
-    public let id: Int
-    public let x: Double
-    public let y: Double
-    public let isMCD: Bool
-    public let isMCC: Bool
-    public let isOutside: Bool
+    public let id        : Int
+    public let x         : Double
+    public let y         : Double
+    public let isMCD     : Bool
+    public let isMCC     : Bool
+    public let isOutside : Bool
     
     init(id: Int, x: Double, y: Double, isMCD: Bool, isOutside: Bool, isMCC: Bool) {
         self.id = id
@@ -19,6 +23,7 @@ public class Vertex {
 }
 
 extension Vertex: Hashable {
+    
 	public var hashValue: Int {
 		return "\(id)".hashValue
 	}

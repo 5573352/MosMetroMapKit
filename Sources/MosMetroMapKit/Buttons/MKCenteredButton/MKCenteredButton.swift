@@ -1,9 +1,7 @@
 //
 //  MKCenteredButton.swift
-//  MosmetroNew
 //
 //  Created by Сеня Римиханов on 20.10.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit

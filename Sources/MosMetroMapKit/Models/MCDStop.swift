@@ -1,9 +1,7 @@
 //
 //  MCDStop.swift
-//  MosmetroClip
 //
 //  Created by Павел Кузин on 21.04.2021.
-//  Copyright © 2021 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit
@@ -27,21 +25,33 @@ struct MCDStop {
 extension MCDStop {
     
     static private func map(data: JSON, all: [StationDTO]) -> MCDStop? {
-        if let arrival = data["prib"].string?.toDate()?.date, let stationDTO = all.filter({ $0.id == data["stationId"].intValue }).first, let line = stationDTO.line {
-            return MCDStop(arrival: arrival,
-                           passing: data["passing"].boolValue,
-                           platform: data["platform"].int,
-                           order: data["seq"].intValue,
-                           fact: data["fact"].string?.toDate()?.date,
-                           stationName: stationDTO.name,
-                           color: line.uiColor)
+        if let arrival    = data["prib"].string?.toDate()?.date,
+           let stationDTO = all.filter({ $0.id == data["stationId"].intValue }).first,
+           let line       = stationDTO.line {
+            return MCDStop(
+                arrival     : arrival,
+                passing     : data["passing"].boolValue,
+                platform    : data["platform"].int,
+                order       : data["seq"].intValue,
+                fact        : data["fact"].string?.toDate()?.date,
+                stationName : stationDTO.name,
+                color       : line.uiColor
+            )
         }
         return nil
     }
     
     static public func getStops(by idtr: Int, for all: [StationDTO], callback: @escaping (Result<[MCDStop],FutureNetworkError>) -> ()) {
         let service = FutureNetworkService()
-        let req = Request(httpMethod: .GET, httpProtocol: .HTTPS, contentType: .json, endpoint: .thread , body: nil, baseURL: "devapp.mosmetro.ru", lastComponent: "\(idtr)")
+        let req = Request(
+            httpMethod    : .GET,
+            httpProtocol  : .HTTPS,
+            contentType   : .json,
+            endpoint      : .thread ,
+            body          : nil,
+            baseURL       : "devapp.mosmetro.ru",
+            lastComponent : "\(idtr)"
+        )
         service.request(req, callback: { result in
             switch result {
             case .success(let response):

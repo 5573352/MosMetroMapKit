@@ -1,17 +1,13 @@
 //
 //  String+Extentions.swift
-//  MosmetroNew
 //
 //  Created by Павел Кузин on 07.12.2020.
-//  Copyright © 2020 Гусейн Римиханов. All rights reserved.
 //
 
 import UIKit
 
-// MARK: - String
 extension String {
     
-    // MARK: - HTML
     var htmlToAttributedString: NSAttributedString? {
         guard let data = data(using: .utf8) else { return NSAttributedString() }
         do {
@@ -25,7 +21,6 @@ extension String {
         return htmlToAttributedString?.string ?? ""
     }
     
-    // MARK: - Capitalize Firsst letter
     /**
         Method capitalized first letter in a string
     */
@@ -49,9 +44,8 @@ extension String {
     }
 }
 
-// MARK: - Attributed string
 extension NSMutableAttributedString {
-    //MARK: - Font Face
+    
     /**
      Method for
      */
