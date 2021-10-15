@@ -303,11 +303,12 @@ class RouteDetailsController: BaseController {
             for wayData in workload.wayData {
                 if wayData.towardsStationID == sectionData.directionID {
                     let trains = wayData.data.map {
-                        return LineLoadWagonsTableViewCell.ViewState(color: sectionData.color,
-                                                                     arrivalTime: $0.arrivalTime,
-                                                                     onSelect: {},
-                                                                     wagons: $0.wagonsWorkload.map { LineLoadWagonsTableViewCell.ViewState.Load(rawValue: $0.rawValue)!  },
-                                                                     isStanding: $0.status == .standing ? true : false)
+                        return LineLoadWagonsTableViewCell.ViewState(
+                            color       : sectionData.color,
+                            arrivalTime : $0.arrivalTime,
+                            onSelect    : {},
+                            wagons      : $0.wagonsWorkload.map { LineLoadWagonsTableViewCell.ViewState.Load(rawValue: $0.rawValue)!  },
+                            isStanding  : $0.status == .standing ? true : false)
                     }
                     let infoWagonRows = RouteDetailsView.ViewState.InfoWagonLoad(color: sectionData.color, info: NSLocalizedString("Nearest trains and workload", tableName: nil, bundle: .mm_Map, value: "", comment: ""))
                     let lastUpdate = RouteDetailsView.ViewState.LastUpdateWagonLoad(color: sectionData.color, lastUpdate: "\(NSLocalizedString("Last update – ", tableName: nil, bundle: .mm_Map, value: "", comment: ""))\(Date().dateByAdding(3, .hour).toFormat("HH:mm:ss"))")

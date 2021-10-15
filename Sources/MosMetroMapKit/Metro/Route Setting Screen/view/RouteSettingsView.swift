@@ -54,7 +54,7 @@ class RouteSettingsView : BasePanBackgroundView {
     private let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = .mm_Headline_3
-        titleLabel.text = "Routes settings".localized()
+        titleLabel.text = NSLocalizedString("Routes settings", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         titleLabel.textColor = .mm_TextPrimary
         titleLabel.adjustsFontSizeToFitWidth = true
         
@@ -82,7 +82,7 @@ class RouteSettingsView : BasePanBackgroundView {
     
     private let saveButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Save".localized(), for: .normal)
+        button.setTitle(NSLocalizedString("Save", tableName: nil, bundle: .mm_Map, value: "", comment: ""), for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.backgroundColor = .mm_Main
         button.roundCorners(.all, radius: 8)

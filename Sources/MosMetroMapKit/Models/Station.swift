@@ -83,39 +83,39 @@ struct Station: Hashable {
         var stationDesc: String {
             switch self {
             case .bank:
-                return "ATM available".localized()
+                return NSLocalizedString("ATM available", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .coffee:
-                return "Coffee".localized()
+                return NSLocalizedString("Coffee", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .flowers:
-                return "Flowers shop".localized()
+                return NSLocalizedString("Flowers shop", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .battery:
-                return "Gadget charger".localized()
+                return NSLocalizedString("Gadget charger", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .toilet:
-                return "WC".localized()
+                return NSLocalizedString("WC", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .candyshop:
-                return "Candy shop".localized()
+                return NSLocalizedString("Candy shop", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .optics:
-                return "Optics shop".localized()
+                return NSLocalizedString("Optics shop", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .carrier:
-                return "Mobile carrier store".localized()
+                return NSLocalizedString("Mobile carrier store", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .theatre:
-                return "Theatre tickets".localized()
+                return NSLocalizedString("Theatre tickets", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .food:
-                return "Food".localized()
+                return NSLocalizedString("Food", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .vending:
-                return "Vending".localized()
+                return NSLocalizedString("Vending", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .print:
-                return "Print".localized()
+                return NSLocalizedString("Print", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .sales:
-                return "Sales point".localized()
+                return NSLocalizedString("Sales point", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .invalid:
-                return "Avalaible for people with low mobility".localized()
+                return NSLocalizedString("Avalaible for people with low mobility", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .elevator:
-                return "Elevator".localized()
+                return NSLocalizedString("Elevator", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .info:
-                return "Information desk".localized()
+                return NSLocalizedString("Information desk", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .parking:
-                return "Park and Ride".localized()
+                return NSLocalizedString("Park and Ride", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             }
         }
         

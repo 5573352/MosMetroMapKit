@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Medium.otf">
+            <string>MoscowSans-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="epn-lA-oup" customClass="MCDExpandView" customModule="MosMetroMapKit">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRk-Ab-Dhr">
+                    <rect key="frame" x="50" y="37" width="5" height="30"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c3r-bP-Cz7">
+                            <rect key="frame" x="1" y="1" width="3" height="30"/>
+                            <color key="backgroundColor" name="BaseIOS"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="grey"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="c3r-bP-Cz7" secondAttribute="bottom" constant="-1" id="AGY-Qw-JVH"/>
+                        <constraint firstAttribute="width" constant="5" id="FLf-nE-k7T"/>
+                        <constraint firstItem="c3r-bP-Cz7" firstAttribute="leading" secondItem="nRk-Ab-Dhr" secondAttribute="leading" constant="1" id="QRb-x8-N3M"/>
+                        <constraint firstAttribute="trailing" secondItem="c3r-bP-Cz7" secondAttribute="trailing" constant="1" id="aZ1-l8-tJD"/>
+                        <constraint firstItem="c3r-bP-Cz7" firstAttribute="top" secondItem="nRk-Ab-Dhr" secondAttribute="top" constant="1" id="adl-1W-aGR"/>
+                        <constraint firstAttribute="height" constant="30" id="x78-bI-XJF"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F39-jM-VBS">
+                    <rect key="frame" x="50" y="-2" width="5" height="30"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oht-vs-FS7">
+                            <rect key="frame" x="1" y="-1" width="3" height="30"/>
+                            <color key="backgroundColor" name="BaseIOS"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="grey"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="5" id="3Ra-Yx-KS0"/>
+                        <constraint firstItem="oht-vs-FS7" firstAttribute="top" secondItem="F39-jM-VBS" secondAttribute="top" constant="-1" id="Tjt-93-jE7"/>
+                        <constraint firstAttribute="bottom" secondItem="oht-vs-FS7" secondAttribute="bottom" constant="1" id="WU3-9n-FY3"/>
+                        <constraint firstItem="oht-vs-FS7" firstAttribute="leading" secondItem="F39-jM-VBS" secondAttribute="leading" constant="1" id="dKc-KG-uws"/>
+                        <constraint firstAttribute="height" constant="30" id="vNw-WD-5Ds"/>
+                        <constraint firstAttribute="trailing" secondItem="oht-vs-FS7" secondAttribute="trailing" constant="1" id="yfk-bX-VZd"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhj-Qs-hxb">
+                    <rect key="frame" x="51" y="31" width="3" height="3"/>
+                    <color key="backgroundColor" name="grey"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="9qw-9G-FOL"/>
+                        <constraint firstAttribute="width" constant="3" id="tfY-80-moI"/>
+                    </constraints>
+                </view>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gIf-7X-az2">
+                    <rect key="frame" x="50" y="-2" width="5" height="69"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfK-SV-jio">
+                            <rect key="frame" x="1" y="-1" width="3" height="71"/>
+                            <color key="backgroundColor" name="BaseIOS"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="grey"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="5" id="DKp-lJ-U0W"/>
+                        <constraint firstItem="HfK-SV-jio" firstAttribute="leading" secondItem="gIf-7X-az2" secondAttribute="leading" constant="1" id="aI3-Fo-5MV"/>
+                        <constraint firstAttribute="trailing" secondItem="HfK-SV-jio" secondAttribute="trailing" constant="1" id="ucw-gQ-tag"/>
+                        <constraint firstAttribute="bottom" secondItem="HfK-SV-jio" secondAttribute="bottom" constant="-1" id="wri-FH-tUW"/>
+                        <constraint firstItem="HfK-SV-jio" firstAttribute="top" secondItem="gIf-7X-az2" secondAttribute="top" constant="-1" id="z5e-3M-h7W"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Los-HF-gGg">
+                    <rect key="frame" x="67" y="17.5" width="113.5" height="30"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bp7-TR-YwO">
+                            <rect key="frame" x="10" y="0.0" width="93.5" height="30"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChR-Tf-FT3">
+                                    <rect key="frame" x="0.0" y="0.0" width="33.5" height="30"/>
+                                    <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="13"/>
+                                    <color key="textColor" name="text"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pj8-18-XZp">
+                                    <rect key="frame" x="53.5" y="0.0" width="40" height="30"/>
+                                    <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="13"/>
+                                    <state key="normal" title="Button">
+                                        <color key="titleColor" name="main"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="handleExpand:" destination="epn-lA-oup" eventType="touchUpInside" id="Ewj-wY-2yL"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="0fq-Wb-VSA"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="card_background"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="H25-RG-8Kf"/>
+                        <constraint firstAttribute="trailing" secondItem="Bp7-TR-YwO" secondAttribute="trailing" constant="10" id="Qna-vp-7uO"/>
+                        <constraint firstItem="Bp7-TR-YwO" firstAttribute="top" secondItem="Los-HF-gGg" secondAttribute="top" id="ROc-zI-oSw"/>
+                        <constraint firstItem="Bp7-TR-YwO" firstAttribute="leading" secondItem="Los-HF-gGg" secondAttribute="leading" constant="10" id="ThI-dS-Hqa"/>
+                        <constraint firstAttribute="bottom" secondItem="Bp7-TR-YwO" secondAttribute="bottom" id="kEG-Jv-1r1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="4LK-wE-zh0"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Qhj-Qs-hxb" firstAttribute="leading" secondItem="epn-lA-oup" secondAttribute="leading" constant="51" id="3Kp-eL-8Iv"/>
+                <constraint firstItem="Qhj-Qs-hxb" firstAttribute="top" secondItem="epn-lA-oup" secondAttribute="top" constant="31" id="8nw-AO-Ejo"/>
+                <constraint firstItem="Los-HF-gGg" firstAttribute="leading" secondItem="nRk-Ab-Dhr" secondAttribute="trailing" constant="12" id="Fz0-0F-n67"/>
+                <constraint firstAttribute="bottom" secondItem="nRk-Ab-Dhr" secondAttribute="bottom" constant="-2" id="KyR-Op-fLy"/>
+                <constraint firstItem="Los-HF-gGg" firstAttribute="centerY" secondItem="epn-lA-oup" secondAttribute="centerY" id="MMh-B3-OOn"/>
+                <constraint firstItem="nRk-Ab-Dhr" firstAttribute="leading" secondItem="4LK-wE-zh0" secondAttribute="leading" constant="50" id="dqd-pU-2gb"/>
+                <constraint firstItem="F39-jM-VBS" firstAttribute="leading" secondItem="epn-lA-oup" secondAttribute="leading" constant="50" id="g3d-s4-GV9"/>
+                <constraint firstItem="nRk-Ab-Dhr" firstAttribute="top" secondItem="F39-jM-VBS" secondAttribute="bottom" constant="9" id="hwI-R3-X02"/>
+                <constraint firstItem="gIf-7X-az2" firstAttribute="top" secondItem="epn-lA-oup" secondAttribute="top" constant="-2" id="kSR-cb-XdA"/>
+                <constraint firstItem="4LK-wE-zh0" firstAttribute="bottom" secondItem="gIf-7X-az2" secondAttribute="bottom" constant="-2" id="tSf-3f-wd9"/>
+                <constraint firstItem="gIf-7X-az2" firstAttribute="leading" secondItem="epn-lA-oup" secondAttribute="leading" constant="50" id="xii-f3-xL4"/>
+                <constraint firstItem="F39-jM-VBS" firstAttribute="top" secondItem="epn-lA-oup" secondAttribute="top" constant="-2" id="yK0-fO-uTq"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="bottomInnerLinePathView" destination="c3r-bP-Cz7" id="dMl-Do-w1T"/>
+                <outlet property="bottomLinePathView" destination="nRk-Ab-Dhr" id="Cbt-JS-MEZ"/>
+                <outlet property="chipView" destination="Los-HF-gGg" id="8Lv-75-6Ew"/>
+                <outlet property="expandButton" destination="pj8-18-XZp" id="Mzb-bZ-q3s"/>
+                <outlet property="hiddenPathView" destination="gIf-7X-az2" id="G8L-B3-FZJ"/>
+                <outlet property="miniCircle" destination="Qhj-Qs-hxb" id="kfk-ic-WOs"/>
+                <outlet property="stationsCountLabel" destination="ChR-Tf-FT3" id="GwX-on-Rpl"/>
+                <outlet property="topHeightAnchor" destination="vNw-WD-5Ds" id="bRc-IY-6rY"/>
+                <outlet property="topInnerLinePathView" destination="oht-vs-FS7" id="jHg-wh-pXc"/>
+                <outlet property="topLinePathView" destination="F39-jM-VBS" id="6dz-aZ-lts"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="-280.24553571428572"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="BaseIOS">
+            <color red="0.94499999284744263" green="0.94900000095367432" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="card_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey">
+            <color red="0.59600001573562622" green="0.60000002384185791" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main">
+            <color red="0.85500001907348633" green="0.12200000137090683" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

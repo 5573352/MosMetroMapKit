@@ -34,7 +34,7 @@ class StationActionsTableViewCell: UITableViewCell {
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: 11),
                     NSAttributedString.Key.foregroundColor: UIColor.mm_Green
                 ]))
-                title.append(NSMutableAttributedString(string: "Schedule online".localized(), attributes: [
+                title.append(NSMutableAttributedString(string: NSLocalizedString("Schedule online", tableName: nil, bundle: .mm_Map, value: "", comment: ""), attributes: [
                     NSAttributedString.Key.foregroundColor: UIColor.mm_TextPrimary
                 ]))
                 _trainsButton.titleLabel?.attributedText = title
@@ -55,11 +55,11 @@ class StationActionsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         _transportsButton.iconImageView?.image = UIImage(named: "bus_template_icon", in: .mm_Map, compatibleWith: nil)!
         _transportsButton.iconImageView?.tintColor = .mm_TextPrimary
-        _transportsButton.titleLabel?.text = "Exits and transport".localized()
+        _transportsButton.titleLabel?.text = NSLocalizedString("Exits and transport", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         
         _trainsButton.iconImageView?.image = UIImage(named: "clock_template", in: .mm_Map, compatibleWith: nil)!
         _trainsButton.iconImageView?.tintColor = .mm_TextPrimary
-        _trainsButton.titleLabel?.text = "Schedule".localized()
+        _trainsButton.titleLabel?.text = NSLocalizedString("Schedule", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         bookmarkButton.roundCorners(.all, radius: 7)
         trainsButton.roundCorners(.all, radius: 7)
         transportsButton.roundCorners(.all, radius: 7)

@@ -68,7 +68,7 @@ class MetroFilterView : BasePanBackgroundView {
     private let titleLabel: UILabel = {
         let titleLabel = UILabel()
         titleLabel.font = .mm_Headline_3
-        titleLabel.text = "Filters".localized()
+        titleLabel.text = NSLocalizedString("Filters", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         titleLabel.textColor = .mm_TextPrimary
         titleLabel.adjustsFontSizeToFitWidth = true
         

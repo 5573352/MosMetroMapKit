@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MCDScheduleViewController" customModule="MosmetroClip" customModuleProvider="target">
+            <connections>
+                <outlet property="scrollButton" destination="Hum-3e-IkI" id="n35-aJ-2OL"/>
+                <outlet property="segmentControl" destination="saE-cW-qwn" id="yE1-Pc-O11"/>
+                <outlet property="tableView" destination="rz6-Qu-SDC" id="5jB-l1-loI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="rz6-Qu-SDC">
+                    <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                    <color key="backgroundColor" name="Base"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="saE-cW-qwn" customClass="HMSegmentedControl">
+                    <rect key="frame" x="20" y="44" width="374" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="rMg-dY-lSK"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ywa-s8-o69"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hum-3e-IkI">
+                    <rect key="frame" x="354" y="798" width="44" height="44"/>
+                    <color key="backgroundColor" name="opacityButton"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="7qr-rE-7lS"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="7xY-7O-bg2"/>
+                        <constraint firstAttribute="height" constant="44" id="Oj5-EQ-Gcs"/>
+                        <constraint firstAttribute="width" constant="44" id="uls-HM-dxF"/>
+                    </constraints>
+                    <color key="tintColor" name="main"/>
+                    <state key="normal" image="RedArrow"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="22"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="scrollToDevider:" destination="-1" eventType="touchUpInside" id="IHY-Xx-a1j"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="Base"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Hum-3e-IkI" secondAttribute="bottom" constant="20" id="6jT-La-SM4"/>
+                <constraint firstItem="saE-cW-qwn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7Ja-lF-1o5"/>
+                <constraint firstItem="rz6-Qu-SDC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BuF-9F-QtK"/>
+                <constraint firstItem="rz6-Qu-SDC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="POV-hH-gJK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="saE-cW-qwn" secondAttribute="trailing" constant="20" id="Sb0-hg-XJD"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Hum-3e-IkI" secondAttribute="trailing" constant="16" id="UjS-lh-DDb"/>
+                <constraint firstItem="saE-cW-qwn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YcD-5e-8sq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="rz6-Qu-SDC" secondAttribute="bottom" id="g0V-eP-ROf"/>
+                <constraint firstItem="rz6-Qu-SDC" firstAttribute="top" secondItem="saE-cW-qwn" secondAttribute="bottom" id="gVp-tI-Zgz"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="RedArrow" width="20" height="20"/>
+        <namedColor name="Base">
+            <color red="0.97600001096725464" green="0.97600001096725464" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main">
+            <color red="0.85500001907348633" green="0.12200000137090683" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="opacityButton">
+            <color red="1" green="1" blue="1" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

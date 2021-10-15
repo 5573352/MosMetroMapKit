@@ -79,7 +79,7 @@ class LineLoadWagonsTableViewCell : UITableViewCell {
         if case .unknown = load {
             return .grey
         } else {
-           return UIColor(named: load.rawValue) ?? UIColor.grey
+            return UIColor(named: load.rawValue, in: .mm_Map, compatibleWith: nil) ?? UIColor.grey
         }
     }
     

@@ -34,8 +34,8 @@ class MetroFilterController : BasePanController {
             self.onClose?()
         }
         metroFilterView.buttonsState = MetroFilterView.ButtonsState(
-            mainButtonTitle      : "Apply".localized(),
-            secondaryButtonTitle : "Clear".localized(),
+            mainButtonTitle      : NSLocalizedString("Apply", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
+            secondaryButtonTitle : NSLocalizedString("Clear", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
             onButtonTap          : { [weak self] button in
                 guard let self = self else { return }
                 self.handleButtonTap(button, self)
@@ -46,29 +46,13 @@ class MetroFilterController : BasePanController {
         switch button {
         case .main:
             self.onSubmitSelect?(self.settedFilters)
-            #if MAIN_APP || APPCLIP
-            AnalyticsService.reportEvent(with: "newmetro.views.metro.filterFeatures", parameters: self.featuresDict)
-            #endif
             for (key, value) in self.featuresDict where value == true {
                 self.combine.append(key)
             }
-            #if MAIN_APP || APPCLIP
-            AnalyticsService.reportEvent(with: "newmetro.metro.combineFeatures", parameters: ["features" : self.combine])
-            #endif
         case .secondary:
-            #if MAIN_APP || APPCLIP
-            AnalyticsService.reportEvent(with: "newmetro.metro.tap.resetFilter")
-            #endif
             self.settedFilters.removeAll()
             self.onClearSelect?()
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        #if MAIN_APP || APPCLIP
-        AnalyticsService.reportEvent(with: "newmetro.views.metro.filter")
-        #endif
     }
 }
 
@@ -76,8 +60,8 @@ extension MetroFilterController {
     
     private func setState() {
         let discalaimerRow = MetroFilterView.ViewState.Disclaimer(
-            title          : "Find station by filters".localized(),
-            detailText     : "Select one or several filters to find matching station".localized()
+            title          : NSLocalizedString("Find station by filters", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
+            detailText     : NSLocalizedString("Select one or several filters to find matching station", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         )
         let disclaimerSection = Section(
             title          : "",

@@ -69,14 +69,14 @@ class MetroSearchView: UIView {
     
     private let favoriteStationsButton: UnderlineButton = {
         let button = UnderlineButton()
-        button.setTitle("Favorites".localized(), for: .normal)
+        button.setTitle(NSLocalizedString("Favorites", tableName: nil, bundle: .mm_Map, value: "", comment: ""), for: .normal)
         button.isSetted = true
         return button
     }()
     
     private let latestRoutesButton: UnderlineButton = {
         let button = UnderlineButton()
-        button.setTitle("History".localized(), for: .normal)
+        button.setTitle(NSLocalizedString("History", tableName: nil, bundle: .mm_Map, value: "", comment: ""), for: .normal)
         button.isSetted = false
         return button
     }()
@@ -119,7 +119,7 @@ class MetroSearchView: UIView {
         let label = UILabel()
         label.font = .mm_Body_15_Bold
         label.textColor = .mm_TextPrimary
-        label.text = "Search results".localized()
+        label.text = NSLocalizedString("Search results", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         label.alpha = 0
         return label
     }()
@@ -240,9 +240,9 @@ extension MetroSearchView: UITableViewDataSource {
                 guard
                     let cell = tableView.dequeueReusableCell(withIdentifier: ImagePlaceholderTableCell.reuseID, for: indexPath) as? ImagePlaceholderTableCell
                 else { return UITableViewCell() }
-                cell.placeholderImageView.image = #imageLiteral(resourceName: "No search data")
-                cell.placeholderTitleLabel.text = "We can not find station with given name".localized()
-                cell.placeholderSubtitleLabel.text = "Try again with another name".localized()
+                cell.placeholderImageView.image = UIImage(named: "No search data", in: .mm_Map, compatibleWith: nil)
+                cell.placeholderTitleLabel.text = NSLocalizedString("We can not find station with given name", tableName: nil, bundle: .mm_Map, value: "", comment: "")
+                cell.placeholderSubtitleLabel.text = NSLocalizedString("Try again with another name", tableName: nil, bundle: .mm_Map, value: "", comment: "")
                 return cell
             } else {
                 guard let data = items[safe: indexPath.row] else { return UITableViewCell() }

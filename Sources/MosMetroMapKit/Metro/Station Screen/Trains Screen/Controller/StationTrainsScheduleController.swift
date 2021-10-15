@@ -11,7 +11,7 @@ import UIKit
 class StationTrainsScheduleController: BasePanFullScreenController  {
     
     convenience init() {
-        self.init(nibName: "BasePanFullScreenController", bundle: nil)
+        self.init(nibName: "BasePanFullScreenController", bundle: .mm_Map)
     }
     
     var model: Station! {
@@ -68,18 +68,18 @@ extension StationTrainsScheduleController {
                     return nil
                 }
                 
-                let state = ViewState.ScheduleData(title: item.key ? "On weekend".localized() : "On weekdays".localized(), oddTimes: oddTimes.first ?? [], evenTimes: evenTimes.first ?? [])
+                let state = ViewState.ScheduleData(title: item.key ? NSLocalizedString("On weekend", tableName: nil, bundle: .mm_Map, value: "", comment: "") : NSLocalizedString("On weekdays", tableName: nil, bundle: .mm_Map, value: "", comment: ""), oddTimes: oddTimes.first ?? [], evenTimes: evenTimes.first ?? [])
                 rows.append(state)
                 rows.append(ViewState.Divider())
             }
-            sections.append(Section(title: String.localizedStringWithFormat("Towards %@".localized(), schedule.towardsName), isNeedToExpand: false, isExpanded: true, rows: rows, onExpandTap: nil))
+            sections.append(Section(title: String.localizedStringWithFormat(NSLocalizedString("Towards %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), schedule.towardsName), isNeedToExpand: false, isExpanded: true, rows: rows, onExpandTap: nil))
             
         }
         self.viewState = ViewState(sections: sections)
     }
     
     private func setup() {
-        self.titleLabel.text = "Trains schedule".localized()
+        self.titleLabel.text = NSLocalizedString("Trains schedule", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(TrainScheduleTableViewCell.nib, forCellReuseIdentifier: TrainScheduleTableViewCell.identifire)

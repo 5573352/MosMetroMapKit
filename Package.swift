@@ -20,6 +20,7 @@ let package = Package(
         .package(url: "https://github.com/scenee/FloatingPanel",                             .upToNextMajor(from: "2.4.0")),
         .package(url: "https://github.com/SwiftyJSON/SwiftyJSON",                            .upToNextMajor(from: "5.0.1")),
         .package(url: "https://github.com/marcosgriselli/ViewAnimator",                      .upToNextMajor(from: "3.1.0")),
+        .package(name: "HMSegmentedControl", url: "https://github.com/HeshamMegid/HMSegmentedControl",                   .branch("master")),
         .package(name: "Localize_Swift", url: "https://github.com/marmelroy/Localize-Swift", .upToNextMajor(from: "3.2.0"))
     ],
     targets: [
@@ -33,7 +34,8 @@ let package = Package(
                 "FloatingPanel",
                 "SwiftyJSON",
                 "ViewAnimator",
-                "Localize_Swift"
+                "Localize_Swift",
+                "HMSegmentedControl"
             ],
             resources: [
                 .process("Constants/Fonts"),

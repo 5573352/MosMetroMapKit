@@ -76,6 +76,8 @@ class MetroMapView : UIView, MetroMapScrollViewDelegate {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private var chatButton : BlurControl?
 }
 
 extension MetroMapView {
@@ -91,6 +93,21 @@ extension MetroMapView {
             $0.rightAnchor.constraint(equalTo: $1.rightAnchor, constant: 0),
             $0.bottomAnchor.constraint(equalTo: $1.bottomAnchor, constant: 0)
         ]})
+        
+        self.chatButton = BlurControl(frame: .zero, cornerRadius: 10, buttonImage: UIImage(named: "arrow-backward",in: .mm_Map, compatibleWith: nil)!)
+        
+        self.chatButton?.onTap = { [weak self] in
+            guard let self = self else { return }
+            self.onChatButtonTap?()
+        }
+        
+        self.chatButton?.pin(on: self, {[
+            $0.heightAnchor.constraint(equalToConstant: 45),
+            $0.leftAnchor.constraint(equalTo: $1.leftAnchor, constant: 8),
+            $0.widthAnchor.constraint(equalToConstant: 45),
+            $0.topAnchor.constraint(equalTo: $1.safeAreaLayoutGuide.topAnchor, constant: 25)
+        ]})
+        self.insertSubview(chatButton!, at: 5)
         
         self.stationSelectionView.pin(on: self, {[
             $0.heightAnchor.constraint(equalToConstant: 44),

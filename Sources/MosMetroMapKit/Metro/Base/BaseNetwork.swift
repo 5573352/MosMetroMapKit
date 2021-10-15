@@ -33,17 +33,17 @@ extension NetworkError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .serverError:
-            return "Unable to connect to server. Please check your internet connection and try again".localized()
+            return NSLocalizedString("Unable to connect to server. Please check your internet connection and try again", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         case .clientError:
-            return "Unable to connect to server. Please check your internet connection and try again".localized()
+            return NSLocalizedString("Unable to connect to server. Please check your internet connection and try again", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         case .dataIsInvalid:
-            return "Oops! Something went wrong".localized()
+            return NSLocalizedString("Oops! Something went wrong", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         case .errorParsingJSON:
-            return "Oops! Something went wrong".localized()
+            return NSLocalizedString("Oops! Something went wrong", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         case .timeout:
-            return "Oops! Something went wrong".localized()
+            return NSLocalizedString("Oops! Something went wrong", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         case .dataIsEmpty:
-            return "Data is empty".localized()
+            return NSLocalizedString("Data is empty", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         }
     }
 }

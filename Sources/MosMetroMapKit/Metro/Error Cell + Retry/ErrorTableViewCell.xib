@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MoscowSans-Medium.otf">
+            <string>MoscowSans-Medium</string>
+        </array>
+        <array key="MoscowSans-Regular.otf">
+            <string>MoscowSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ErrorTableViewCell" rowHeight="411" id="KGk-i7-Jjw" customClass="ErrorTableViewCell" customModule="MosMetroMapKit">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnj-3r-yDd">
+                        <rect key="frame" x="20" y="174" width="280" height="51"/>
+                        <fontDescription key="fontDescription" name="MoscowSans-Medium" family="Moscow Sans" pointSize="22"/>
+                        <color key="textColor" name="TextPrimary"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADY-6I-tMC">
+                        <rect key="frame" x="20" y="236" width="280" height="15"/>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="15"/>
+                        <color key="textColor" name="TextSecondary"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KlX-2X-qwL">
+                        <rect key="frame" x="20" y="297" width="280" height="44"/>
+                        <color key="backgroundColor" name="lightRed"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="fNx-cN-Lza"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="15"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" name="main"/>
+                        </state>
+                        <connections>
+                            <action selector="handleRetryTap:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Zwe-y9-52H"/>
+                        </connections>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close_square" translatesAutoresizingMaskIntoConstraints="NO" id="Weu-Ai-b2f">
+                        <rect key="frame" x="112" y="53" width="96" height="96"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="96" id="Fln-cQ-GAn"/>
+                            <constraint firstAttribute="width" constant="96" id="Nux-21-Na4"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jnj-3r-yDd" firstAttribute="top" secondItem="Weu-Ai-b2f" secondAttribute="bottom" constant="25" id="02y-i8-Fg2"/>
+                    <constraint firstAttribute="trailing" secondItem="jnj-3r-yDd" secondAttribute="trailing" constant="20" id="5k5-T9-3nf"/>
+                    <constraint firstItem="KlX-2X-qwL" firstAttribute="top" secondItem="ADY-6I-tMC" secondAttribute="bottom" constant="46" id="Ah5-GZ-nvV"/>
+                    <constraint firstItem="ADY-6I-tMC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Gm3-Rx-cgs"/>
+                    <constraint firstAttribute="trailing" secondItem="ADY-6I-tMC" secondAttribute="trailing" constant="20" id="HlB-cJ-MgL"/>
+                    <constraint firstItem="ADY-6I-tMC" firstAttribute="top" secondItem="jnj-3r-yDd" secondAttribute="bottom" constant="11" id="Jf7-9R-HYa"/>
+                    <constraint firstItem="Weu-Ai-b2f" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="42" id="Obo-B5-g1r"/>
+                    <constraint firstItem="KlX-2X-qwL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Vuu-J5-x4o"/>
+                    <constraint firstItem="jnj-3r-yDd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="jHz-4X-IdJ"/>
+                    <constraint firstItem="Weu-Ai-b2f" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="kfW-13-I6m"/>
+                    <constraint firstAttribute="bottom" secondItem="KlX-2X-qwL" secondAttribute="bottom" constant="70" id="my0-Fb-5Ag"/>
+                    <constraint firstAttribute="trailing" secondItem="KlX-2X-qwL" secondAttribute="trailing" constant="20" id="xu5-li-Nr3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="errorDescLabel" destination="ADY-6I-tMC" id="Roq-p4-bV4"/>
+                <outlet property="errorRetryButton" destination="KlX-2X-qwL" id="KYP-84-oEU"/>
+                <outlet property="errorTitle" destination="jnj-3r-yDd" id="nlM-bp-MVd"/>
+            </connections>
+            <point key="canvasLocation" x="-27.536231884057973" y="163.05803571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="close_square" width="96" height="96"/>
+        <namedColor name="TextPrimary">
+            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextSecondary">
+            <color red="0.59600001573562622" green="0.60000002384185791" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="lightRed">
+            <color red="0.98000001907348633" green="0.94099998474121094" blue="0.94499999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="main">
+            <color red="0.85500001907348633" green="0.12200000137090683" blue="0.19200000166893005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

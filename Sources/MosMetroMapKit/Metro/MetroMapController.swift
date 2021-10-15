@@ -124,7 +124,7 @@ class MetroMapController: BaseController {
         }
     }
 }
-// MARK: Common Extensions
+
 extension MetroMapController {
     
     private func handleFilters() {
@@ -166,8 +166,8 @@ extension MetroMapController {
     
     private func setupError() {
         let errorView = ResultView(frame: .zero)
-        errorView.titleLabel.text = "Error".localized()
-        errorView.subtitleLabel.text = "Oops! Something went wrong".localized()
+        errorView.titleLabel.text = NSLocalizedString("Error", tableName: nil, bundle: .mm_Map, value: "", comment: "")
+        errorView.subtitleLabel.text = NSLocalizedString("Oops! Something went wrong", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         errorView.imageView.image = UIImage(named: "close_square")
         errorView.imageView.tintColor = .mm_Red
         errorView.pin(on: self.view) {[
@@ -176,7 +176,7 @@ extension MetroMapController {
         ]}
         let againButton = MKButton()
         againButton.setTitleColor(.white, for: .normal)
-        againButton.setTitle("Retry again".localized(), for: .normal)
+        againButton.setTitle(NSLocalizedString("Retry again", tableName: nil, bundle: .mm_Map, value: "", comment: ""), for: .normal)
         againButton.backgroundColor = .mm_Main
         againButton.titleLabel?.font = UIFont(name: "MoscowSans-Medium", size: 15)
         againButton.addTarget(self, action: #selector(retryTap), for: .touchUpInside)
@@ -309,7 +309,7 @@ extension MetroMapController {
         let fromState = StationSelectTextField.ViewState.init(
             color   : .mm_Textfield,
             image   : nil,
-            title   : "From".localized(),
+            title   : NSLocalizedString("From", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
             onTap   : { [weak self] in
                 guard let self = self else { return }
                 self.presentSearchController(.from)
@@ -323,7 +323,7 @@ extension MetroMapController {
         let toState = StationSelectTextField.ViewState.init(
             color: .mm_Textfield,
             image: nil,
-            title: "To".localized(),
+            title: NSLocalizedString("To", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
             onTap: { [weak self] in
                 guard let self = self else { return }
                 self.presentSearchController(.to)
@@ -463,8 +463,8 @@ extension MetroMapController {
         var routesData = [RoutePreviewCollectionCell.ViewState]()
         for (index,route) in routes.enumerated() {
 
-            let arrivalTime = String.localizedStringWithFormat("arriving in %@".localized(), Utils.getArrivalTime(route.metadata.totalTime))
-            let transitionsAndCost = "\(String.localizedStringWithFormat("transfers count".localized(), route.metadata.transfers)) • \(route.metadata.cost)₽ • \(arrivalTime)"
+            let arrivalTime = String.localizedStringWithFormat(NSLocalizedString("arriving in %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), Utils.getArrivalTime(route.metadata.totalTime))
+            let transitionsAndCost = "\(String.localizedStringWithFormat(NSLocalizedString("transfers count", tableName: nil, bundle: .mm_Map, value: "", comment: ""), route.metadata.transfers)) • \(route.metadata.cost)₽ • \(arrivalTime)"
 
             let state = RoutePreviewCollectionCell.ViewState(time: Utils.getTotalTime(route.metadata.totalTime),
                                                              subtitle: transitionsAndCost,

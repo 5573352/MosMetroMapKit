@@ -13,7 +13,7 @@ class RouteEmergenciesController: BasePanFullScreenController {
     public var service : MetroService?
     
     convenience init() {
-        self.init(nibName: "BasePanFullScreenController", bundle: nil)
+        self.init(nibName: "BasePanFullScreenController", bundle: .mm_Map)
     }
     
     override func viewDidLoad() {

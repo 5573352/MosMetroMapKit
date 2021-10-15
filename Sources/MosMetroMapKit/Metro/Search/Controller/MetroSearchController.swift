@@ -25,9 +25,9 @@ class MetroSearchController : BaseController {
         didSet {
             switch direction {
             case .to:
-                searchController.searchBar.placeholder = "To".localized()
+                searchController.searchBar.placeholder = NSLocalizedString("To", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             case .from:
-                searchController.searchBar.placeholder = "From".localized()
+                searchController.searchBar.placeholder = NSLocalizedString("From", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             }
         }
     }

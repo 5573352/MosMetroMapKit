@@ -239,7 +239,7 @@ extension NestedTableInCollectionCell: UITableViewDelegate {
         if case .loaded(let items) = viewState {
             switch items[indexPath.row] {
             case is ViewState.FavoritesItem:
-                let deleteAction = UITableViewRowAction(style: .default, title: "Remove".localized(), handler: { (action, indexPath) in
+                let deleteAction = UITableViewRowAction(style: .default, title: NSLocalizedString("Remove", tableName: nil, bundle: .mm_Map, value: "", comment: ""), handler: { (action, indexPath) in
                     guard let item = items[safe: indexPath.row] as? ViewState.FavoritesItem else { return }
                     item.onRemove(indexPath.row)
                 })
@@ -248,7 +248,7 @@ extension NestedTableInCollectionCell: UITableViewDelegate {
             case is MetroSearchView.ViewState.StationViewData:
                 guard let item = items[safe: indexPath.row] as? MetroSearchView.ViewState.StationViewData else { return nil }
                 if let onRemove = item.onRemove {
-                    let deleteAction = UITableViewRowAction(style: .default, title: "Remove".localized(), handler: { (action, indexPath) in
+                    let deleteAction = UITableViewRowAction(style: .default, title: NSLocalizedString("Remove", tableName: nil, bundle: .mm_Map, value: "", comment: ""), handler: { (action, indexPath) in
                         onRemove()
                     })
                     deleteAction.backgroundColor = .mm_Red

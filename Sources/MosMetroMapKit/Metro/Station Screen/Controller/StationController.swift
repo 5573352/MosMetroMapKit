@@ -12,8 +12,8 @@ import FloatingPanel
 
 class StationController: BasePanController {
     
-    private let service = NetworkService()
     public var metroService : MetroService?
+    private let service = NetworkService()
     
     public var onClose                 : (()->())?
     public var tipStationScreen        : (()->())?
@@ -55,7 +55,7 @@ class StationController: BasePanController {
                 if !self.model.isMCD {
                     let currentSecond = Date().second
                     let fireAfterSecond = (10 - (currentSecond % 10)) + 2
-                    typeOut("FIRE AFTER = \(fireAfterSecond)")
+                    debugPrint("FIRE AFTER = \(fireAfterSecond)")
                     timer = Timer.scheduledTimer(timeInterval: TimeInterval(fireAfterSecond), target: self, selector: #selector(loadTrains), userInfo: nil, repeats: false)
                     RunLoop.current.add(self.timer, forMode: RunLoop.Mode.common)
                     self.loadTrains()
@@ -75,6 +75,7 @@ class StationController: BasePanController {
             }
         }
     }
+    
     
     private func loadSchedule() {
         MCDSchedule.loadSchedule(by: model.id) { (result) in
@@ -170,33 +171,18 @@ extension StationController {
         }
     }
     
-    // swiftlint:disable all
     private func makeMCDrows(_ stationID: Int, threads: [MCDThread]) -> MCDArrivalTableViewCell.ViewState? {
-        guard
-            let station = metroService?.stationsDTO.values.filter({ $0.id == stationID }).first,
-            let three = MCDThread.getNearestThree(threads: threads)
-        else { return nil }
-        let items: [MCDArrivaleCollectionViewCell.ViewState] = three.map { item in
-            let onSelect = { [weak self] in
-                guard
-                    let self = self
-                else { return }
-//                self.handleMCDRouteTap(thread: item, isFromSchedule: false)
-            }
+        guard let station = metroService?.stationsDTO.values.filter({ $0.id == stationID }).first, let three = MCDThread.getNearestThree(threads: threads) else { return nil }
+            let items: [MCDArrivaleCollectionViewCell.ViewState] = three.map { item in
+                let onSelect = { [weak self] in
+                    guard let self = self else { return }
+                    self.handleMCDRouteTap(thread: item, isFromSchedule: false)
+                }
                 
-            return MCDArrivaleCollectionViewCell.ViewState(
-                arrivalTime : item.getArrivalString(),
-                onSelect    : onSelect,
-                status      : self.mcdStatus(status: item.status),
-                platform    : item.platform,
-                routeNumb   : item.trainNum
-            )
-        }
+                return MCDArrivaleCollectionViewCell.ViewState(arrivalTime: item.getArrivalString(), onSelect: onSelect, status: self.mcdStatus(status: item.status), platform: item.platform, routeNumb: item.trainNum)
+            }
             
-        return MCDArrivalTableViewCell.ViewState(
-            towards: String.localizedStringWithFormat("Towards %@".localized(), station.name),
-            items: items
-        )
+            return MCDArrivalTableViewCell.ViewState(towards: String.localizedStringWithFormat("Towards %@".localized(), station.name), items: items)
     }
 
     private func handleMCDSchedule(_ schedule: MCDSchedule) {
@@ -209,7 +195,7 @@ extension StationController {
                 rows.append(towardsEndRow)
             }
             let lastUpdateRow = StationView.ViewState.TrainsLastUpdate(title: "\("Last update – ".localized())\(Date().dateByAdding(3, .hour).toFormat("HH:mm:ss"))")
-            
+                
             if let first = rows.first, let last = rows.last {
                 if first.items.isEmpty && last.items.isEmpty {
                     DispatchQueue.main.async { [weak self] in
@@ -241,14 +227,7 @@ extension StationController {
             var rows = [WagonsLoadTableViewCell.ViewState]()
             for wayData in workload.wayData {
                 let trains = wayData.data.map {
-                    return WagonLoadCollectionViewCell.ViewState(
-                        arrivalTime: $0.arrivalTime,
-                        onSelect: {},
-                        wagons: $0.wagonsWorkload.map {
-                            WagonLoadCollectionViewCell.ViewState.Load(rawValue: $0.rawValue)!
-                        },
-                        isStanding: $0.status == .standing ? true : false
-                    )
+                    return WagonLoadCollectionViewCell.ViewState(arrivalTime: $0.arrivalTime, onSelect: {}, wagons: $0.wagonsWorkload.map { WagonLoadCollectionViewCell.ViewState.Load(rawValue: $0.rawValue)! }, isStanding: $0.status == .standing ? true : false)
                 }
                 rows.append(WagonsLoadTableViewCell.ViewState(towards: wayData.towardsStationName, items: trains))
             }
@@ -301,6 +280,7 @@ extension StationController {
         if !station.emergency.isEmpty {
             sections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [StationView.ViewState.Divider()], onExpandTap: nil))
         }
+        var onTransport: (()->())? = nil
         let addToFavoritesTitle = "Bookmark".localized()
         let favoritesImage = UIImage(named: "like", in: .mm_Map, compatibleWith: nil)!
         let onBookmark : (()->())? = nil
@@ -316,11 +296,16 @@ extension StationController {
             bookmarkImage: favoritesImage,
             bookmarkTitle: addToFavoritesTitle,
             onTrains: model.schedule.isEmpty ? nil : onTrains,
-            onMCD: nil
-        )
+            onMCD: { [weak self] in
+                if let schedule = self?.mcdSchedule {
+                    guard let self = self else { return }
+//                    self.handleScheduleTap(schedule: schedule)
+                }
+            })
         sections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [actionsRow], onExpandTap: nil))
         actionsRowSectionIndex = sections.endIndex - 1
         
+        // Пересадки
         if let transitions = station.transitions {
             let transfers = transitions.enumerated().map { (index,transitionStation) in
                 return StationView.ViewState.SubtitleData(
@@ -352,8 +337,8 @@ extension StationController {
         if !model!.features.isEmpty {
             var boolRows = [FeatureTableViewCell.ViewState]()
             for index in stride(from: 0, to: model!.features.endIndex - 1, by: 2) {
-                var firstValue: FeatureTableViewCell.ViewState.Feature?
-                var secondValue: FeatureTableViewCell.ViewState.Feature?
+                var firstValue: FeatureTableViewCell.ViewState.Feature? = nil
+                var secondValue: FeatureTableViewCell.ViewState.Feature? = nil
                 if let first = model!.features[safe: index] {
                     firstValue = FeatureTableViewCell.ViewState.Feature(image: first.image, title: first.stationDesc)
                 }
@@ -374,14 +359,37 @@ extension StationController {
             sections.append(Section(title: "Services".localized(), isNeedToExpand: false, isExpanded: true, rows: finalRows, onExpandTap: nil))
         }
         
-        return StationView.ViewState(
-            stationTitle: station.name,
-            sections: sections,
-            onClose: { [weak self] in
-                guard let self = self else { return }
-                self.onClose?()
-            }
-        )
+        return StationView.ViewState(stationTitle: station.name,
+                                     sections: sections,
+                                     onClose: { [weak self] in self?.onClose?() })
+    }
+    
+    private func handleScheduleTap(schedule: MCDSchedule) {
+        guard let service = self.metroService else { return }
+        let scheduleVC = MCDScheduleViewController()
+        let nav = BaseNavigationController(rootViewController: scheduleVC)
+
+        self.present(nav, animated: true, completion: nil)
+        
+
+        if let startStation = service.stationsDTO.values.filter({ $0.id == model.line.firstStationID }).first,
+           let endStation = service.stationsDTO.values.filter({ $0.id == model.line.lastStationID }).first {
+            scheduleVC.towardsStartName = String.localizedStringWithFormat("To %@".localized(), startStation.name)
+            scheduleVC.towardsEndName = String.localizedStringWithFormat("To %@".localized(), endStation.name)
+        }
+     
+        scheduleVC.towardsStart = schedule.start
+        scheduleVC.towardsEnd = schedule.end
+        scheduleVC.setTitle("\(model.name)")
+    }
+
+    private func handleMCDRouteTap(thread: MCDThread, isFromSchedule: Bool) {
+        let routeVC = MCDRouteScreen()
+        let nav = BaseNavigationController(rootViewController: routeVC)
+        self.present(nav, animated: true, completion: nil)
+        routeVC.title = "Route".localized() + " \("№\(thread.trainNum)")"
+        routeVC.addCloseButton()
+        routeVC.idtr = thread.idtr
     }
     
     private func presentTrainsTimeController() {
@@ -391,10 +399,4 @@ extension StationController {
         destination.model = model
         floatingPanel.track(scrollView: destination.tableView)
     }
-}
-
-struct MailMessage {
-    let to   : String
-    let title: String
-    let body : String
 }

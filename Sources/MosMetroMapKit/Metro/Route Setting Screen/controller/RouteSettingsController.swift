@@ -45,8 +45,8 @@ extension RouteSettingsController {
     
     private func makeState() -> RouteSettingsView.ViewState {
         let classisOption = RouteSettingsView.ViewState.RouteOption(
-            title       : "Default".localized(),
-            descr       : "Routes will be sorted by transfers count and time".localized(),
+            title       : NSLocalizedString("Default", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
+            descr       : NSLocalizedString("Routes will be sorted by transfers count and time", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
             isActivated : routeOptions.routeSorting == .classic ? true : false,
             onSelect    : { [weak self] in
                             guard let self = self else { return }
@@ -55,8 +55,8 @@ extension RouteSettingsController {
         )
         
         let minimalTimeOption = RouteSettingsView.ViewState.RouteOption(
-            title       : "Only by route total time".localized(),
-            descr       : "Routes will be sorted in ascending order by time".localized(),
+            title       : NSLocalizedString("Only by route total time", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
+            descr       : NSLocalizedString("Routes will be sorted in ascending order by time", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
             isActivated : routeOptions.routeSorting == .leastTime ? true : false,
             onSelect    : { [weak self] in
                             guard let self = self else { return }
@@ -65,8 +65,8 @@ extension RouteSettingsController {
         )
         
         let leastTransfersOption = RouteSettingsView.ViewState.RouteOption(
-            title       : "Least transfers".localized(),
-            descr       : "Routes will be sorted in ascending order by transfers".localized(),
+            title       : NSLocalizedString("Least transfers", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
+            descr       : NSLocalizedString("Routes will be sorted in ascending order by transfers", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
             isActivated : routeOptions.routeSorting == .leastTransfers ? true : false,
             onSelect    : { [weak self] in
                             guard let self = self else { return }
@@ -75,7 +75,7 @@ extension RouteSettingsController {
         )
         
         let routeOptionsSection = Section(
-            title          : "Priority".localized(),
+            title          : NSLocalizedString("Priority", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
             isNeedToExpand : false,
             isExpanded     : true,
             rows           : [classisOption,minimalTimeOption,leastTransfersOption],
@@ -99,15 +99,7 @@ extension RouteSettingsController {
         let newRoutingOptions = RoutingOptionsDTO()
         newRoutingOptions.id = 1
         newRoutingOptions.routeSorting = self.routeOptions.routeSorting.rawValue
-        #if MAIN_APP
-        realmContext.commitWrite { [weak self] in
-            guard let self = self else { return }
-            self.realmContext.save2(newRoutingOptions, 1)
-        }
-        #else
         UserDefaults.standard.setValue(newRoutingOptions.routeSorting, forKey: "RouteOption")
-        #endif
-        
         var text = ""
         switch self.routeOptions.routeSorting {
         case .leastTime:
@@ -117,10 +109,6 @@ extension RouteSettingsController {
         case .leastTransfers:
             text = "TRANSFERS"
         }
-        #if MAIN_APP || APPCLIP
-        let params = ["option": text]
-        AnalyticsService.reportEvent(with: "newmetro.metro.selectedRouteOption", parameters: params)
-        #endif
         self.onClose?()
     }
 }

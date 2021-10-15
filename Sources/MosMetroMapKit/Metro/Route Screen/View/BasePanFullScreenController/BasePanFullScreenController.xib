@@ -14,7 +14,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasePanFullScreenController" customModule="MosMetroMapKit">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasePanFullScreenController" customModuleProvider="target">
             <connections>
                 <outlet property="bgBlurView" destination="MKY-li-adS" id="51V-5T-kdV"/>
                 <outlet property="closeButton" destination="Vgb-rM-FXh" id="cV6-NF-OFd"/>
