@@ -18,14 +18,12 @@ public class MapKit {
     public var timeoutInSeconds : TimeInterval = 5
  
     private init() {
-        // This registers the fonts
         _ = UIFont.registerFont(bundle: .mm_Map, fontName: "MoscowSans-Medium", fontExtension: "otf")
         _ = UIFont.registerFont(bundle: .mm_Map, fontName: "MoscowSans-Bold", fontExtension: "otf")
         _ = UIFont.registerFont(bundle: .mm_Map, fontName: "MoscowSans-Light", fontExtension: "otf")
         _ = UIFont.registerFont(bundle: .mm_Map, fontName: "MoscowSans-Regular", fontExtension: "otf")
         _ = UIFont.registerFont(bundle: .mm_Map, fontName: "MoscowSans-Extrabold", fontExtension: "otf")
 
-        // This prints out all the fonts available you should notice that your custom font appears in this list
         for family in UIFont.familyNames.sorted() {
             let names = UIFont.fontNames(forFamilyName: family)
             print("Family: \(family) Font names: \(names)")
