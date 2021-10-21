@@ -40,9 +40,6 @@
                                 <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
                                 <color key="textColor" name="mm_TextSecondary"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Odd"/>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhD-ZK-rjE">
                                 <rect key="frame" x="0.0" y="24" width="70" height="16"/>
@@ -70,9 +67,6 @@
                                 <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
                                 <color key="textColor" name="mm_TextSecondary"/>
                                 <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Even"/>
-                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhI-EQ-buu">
                                 <rect key="frame" x="0.0" y="24" width="70" height="16"/>
@@ -97,9 +91,6 @@
                         <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
                         <color key="textColor" name="mm_TextSecondary"/>
                         <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="First train"/>
-                        </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="First train" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXz-4V-ezQ">
                         <rect key="frame" x="20" y="87" width="132" height="16"/>
@@ -109,9 +100,6 @@
                         <fontDescription key="fontDescription" name="MoscowSans-Regular" family="Moscow Sans" pointSize="13"/>
                         <color key="textColor" name="mm_TextSecondary"/>
                         <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="localizeKey" value="Last train"/>
-                        </userDefinedRuntimeAttributes>
                     </label>
                 </subviews>
                 <constraints>
@@ -134,7 +122,11 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="FirstTrainTop" destination="cwI-7C-cXY" id="Rfl-T3-M9S"/>
+                <outlet property="LastTrainLeft" destination="wXz-4V-ezQ" id="hvN-VI-b4E"/>
                 <outlet property="evenStack" destination="JHr-aN-x56" id="YgL-6s-fWU"/>
+                <outlet property="firstTrainLeft" destination="8ji-Ho-Bwv" id="72r-tN-YWd"/>
+                <outlet property="lastTrainTop" destination="mVy-mW-Dz7" id="3Vg-wS-qPR"/>
                 <outlet property="mainTitleLabel" destination="UVk-LR-wKu" id="9uG-fS-TFi"/>
                 <outlet property="oddStack" destination="Xpd-7w-Acj" id="I88-XC-cQt"/>
             </connections>
