@@ -27,7 +27,7 @@ class ErrorTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         errorRetryButton.roundCorners(.all, radius: 8)
-        errorRetryButton.setTitle("Retry again".localized(), for: .normal)
+        errorRetryButton.setTitle(NSLocalizedString("Retry again", tableName: nil, bundle: .mm_Map, value: "", comment: ""), for: .normal)
     }
     
     public func configure(_ data: _ErrorData) {

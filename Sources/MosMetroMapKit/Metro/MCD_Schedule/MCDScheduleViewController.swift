@@ -45,7 +45,7 @@ class MCDScheduleViewController: BaseController {
         // subtitleLabel
         let subtitleLabel = UILabel()
         subtitleLabel.textAlignment = .center
-        subtitleLabel.text = "MCD schedule".localized()
+        subtitleLabel.text = NSLocalizedString("MCD schedule", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         subtitleLabel.font = UIFont(name: "MoscowSans-Bold", size: 11)
         subtitleLabel.textColor = .grey
         let stackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
@@ -78,7 +78,7 @@ class MCDScheduleViewController: BaseController {
         }
         self.navigationController?.pushViewController(routeVC, animated: true)
         self.navigationItem.rightBarButtonItem = nil
-        routeVC.title = "Route".localized() + " \("№\(thread.trainNum)")"
+        routeVC.title = NSLocalizedString("Route", tableName: nil, bundle: .mm_Map, value: "", comment: "") + " \("№\(thread.trainNum)")"
         routeVC.idtr = thread.idtr
     }
     
@@ -179,9 +179,6 @@ class MCDScheduleViewController: BaseController {
     
     private func detailsHelper(thread: MCDThread) -> String {
         var detailsText = "№\(thread.trainNum)"
-//        if let platform = thread.platform {
-//            detailsText = detailsText + " • \("pl.".localized())\(platform) "
-//        }
         return detailsText
     }
     
@@ -193,20 +190,20 @@ class MCDScheduleViewController: BaseController {
         if thread.arrival < Date().addingTimeInterval(3600*3) {
             switch thread.status {
             case .late(let mins):
-                return String.localizedStringWithFormat("Arrived %d min late".localized(), mins)
+                return String.localizedStringWithFormat(NSLocalizedString("Arrived %d min late", tableName: nil, bundle: .mm_Map, value: "", comment: ""), mins)
             case .early(let mins):
-                return String.localizedStringWithFormat("Arrived %d min earlier".localized(), mins)
+                return String.localizedStringWithFormat(NSLocalizedString("Arrived %d min earlier", tableName: nil, bundle: .mm_Map, value: "", comment: ""), mins)
             case .standart:
-                return "Arrived on schedule".localized()
+                return NSLocalizedString("Arrived on schedule", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             }
         } else {
             switch thread.status {
             case .late(let mins):
-                return String.localizedStringWithFormat("Possible delay %d min".localized(), mins)
+                return String.localizedStringWithFormat(NSLocalizedString("Possible delay %d min", tableName: nil, bundle: .mm_Map, value: "", comment: ""), mins)
             case .early(let mins):
-                return String.localizedStringWithFormat("Arriving %d min earlier".localized(), mins)
+                return String.localizedStringWithFormat(NSLocalizedString("Arriving %d min earlier", tableName: nil, bundle: .mm_Map, value: "", comment: ""), mins)
             case .standart:
-                return "On schedule".localized()
+                return NSLocalizedString("On schedule", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             }
         }
     }

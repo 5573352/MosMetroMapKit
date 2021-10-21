@@ -59,20 +59,20 @@ class MCDRouteScreen : BaseController {
         if stop.arrival < Date().addingTimeInterval(3600*3) {
             switch stop.status {
             case .late(let mins):
-                return String.localizedStringWithFormat("Arrived %d min late".localized(), mins)
+                return String.localizedStringWithFormat(NSLocalizedString("Arrived %d min late", tableName: nil, bundle: .mm_Map, value: "", comment: ""), mins)
             case .early(let mins):
-                return String.localizedStringWithFormat("Arrived %d min earlier".localized(), mins)
+                return String.localizedStringWithFormat(NSLocalizedString("Arrived %d min earlier", tableName: nil, bundle: .mm_Map, value: "", comment: ""), mins)
             case .standart:
-                return "Arrived on schedule".localized()
+                return NSLocalizedString("Arrived on schedule", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             }
         } else {
             switch stop.status {
             case .late(let mins):
-                return String.localizedStringWithFormat("Possible delay %d min".localized(), mins)
+                return String.localizedStringWithFormat(NSLocalizedString("Possible delay %d min", tableName: nil, bundle: .mm_Map, value: "", comment: ""), mins)
             case .early(let mins):
-                return String.localizedStringWithFormat("Arriving %d min earlier".localized(), mins)
+                return String.localizedStringWithFormat(NSLocalizedString("Arriving %d min earlier", tableName: nil, bundle: .mm_Map, value: "", comment: ""), mins)
             case .standart:
-                return "On schedule".localized()
+                return NSLocalizedString("On schedule", tableName: nil, bundle: .mm_Map, value: "", comment: "")
             }
         }
     }
@@ -90,7 +90,7 @@ class MCDRouteScreen : BaseController {
     
     private func makeErrorState() {
         
-        let errRow = ViewState.ErrorData(title: "Error".localized(), descr: "Oops! Something went wrong" .localized(), onRetry: { [weak self] in
+        let errRow = ViewState.ErrorData(title: NSLocalizedString("Error", tableName: nil, bundle: .mm_Map, value: "", comment: ""), descr: NSLocalizedString("Oops! Something went wrong", tableName: nil, bundle: .mm_Map, value: "", comment: ""), onRetry: { [weak self] in
             guard let self = self else { return }
             self.loadData(for: self.idtr)
         })
@@ -310,7 +310,7 @@ extension MCDRouteScreen : UITableViewDataSource {
                         expandView.isExpanded.toggle()
                         self.handleExpand(section: section)
                     }
-                    expandView.stationsCountLabel.text =  String.localizedStringWithFormat("stations count".localized(), viewState.sections[section].rows.count)
+                    expandView.stationsCountLabel.text =  String.localizedStringWithFormat(NSLocalizedString("stations count", tableName: nil, bundle: .mm_Map, value: "", comment: ""), viewState.sections[section].rows.count)
                     return expandView
                 }
             }

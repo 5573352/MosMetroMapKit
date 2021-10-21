@@ -18,7 +18,7 @@ class MCDExpandTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .clear
-        label.text = "Previous".localized()
+        label.text = NSLocalizedString("Previous", tableName: nil, bundle: .mm_Map, value: "", comment: "")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

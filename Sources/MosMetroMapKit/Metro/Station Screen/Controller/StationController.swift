@@ -182,7 +182,7 @@ extension StationController {
                 return MCDArrivaleCollectionViewCell.ViewState(arrivalTime: item.getArrivalString(), onSelect: onSelect, status: self.mcdStatus(status: item.status), platform: item.platform, routeNumb: item.trainNum)
             }
             
-            return MCDArrivalTableViewCell.ViewState(towards: String.localizedStringWithFormat("Towards %@".localized(), station.name), items: items)
+            return MCDArrivalTableViewCell.ViewState(towards: String.localizedStringWithFormat(NSLocalizedString("Towards %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), station.name), items: items)
     }
 
     private func handleMCDSchedule(_ schedule: MCDSchedule) {
@@ -194,7 +194,7 @@ extension StationController {
             if let towardsEndRow = self.makeMCDrows(model.line.lastStationID, threads: schedule.end) {
                 rows.append(towardsEndRow)
             }
-            let lastUpdateRow = StationView.ViewState.TrainsLastUpdate(title: "\("Last update – ".localized())\(Date().dateByAdding(3, .hour).toFormat("HH:mm:ss"))")
+            let lastUpdateRow = StationView.ViewState.TrainsLastUpdate(title: "\(NSLocalizedString("Last update – ", tableName: nil, bundle: .mm_Map, value: "", comment: ""))\(Date().dateByAdding(3, .hour).toFormat("HH:mm:ss"))")
                 
             if let first = rows.first, let last = rows.last {
                 if first.items.isEmpty && last.items.isEmpty {
@@ -208,7 +208,7 @@ extension StationController {
                     finalRows.append(contentsOf: cellStates)
                     finalRows.append(lastUpdateRow)
                     finalRows.append(StationView.ViewState.Divider())
-                    let newSection = Section(title: "Train's arriving".localized(),
+                    let newSection = Section(title: NSLocalizedString("Train's arriving", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
                                              isNeedToExpand: false,
                                              isExpanded: true,
                                              rows: finalRows,
@@ -233,13 +233,13 @@ extension StationController {
             }
 
             let cellStates = rows.map {  StationView.ViewState.TrainsWorkloadData.loaded($0) }
-            let lastUpdateRow = StationView.ViewState.TrainsLastUpdate(title: "\("Last update – ".localized())\(Date().dateByAdding(3, .hour).toFormat("HH:mm:ss"))")
+            let lastUpdateRow = StationView.ViewState.TrainsLastUpdate(title: "\(NSLocalizedString("Last update – ", tableName: nil, bundle: .mm_Map, value: "", comment: ""))\(Date().dateByAdding(3, .hour).toFormat("HH:mm:ss"))")
             var finalRows = [Any]()
             finalRows.append(contentsOf: cellStates)
             finalRows.append(lastUpdateRow)
             finalRows.append(StationView.ViewState.Divider())
             let newSection = Section(
-                title          : "Trains load".localized(),
+                title          : NSLocalizedString("Trains load", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
                 isNeedToExpand : false,
                 isExpanded     : true,
                 rows           : finalRows,
@@ -258,7 +258,7 @@ extension StationController {
         }
         secondaryLinesRows.insert(mainLineRow, at: 0)
         linesAndWorktimeRows.append(contentsOf: secondaryLinesRows)
-        let worktime = StationView.ViewState.WorktimeData(font: .mm_Body_15_Regular, title: "\("Opened from".localized()) \(station.worktime.open) \("till".localized()) \(station.worktime.close)", color: .mm_TextSecondary)
+        let worktime = StationView.ViewState.WorktimeData(font: .mm_Body_15_Regular, title: "\(NSLocalizedString("Opened from", tableName: nil, bundle: .mm_Map, value: "", comment: "")) \(station.worktime.open) \(NSLocalizedString("till", tableName: nil, bundle: .mm_Map, value: "", comment: "")) \(station.worktime.close)", color: .mm_TextSecondary)
         linesAndWorktimeRows.append(worktime)
         linesAndWorktimeRows.append(StationView.ViewState.Divider())
         sections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: linesAndWorktimeRows, onExpandTap: nil))
@@ -281,7 +281,7 @@ extension StationController {
             sections.append(Section(title: nil, isNeedToExpand: false, isExpanded: true, rows: [StationView.ViewState.Divider()], onExpandTap: nil))
         }
         var onTransport: (()->())? = nil
-        let addToFavoritesTitle = "Bookmark".localized()
+        let addToFavoritesTitle = NSLocalizedString("Bookmark", tableName: nil, bundle: .mm_Map, value: "", comment: "")
         let favoritesImage = UIImage(named: "like", in: .mm_Map, compatibleWith: nil)!
         let onBookmark : (()->())? = nil
         let onTrains: ()->() = { [weak self] in
@@ -321,7 +321,7 @@ extension StationController {
             var finalRows = [Any]()
             finalRows.append(contentsOf: transfers)
             finalRows.append(StationView.ViewState.Divider())
-            sections.append(Section(title: "Transfers".localized(),
+            sections.append(Section(title: NSLocalizedString("Transfers", tableName: nil, bundle: .mm_Map, value: "", comment: ""),
                                     isNeedToExpand: false,
                                     isExpanded: true,
                                     rows: finalRows,
@@ -356,7 +356,7 @@ extension StationController {
             var finalRows = [Any]()
             finalRows.append(contentsOf: boolRows)
             finalRows.append(StationView.ViewState.Divider())
-            sections.append(Section(title: "Services".localized(), isNeedToExpand: false, isExpanded: true, rows: finalRows, onExpandTap: nil))
+            sections.append(Section(title: NSLocalizedString("Services", tableName: nil, bundle: .mm_Map, value: "", comment: ""), isNeedToExpand: false, isExpanded: true, rows: finalRows, onExpandTap: nil))
         }
         
         return StationView.ViewState(stationTitle: station.name,
@@ -374,8 +374,8 @@ extension StationController {
 
         if let startStation = service.stationsDTO.values.filter({ $0.id == model.line.firstStationID }).first,
            let endStation = service.stationsDTO.values.filter({ $0.id == model.line.lastStationID }).first {
-            scheduleVC.towardsStartName = String.localizedStringWithFormat("To %@".localized(), startStation.name)
-            scheduleVC.towardsEndName = String.localizedStringWithFormat("To %@".localized(), endStation.name)
+            scheduleVC.towardsStartName = String.localizedStringWithFormat(NSLocalizedString("To %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), startStation.name)
+            scheduleVC.towardsEndName = String.localizedStringWithFormat(NSLocalizedString("To %@", tableName: nil, bundle: .mm_Map, value: "", comment: ""), endStation.name)
         }
      
         scheduleVC.towardsStart = schedule.start
@@ -387,7 +387,7 @@ extension StationController {
         let routeVC = MCDRouteScreen()
         let nav = BaseNavigationController(rootViewController: routeVC)
         self.present(nav, animated: true, completion: nil)
-        routeVC.title = "Route".localized() + " \("№\(thread.trainNum)")"
+        routeVC.title = NSLocalizedString("Route", tableName: nil, bundle: .mm_Map, value: "", comment: "") + " \("№\(thread.trainNum)")"
         routeVC.addCloseButton()
         routeVC.idtr = thread.idtr
     }

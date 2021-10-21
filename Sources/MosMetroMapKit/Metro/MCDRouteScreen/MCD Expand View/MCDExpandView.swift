@@ -31,13 +31,13 @@ class MCDExpandView: UIView {
     var isExpanded: Bool = false {
          didSet {
              if isExpanded {
-                self.expandButton.setTitle("Hide".localized(), for: .normal)
+                self.expandButton.setTitle(NSLocalizedString("Hide", tableName: nil, bundle: .mm_Map, value: "", comment: ""), for: .normal)
                 UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: { [weak self] in
                     guard let self = self else { return }
                     self.hiddenPathView.alpha = 1
                 }, completion: nil)
              } else {
-                 self.expandButton.setTitle("Show".localized(), for: .normal)
+                 self.expandButton.setTitle(NSLocalizedString("Show", tableName: nil, bundle: .mm_Map, value: "", comment: ""), for: .normal)
                 UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: { [weak self] in
                     guard let self = self else { return }
                     self.hiddenPathView.alpha = 0
@@ -51,12 +51,11 @@ class MCDExpandView: UIView {
     }
     
     private func setup() {
-        expandButton.setTitle("Show".localized(), for: .normal)
+        expandButton.setTitle(NSLocalizedString("Show", tableName: nil, bundle: .mm_Map, value: "", comment: ""), for: .normal)
         expandButton.setTitleColor(.mainColor, for: .normal)
         chipView.roundCorners(.all, radius: 8)
         miniCircle.roundCorners(.all, radius: 1.5)
         topLinePathView.roundCorners(.bottom, radius: 2)
         bottomLinePathView.roundCorners(.top, radius: 2)
-        
     }
 }
