@@ -13,8 +13,9 @@ let package = Package(
             targets: ["MosMetroMapKit"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/drmohundro/SWXMLHash.git",                         .exact("5.0.2")),
         .package(url: "https://github.com/ivanvorobei/SPAlert",                              .exact("2.1.4")),
-        .package(url: "https://github.com/exyte/Macaw",                                      .upToNextMajor(from: "0.9.7")),
+        .package(url: "https://github.com/exyte/Macaw",                                      .exact("0.9.7")),
         .package(url: "https://github.com/SDWebImage/SDWebImage",                            .upToNextMajor(from: "5.0.0")),
         .package(url: "https://github.com/malcommac/SwiftDate",                              .upToNextMajor(from: "6.3.1")),
         .package(url: "https://github.com/scenee/FloatingPanel",                             .upToNextMajor(from: "2.4.0")),
@@ -27,6 +28,7 @@ let package = Package(
         .target(
             name: "MosMetroMapKit",
             dependencies: [
+                "SWXMLHash",
                 "SPAlert",
                 "Macaw",
                 "SwiftDate",
