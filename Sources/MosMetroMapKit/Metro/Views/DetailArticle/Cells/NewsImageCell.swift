@@ -24,19 +24,19 @@ class NewsImageCell: UITableViewCell {
     var imageURL: String! {
         didSet {
             guard let photoURL = URL(string: imageURL) else { return }
-            mainImageView.sd_setImage(with: photoURL) { [weak self] (image, error, _, _) in
-                guard let self = self else { return }
-                if let image = image {
-                    print("SIZE - \(image.size)")
-                    let scale = self.mainImageView.frame.width/image.size.width
-                    let imageViewWidth = self.mainImageView.frame.width
-                    let newImage = image.sd_resizedImage(with: CGSize(width: imageViewWidth * 2, height: (image.size.height * scale) * 2), scaleMode: .fill)
-                    self.mainImageView.image = newImage
-                    self.imageViewHeightAnchor.constant = image.size.height * scale
-                    self.layoutSubviews()
-                    self.onSet?()
-                }
-            }
+//            mainImageView.sd_setImage(with: photoURL) { [weak self] (image, error, _, _) in
+//                guard let self = self else { return }
+//                if let image = image {
+//                    print("SIZE - \(image.size)")
+//                    let scale = self.mainImageView.frame.width/image.size.width
+//                    let imageViewWidth = self.mainImageView.frame.width
+//                    let newImage = image.sd_resizedImage(with: CGSize(width: imageViewWidth * 2, height: (image.size.height * scale) * 2), scaleMode: .fill)
+//                    self.mainImageView.image = newImage
+//                    self.imageViewHeightAnchor.constant = image.size.height * scale
+//                    self.layoutSubviews()
+//                    self.onSet?()
+//                }
+//            }
         }
     }
     

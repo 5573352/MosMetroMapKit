@@ -13,15 +13,11 @@ let package = Package(
             targets: ["MosMetroMapKit"])
     ],
     dependencies: [
-        .package(url: "https://github.com/SDWebImage/SDWebImage",                            .upToNextMajor(from: "5.0.0")),
-        .package(name: "HMSegmentedControl", url: "https://github.com/HeshamMegid/HMSegmentedControl",                   .branch("master")),
     ],
     targets: [
         .target(
             name: "MosMetroMapKit",
             dependencies: [
-                "SDWebImage",
-                "HMSegmentedControl"
             ],
             resources: [
                 .process("Constants/Fonts"),

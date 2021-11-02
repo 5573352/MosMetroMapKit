@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import HMSegmentedControl
 
 class MCDScheduleViewController: BaseController {
 
     @IBOutlet weak var tableView     : UITableView!
-    @IBOutlet weak var segmentControl: HMSegmentedControl!
     
     @objc private func handleClose() {
         self.dismiss(animated: true, completion: nil)
@@ -238,7 +236,6 @@ class MCDScheduleViewController: BaseController {
     public var viewState : ViewState = .initial {
         didSet {
             scrollButton.alpha = 0
-            segmentControl.sectionTitles = [viewState.startName,viewState.endName];
             var animated = false
             switch viewState.state {
             case .loading : break
@@ -283,10 +280,8 @@ class MCDScheduleViewController: BaseController {
         tableView.register(LoadingTableViewCell.nib,
             forCellReuseIdentifier: LoadingTableViewCell.identifire)
         tableView.register(UINib(nibName: ErrorTableViewCell.reuseID, bundle: nil), forCellReuseIdentifier: ErrorTableViewCell.reuseID)
-        segmentControl.backgroundColor = .clear
         tableView.delegate = self
         tableView.dataSource = self
-        segmentControl.alpha = 0
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeLeft.direction = .left
         self.tableView.addGestureRecognizer(swipeLeft)
@@ -312,45 +307,14 @@ class MCDScheduleViewController: BaseController {
     @objc
     private func handleGesture(gesture: UISwipeGestureRecognizer) {
         if gesture.direction == .right {
-            if segmentControl.selectedSegmentIndex == 1 {
-                makeTransition(with: .fromLeft)
-                viewState = ViewState(start: viewState.start, end: viewState.end, startName: viewState.startName, endName: viewState.endName, state: .towardsStart)
-                segmentControl.setSelectedSegmentIndex(0, animated: true)
-            }
         }
         else if gesture.direction == .left {
-            if segmentControl.selectedSegmentIndex == 0 {
-                makeTransition(with: .fromRight)
-                viewState = ViewState(start: viewState.start, end: viewState.end, startName: viewState.startName, endName: viewState.endName, state: .towardsEnd)
-                segmentControl.setSelectedSegmentIndex(1, animated: true)
-            }
         }
     }
     
     private func setupSegmentControl() {
 //        let d = firstDir?.first as! ViewState.Train
 //        let t = secondDir?.first as! ViewState.Train
-        segmentControl.shouldStretchSegmentsToScreenSize = true
-        segmentControl.sectionTitles = [viewState.startName,viewState.endName];
-        segmentControl.selectionStyle = HMSegmentedControlSelectionStyle.fullWidthStripe
-        segmentControl.tintColor = .mainColor
-        segmentControl.selectionStyle = HMSegmentedControlSelectionStyle.box
-        segmentControl.segmentWidthStyle = HMSegmentedControlSegmentWidthStyle.fixed;
-        segmentControl.addTarget(self, action: #selector(segmentedControlChangedValue(segmentedControl:)), for: .valueChanged)
-        segmentControl.backgroundColor = .clear
-        segmentControl.setSelectedSegmentIndex(0, animated: true)
-        segmentControl.selectionIndicatorBoxColor = .clear
-        segmentControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocation.down;
-        segmentControl.segmentWidthStyle = HMSegmentedControlSegmentWidthStyle.dynamic;
-        segmentControl.selectionIndicatorHeight = 2;
-        segmentControl.backgroundColor = .clear
-        segmentControl.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "MoscowSans-Regular", size: 15) ?? UIFont.HEADER_4, NSAttributedString.Key.foregroundColor: UIColor.grey]
-        segmentControl.selectedTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "MoscowSans-Bold", size: 15) ?? UIFont.HEADER_4, NSAttributedString.Key.foregroundColor: UIColor.textPrimary]
-        segmentControl.selectionIndicatorColor = UIColor.mainColor
-        UIView.animate(withDuration: 0.3, animations: { [weak self] in
-            self?.segmentControl.alpha = 1
-            
-        })
 //        segmentControl.segmentEdgeInset = UIEdgeInsets(top: 0, left: UIScreen.main.bounds.width/3, bottom: UIScreen.main.bounds.width/3, right: 0);
     }
     
@@ -372,7 +336,6 @@ class MCDScheduleViewController: BaseController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        segmentControl.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50)
     }
     
     override func viewDidAppear(_ animated: Bool) {

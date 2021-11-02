@@ -30,14 +30,14 @@ class StandartImageSubtitleCell : UITableViewCell {
                 self.leftImage.image = UIImage(named: "placholder_image")
                 return
             }
-            leftImage.sd_setImage(with: photoURL, placeholderImage: nil, options: [.scaleDownLargeImages]) { (image, error, cacheType, imageUrl) in
-                if imageUrl != URL(string: urlStr),
-                   error    != nil,
-                   image    == nil {
-                    self.leftImage.image = UIImage(named: "placholder_image")
-                    self.leftImage.backgroundColor = .cardBackground
-                }
-            }
+//            leftImage.sd_setImage(with: photoURL, placeholderImage: nil, options: [.scaleDownLargeImages]) { (image, error, cacheType, imageUrl) in
+//                if imageUrl != URL(string: urlStr),
+//                   error    != nil,
+//                   image    == nil {
+//                    self.leftImage.image = UIImage(named: "placholder_image")
+//                    self.leftImage.backgroundColor = .cardBackground
+//                }
+//            }
         }
     }
     
