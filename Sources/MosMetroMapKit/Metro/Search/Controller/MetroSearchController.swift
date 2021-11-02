@@ -5,7 +5,6 @@
 //
 
 import UIKit
-import SPAlert
 
 class MetroSearchController : BaseController {
     

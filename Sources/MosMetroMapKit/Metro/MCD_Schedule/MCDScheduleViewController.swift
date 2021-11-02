@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import SwiftDate
-import FloatingPanel
 import HMSegmentedControl
 
 class MCDScheduleViewController: BaseController {

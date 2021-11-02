@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 protocol _StandartImageSubtitle {
     var image    : UIImage? { get set }

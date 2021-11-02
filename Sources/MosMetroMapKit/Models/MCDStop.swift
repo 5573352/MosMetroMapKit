@@ -5,8 +5,6 @@
 //
 
 import UIKit
-import SwiftDate
-import SwiftyJSON
 
 struct MCDStop {
     let arrival     : Date

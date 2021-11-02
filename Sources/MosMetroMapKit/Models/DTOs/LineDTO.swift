@@ -5,8 +5,6 @@
 //
 
 import UIKit
-import SwiftyJSON
-import Localize_Swift
 
 class LineDTO {
     

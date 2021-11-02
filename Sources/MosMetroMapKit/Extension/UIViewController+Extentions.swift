@@ -5,7 +5,6 @@
 //
 
 import UIKit
-import FloatingPanel
 
 extension UIViewController {
     

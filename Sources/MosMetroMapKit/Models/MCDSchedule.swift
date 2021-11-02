@@ -5,8 +5,6 @@
 //
 
 import UIKit
-import SwiftDate
-import SwiftyJSON
 
 enum MCDStatus {
     case late(Int)

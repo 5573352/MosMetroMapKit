@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FloatingPanel
 
 class MetroFilterController : BasePanController {
     

@@ -5,8 +5,6 @@
 //
 
 import Foundation
-import SwiftyJSON
-import Localize_Swift
 
 class ExitDTO {
     var latitude   : Double = 0.0

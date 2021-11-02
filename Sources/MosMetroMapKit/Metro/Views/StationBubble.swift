@@ -5,7 +5,6 @@
 //
 
 import UIKit
-import ViewAnimator
 
 class BubbleSegmentView: UIView {
     
@@ -152,7 +151,7 @@ extension StationBubble {
     public func show(on view: UIView, scrollView: UIScrollView, position: MapPoint, with zoom: CGRect) {
         view.addSubview(self)
         self.alpha = 0
-        let animation = AnimationType.from(direction: .top, offset: 30)
+        let animation = VAAnimationType.from(direction: .top, offset: 30)
         UIView.animate(views: [self],
                        animations: [animation],
                        duration: 0.5)

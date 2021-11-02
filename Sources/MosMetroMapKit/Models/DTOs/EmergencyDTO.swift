@@ -4,9 +4,7 @@
 //  Created by Павел Кузин on 12.04.2021.
 //
 
-import SwiftDate
 import Foundation
-import SwiftyJSON
 
 class StationEmergencyDTO {
     var stationID = 0
@@ -70,8 +68,8 @@ class AlternativeConnectionDTO {
     }
     
     func mapAlternativeReversed(data: JSON) {
-       if let stationFromID = data["stationFromId"].int,
-        let stationToID     = data["stationToId"].int {
+        if let stationFromID = data["stationFromId"].int,
+           let stationToID     = data["stationToId"].int {
             self.fromStationID = stationToID
             self.toStationID   = stationFromID
             self.id            = 4000 + data["id"].intValue

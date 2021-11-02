@@ -5,7 +5,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 struct ArticlesResponse {
     let articles: [Any]

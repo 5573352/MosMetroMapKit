@@ -5,8 +5,6 @@
 //
 
 import UIKit
-import SPAlert
-import FloatingPanel
 
 // TODO: переписать экран под красивую логику
 // swiftlint:disable all

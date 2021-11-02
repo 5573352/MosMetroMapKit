@@ -5,7 +5,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 class TransitionPartDTO {
     var prevStationID: Int = 0

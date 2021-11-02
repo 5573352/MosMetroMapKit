@@ -5,8 +5,6 @@
 //
 
 import UIKit
-import FloatingPanel
-import Localize_Swift
 
 class BaseController: UIViewController {
     

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 protocol _NewsImageCell {
     var imageURL : String { get set }
