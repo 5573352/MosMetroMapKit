@@ -9,7 +9,7 @@ import UIKit
 public extension UICollectionViewCell {
     
     static var nib  : UINib{
-        return UINib(nibName: identifire, bundle: .mm_Map)
+        return UINib(nibName: identifire, bundle: .module)
     }
     
     static var identifire : String{
