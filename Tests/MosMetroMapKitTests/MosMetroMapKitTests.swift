@@ -1,5 +1,5 @@
     import XCTest
-    @testable import MosMetroMapKit
+//    @testable import MosMetroMapKit
 
     final class MosMetroMapKitTests: XCTestCase {
         func testExample() {

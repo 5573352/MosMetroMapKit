@@ -27,8 +27,8 @@ let package = Package(
                 .process("SwiftDate/Formatters/RelativeFormatter/langs")
             ]
         ),
-        .testTarget(
-            name: "MosMetroMapKitTests",
-            dependencies: ["MosMetroMapKit"]),
+//        .testTarget(
+//            name: "MosMetroMapKitTests",
+//            dependencies: ["MosMetroMapKit"]),
     ]
 )
